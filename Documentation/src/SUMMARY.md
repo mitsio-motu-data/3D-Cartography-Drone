@@ -7,7 +7,7 @@
 
 # Guide
 
-- [Obtention des autorisations](./guide/autorisation/autorisations.md)
+- [Obtention des autorisations](./guide/autorisations/autorisations.md)
 - [Identification des contraintes](./guide/contraintes/contraintes.md)
     - [Contraintes d'organisation](./guide/contraintes/contraintes_orga.md)
     - [Contraintes matérielles](./guide/contraintes/contraintes_materielles.md)
