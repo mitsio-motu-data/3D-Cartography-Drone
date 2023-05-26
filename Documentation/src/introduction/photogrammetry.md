@@ -1,2 +1,0 @@
-# Quelques notions de photogrammétrie
-
