@@ -11,7 +11,7 @@ Réaliser un vol d'acquisition est long et fastidieux. De plus, les images de la
 Nous appelerons **mission horizontale** un vol sur un plan parrallèle au sol (par exemple pour cartographier un parc) et **mission verticale** un vol sur un plan perpendiculaire au sol (par exemple pour cartographier une façade de bâtiment).
 
 
-> //!\\ On vous prévient, Mission Planner est un logiciel qui présente de nombreux bugs.
+> 🚨 On vous prévient, Mission Planner est un logiciel qui présente de nombreux bugs.
 > Nous allons essayer de vous guider au mieux dans le logiciel. Il est possible qu'avec
 > de nouvelles mises à jour, certains soient résolus et que d'autres apparaissent.
 
@@ -69,7 +69,7 @@ Une nouvelle fenêtre apparaît. Elle va permettre de paramétrer le quadrillage
 
     Dans le panneau de droite : `Simple` > `Simple Options` > `Camera`
     
-    //!\\\\ Ce n'est le cas pour le **DJI Mavic Air 2** lors de la rédaction de ce tutoriel.
+    Ce n'est le cas pour le **DJI Mavic Air 2** lors de la rédaction de ce tutoriel.
 
 3. Rendez-vous dans le menu des paramètres de la caméra.
 Dans le panneau de droite : `Camera Config`
