@@ -16,3 +16,7 @@ Pour mapper un bâtiment en entier :
 - chaque façade individuellement (vertical)
 - chaque angles pour faire le lien entre les façades (vertical)
 - Une acquisition générale pour s'assurer du lien général + avoir un peu de l'environnement embiant (cross-grid)
+
+___
+
+Utilisation d'un tableau de suivi de la planification
