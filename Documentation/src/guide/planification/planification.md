@@ -7,3 +7,12 @@ Les étapes à suivre pour mettre en place le vol autome sont les suivantes :
 - Prévoir des points GPS à rallier grâce à **Mission Planner**
 - Convertir les points dans le format de **Litchi** grâce à Mission Planner To Litchi et éditer la mission (verticalité par exemple).
 - Finaliser la mission sur **Litchi**
+
+___
+
+Pour mapper un bâtiment en entier : 
+
+- le toît / terrain (horizontal)
+- chaque façade individuellement (vertical)
+- chaque angles pour faire le lien entre les façades (vertical)
+- Une acquisition générale pour s'assurer du lien général + avoir un peu de l'environnement embiant (cross-grid)

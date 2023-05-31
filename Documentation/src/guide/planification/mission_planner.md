@@ -11,7 +11,7 @@ Réaliser un vol d'acquisition est long et fastidieux. De plus, les images de la
 Nous appelerons **mission horizontale** un vol sur un plan parrallèle au sol (par exemple pour cartographier un parc) et **mission verticale** un vol sur un plan perpendiculaire au sol (par exemple pour cartographier une façade de bâtiment).
 
 
-> 🚨 On vous prévient, Mission Planner est un logiciel qui présente de nombreux bugs.
+> 🚨 Soyez prévenu, Mission Planner est un logiciel qui présente de nombreux bugs.
 > Nous allons essayer de vous guider au mieux dans le logiciel. Il est possible qu'avec
 > de nouvelles mises à jour, certains soient résolus et que d'autres apparaissent.
 
@@ -79,5 +79,71 @@ Dans le panneau de droite : `Camera Config`
 </figure>
 
 
+Les étapes 1 et 2 sont nécessaires seulement si le modèle du drone n'est pas connu de Mission Planner et **la première fois uniquement**.
+
+1. Importez une image capturée par le drone. Cela va permettre à Mission Planner de déterminer automatiquement les paramètres *focal length*, *image width (pxl)* et *image height (pxl)*. ⚠️ Les deux paramètres restants (taille du *sensor*) ne peuvent pas être déterminés par Mission Planner (bien que les champs soient remplis, ce sont les paramètre de la caméra qui était enregistrée par défaut. Il ne sont pas mis à jour). Il faudra vous renseigner sur la nature de votre capteur pour remplir ces champs vous même.
+
+    Dans le panneau de droite : `Camera Config` > `Camera Options` > `Load Sample Photo`
+
+    Ci-dessous, le tableau regroupant tous les paramètres des caméras des drones déjà utilisés ches Mitsio Motu. Merci de mettre à jour ce tableau à chaque nouveau modèle utilisé.
+
+|                        | Mavic Air 2 | Mavic Pro 2 | Phantom 4 |
+| :--------------------: | :---------: | :---------: | :-------: |
+| **Focal length**       | 4.5         | 10.3        | 8.8       |
+| **Image width (px)**   | 4000        | 5472        | 5472      |
+| **Image height (px)**  | 3000        | 3648        | 3648      | 
+| **Sensor width( mm)**  | 6.4         | 13.31       | 13.31     |
+| **Sensor height (mm)** | 4.8         | 8.88        | 8.88      |
+| **Proportion**         | 4/3         | 3/1         | 3/1       |
+    
 
 
+2. Vérifiez que les paramètres sont cohérents puis sauvegardez les. Mission Planner va vous demander de renseigner le modèle du drone (autrement dit, son nom). Cela permettra à Mission Planner de l'enregistrer et de vous le proposer dans les drones connus lors de votre prochaine plannification.
+
+    Dans le panneau de droite : `Camera Config` > `Camera Options` > `Save`
+
+3. Sélectionnez le mode de capture d'images `DO_DIGICAM_CONTROL`. Ce mode permet de préciser combien de temps le drone doit s'arrêter au moment de prendre la photo (afin de s'assurer que l'image soit nette). 
+
+    Dans le panneau de droite : `Camera Config` > `Trigger Method` > `DO_DIGICAM_CONTROL`
+
+<figure align="center">
+    <img src="../../images/guide/mission_planner/cam_config.jpg"/>
+</figure>
+
+Vous pouvez maintenant renseigner l'ensemble de vos paramètres de vol dans le menu `Grid Options`. Il faut notamment faire attention à : 
+
+- `Camera Options` > `Overlap` et `Sidelap`, les recouvrements de vos images dans le sens de vol et sur les côtés.[^recouv]
+- `Camera Options` > `Cross Grid`, qui peut être très utile dans l'acquisition de zones générales avec des bâtiments.[^cross-grid] 
+- `Copter Options` > `Delay at WP (sec)`, le temps d'arrêt à chaque point. Il n'est pas nécessaire d'y régler le temps, nous le paramétrerons dans la section [Conversion du format avec Carto3D](carto3d.md).
+
+Enfin, retournez dans le menu `Simple` pour activer 3 options : 
+
+1. `Simple Options` > `Camera top facing forward` : Quand elle est activée, cela signifie que la caméra pointe bien vers l'avant du drone. Cela est nécessaire pour le calcul de la positions des *waypoints*.
+2. `Simple Options` > `Use speed for this mission` : Vous pouvez d'ailleurs mettre la vitesse à jour de la mission ici.
+3. `Display` > `Internals`
+
+Vérifiez que les points semblent cohérents. Une fois satisfait, cliquez sur `Accept`.
+
+<figure align="center">
+    <img src="../../images/guide/mission_planner/mission_finished.jpg"/>
+</figure>
+
+La fenêtre `Survez (Gris)` se ferme et tous les points apparaissent de le plan de vol.
+
+Vous y êtes presque ! 
+
+1. Activez l'option `Verify Height` pour que Mission Planner vérifie les altitudes renseignées s'il a des données disponibles pour la région en question.
+2. Exportez les points. Ils sont enregistrés au format `.waypoints` que vous pouvez ouvrir avec un éditeur de texte.
+
+<figure align="center">
+    <img src="../../images/guide/mission_planner/mission_height.jpg"/>
+</figure>
+
+> 👏 Et voilà pour la section Mission Planner ! Il ne reste maintenant plus qu'à convertir et personnaliser la mission
+> avec [Conversion du format avec Carto3D](carto3d.md) et enfin à l'importer dans Litchi avec [Importation sur Litchi Fly](litchi.md).
+
+___
+
+[^recouv]: Pour le projet de l'hôtel de la paix, le recouvrement était de 80% pour l'*overlap* et le *sidelap*.
+
+[^cross-grid]: Une *cross-grid* est nécessaire pour l'acquisition complète d'un terrain avec bâtiments par exemple. Pour pouvoir observer les façades, il faut orienter la caméra non pas perpendiculairement au sol mais à 45° par rapport au sol environ. Avec la caméra perpendiculaire, il manquera les façades de bâtiments dans la reconstructiojn. Pour pouvoir obtenir des photos de toutes les zones, il est dans ce cas indispensable de faire un acquisition en cross-grid. Sinon, certaines zones ne pourront pas être reconstituées.
