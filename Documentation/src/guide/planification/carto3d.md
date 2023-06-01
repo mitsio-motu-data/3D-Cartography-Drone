@@ -4,6 +4,7 @@
 
 <figure align="center">
     <img src="../../images/guide/carto3d/carto3d.png" | width=600/>
+    <figcaption>Image issue de **Carto3D**</figcaption>
 </figure>
 
 Cette étape a plusieurs intérêts : 
