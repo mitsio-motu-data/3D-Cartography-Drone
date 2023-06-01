@@ -16,4 +16,11 @@ Cette étape a plusieurs intérêts :
     - Prendre une photo.
     - Attendre 0.5 seconde.
 
-L'installation et l'utilisation de **Carto3D**
+L'installation et l'utilisation de **Carto3D** sont détaillées sur le [**Dépôt Github du projet**](https://github.com/mitsio-motu-data/Carto3D).
+
+Comme expliqué dans [Planification de la mission](planification.md),  certaines missions sont plus adaptées à planifier sur Litchi que Mission Planner. Elles peuvent être exportées de Litchi en format CSV et utilisées également dans [**Carto3D**](https://github.com/mitsio-motu-data/Carto3D).
+
+<figure align="center">
+    <img src="../../images/guide/carto3d/angle.jpg" | width=600/>
+    <figcaption>Exemple de mission (angle) plus adaptée à planifier sur Litchi</figcaption>
+</figure>
