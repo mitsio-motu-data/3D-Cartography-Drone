@@ -2,4 +2,4 @@
 .vscode
 
 # mdbook
-./Documentation/book
+Documentation/book/
