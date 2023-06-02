@@ -24,9 +24,9 @@ Il reste à voir les paramètres généraux de la mission dans `SETTINGS`.
 | :-------: | ----------------- | ---------------------- | ---------------------- |
 | Units     | Unités de mesure
 | Heading Mode |<ul><li><b>TNW</b> : Heading qui pointe en direction du prochain waypoint.</li><li><b>ID</b> : Heading lors du départ conservé.</li><li><b>UC</b> : Contrôle du heading pendant la mission avec le joystick gauche.</li><li><b>WD</b> : Utilisation du heading défini aux waypoints dans Litchi.</li></ul> [Doc litchi](https://flylitchi.com/help#waypoints-p3) | Auto (TNW) | <ul><li>Façade : Initial(ID)</li><li>Angle : Custom(WD)</li></ul> |
-| Finish Action | **RTH** signifie *Return To Home, *HOME* étant le point de départ, qui se défini automatiquement au lancement du drone. Les autres options ont un nom explicite. Le drone montera en haute altitude avant d'effectuer un **RTH** pour ne rien heuter. | RTH | RTH |
+| Finish Action | **RTH** signifie *Return To Home*, *HOME* étant le point de départ, qui se défini automatiquement au lancement du drone. Les autres options ont un nom explicite. Le drone montera en haute altitude avant d'effectuer un **RTH** pour ne rien heuter. | RTH | RTH |
 | Path Mode | Permet d'arrondir les angles du chemin de la mission. Utilisé pour les vols esthétiques. | Straight Lines | Straight Lines |
-| Cruising & Max Flight speed | Noms explicites. | <ul><li>CS : 11km/s</li><li>MFS : 15km/s</li></ul> | <ul><li>CS : 11km/s</li><li>MFS : 15km/s</li></ul> |
+| Cruising & Max Flight speed | Ndoms explicites. | <ul><li>CS : 11km/s</li><li>MFS : 15km/s</li></ul> | <ul><li>CS : 11km/s</li><li>MFS : 15km/s</li></ul> |
 | Photo Capture Interval | Cela permet de prendre une photo toutes les *x* secondes ou tous les *y* mètres. Peut être désactivé en renseignant *0*. Nous n'en avons pas besoin car les photos sont déjà prises à nos *waypoints*. | 0 (Disabled) | 0 (Disabled) |
 | Default Curve Size | Permet de paramétrer la courbe si *Path Mode* est *Curved Turns* | | |
 | Default Gimbal Pitch Mode | | None | None |
