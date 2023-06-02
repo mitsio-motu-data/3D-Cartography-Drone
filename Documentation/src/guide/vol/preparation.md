@@ -38,12 +38,13 @@ Pour ne pas perdre de temps sur le terrain, il est important de faire quelques p
 
 ## Le matériel pour les vols
 
-Peu de matériel est à prévoir en plus du drone : 
+Peu de matériel est à prévoir en plus du drone (le matériel du drone est dans sa sacoche) : 
 - Batteries chargées.
 - Télécommande chargée.
 - 🕶️ Lunettes de soleil pour l'opérateur (surveiller le drone dans le ciel peut être compliqué avec le soleil).
 - 🕶️ Lunettes de soleil pour le drone, ou plutôt, les filtres UV de la caméra. Cela permet que les images soient sur exposées et donc inutilisables.
 - Tapis de décollage et atterissage si on est dans une zone poussiéreuse (sable, terre, ...). Cela évite que le sol se soulève et endommage le drone. Un tapis de voiture fait très bien l'affaire.
+- 💻 Ordinateur pour ré ajuster les missions Litchi sur place.
 
 ## Vol d'essai
 
@@ -118,7 +119,7 @@ Lancez ensuite simplement le vol en cliquant sur `Play`.
 </figure>
 
 C'est parti ! Plus qu'à laisser le drone faire son travail. Vérifiez tout de même qu'il effectue bien ce qui est prévu et que ça correspond à ce que vous souhaitiez. Vous perdez alors tout le contrôle du drone. Cependant vour pouvez interargir avec après avoir cliqué que les boutons `pause ⏸️` ou `stop ⏹️` : 
-- `pause ⏸️` : Les joysticks n'ont toujours pas d'effet. Le drone ne peut pas être déplacé. Vous pouvez cependant rectifier le *heading* du drone en faisant glisser votre doight sur l'image sur votre téléphone. Cependant cette solution n'est pas très précise. La mission continue depuis ce point quand vous la relancez.
+- `pause ⏸️` : Les joysticks n'ont toujours pas d'effet. Le drone ne peut pas être déplacé. Vous pouvez cependant rectifier le *heading* du drone en faisant glisser votre doight sur l'image sur votre téléphone. Cependant cette solution n'est pas très précise. La mission continue depuis ce point quand vous la relancez. IL est très utile dès que vous avez un doute sur une potentielle collision du drone. Dès que vous avez un doute, utilisez le. Vous aurez alors le temps de vérifier si le drone peut continuer ou non.
 - `stop ⏹️` : La mission est arrêtée. Vous reprenez tout le comportement du drone. Quand vous voyez que vous allez rencontrer un obstacle, il faut appuyer sur ce bouton. Vous pouvez ensuite contourner manuellement l'obstacle. Ensuite, relancez la mission au waypoint le plus proche et sucuritaire, après l'obstacle.
 
 ## Reconnaissance sur le terrain
