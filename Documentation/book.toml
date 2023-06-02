@@ -3,7 +3,7 @@ authors = ["Adèle Pluquet"]
 language = "en"
 multilingual = false
 src = "src"
-title = "3D Cartography with a drone - Documentation"
+title = "Cartographie 3D avec un drone - Documentation"
 
 [output.html]
 
