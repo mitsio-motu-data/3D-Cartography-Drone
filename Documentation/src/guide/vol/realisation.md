@@ -48,9 +48,26 @@ Le [Mavic Air 2](https://www.dji.com/mavic-air-2/specs) n'a cependant pas de cap
 
 ## Gestion de la batterie
 
-- Gestion batterie 20 & 10%
+Une fois connecté au drone avec `Litchi Fly`, vous pourrez suivre l'état de la batterie de votre drone grâce à la barre d'état en haut de l'écran. Quand il atteindre **20%** de batterie restante, il vous demandera l'autorisation de rentrer afin que la batterie soit changée. Vous pouvez accepter ou continuer la mission (parfois, il est si proche qu'il n'est pas nécessaire qu'il rentre tout de suite). ⚠️ Attention cependant, veillez à le faire tout de même rentrer avant qu'il atteigne **10%** sinon il fera un atterrissage forcé là ou il se trouve. Ça peut être très problématique si vous vous trouvez au dessus d'un toît ou arbre par exemple. Si jamais cela arrivait, sachez que vous pouvez tout de même le décaler droite/gauche et avant/arrière avec les joysticks mais nous n'avez pas de contrôle haut/bas. Il faut donc être attentifs et réactif si cela arrive.
+
+Dans tous les cas, une fois que votre drone est revenu, changez sa batterie.
+
+La mission a été interrompue. Quand vous relancez la mission, vous avez le choix du *waypoint* ou commencer. Malheureusement, `Litchi Fly` au cours d'une mission n'indique pas le *waypoint* ou il se situe. Ce sera donc à vous d'estimer là où vous en étiez.
 
 ## Erreurs Litchi : "Invalid 3D path"
 
+En lançant la mission, il est possible que vous rencontriez une erreur similaire à `Invalid 3D path between waypoints 30 and 31`. IL semblerait que cette erreur se produise quand deux *waypoints* sont trop proches, dans cet exemple, les points n°30 et 31.
+
+Dans ce cas, rendez-vous sur `Litchi Fly` (sur PC ou directement sur l'application téléphone). Supprimez le premier des points listé (ici le point n°30). Sauvegardez et synchronisez bien les appareils si vous avez édité la mission sur l'ordinateur. Relancez la mission et recommencez l'opération si nécessaire jusqu'à ce que la mission fonctionne.
+
+> 💡 **Tip** : Si cela se produit sur une mission verticale, l'erreur va apparaître à chaque ligne de vol. Au lieu de supprimer un point et relancer la mission à chaque fois, vous pouvez identifier les *waypoints* problématiques sur toutes les lignes, tous les supprimer et sauvegarder/synchroniser une fois qu'ils sont tous faits seulement.
+
 ## Mission mal placée
+
+Planifier ses mission sur des images satellites de mauvaise qualité fait qu'il est impossible d'avoir une bonne précision dans le placement de la mission. Il est très probable que vous vous rendiez compte sur le terrain que votre mission n'est pas placée exactement là ou le voudriez.
+
+Pour résoudre cela, rendez-vous sur `Litchi Fly` sur ordinateur (cette modification n'est à l'heure actuelle pas possible sur téléphone). Déplacez tous les points de la mission dans le sens souhaité. Sauvegardez et synchronisez bien le téléphone. Lancez la mission, voyez si c'est mieux ou s'il faut encore éditer la mission. Dans ce cas, recommencez jusqu'à ce que la position soit satisfaisante.
+
+
+
 
