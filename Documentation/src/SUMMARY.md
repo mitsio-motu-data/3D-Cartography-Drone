@@ -26,9 +26,8 @@ ___
 
 # Recherches menées
 
-- [Contraintes]()
-- [Programmation de vol]()
-- [Reconstruction 3D]()
+- [Recherches](./recherches/recherches.md)
+- [Bibliographie](./recherches/bibliographie.md)
 ___
 
 - [Contributeurs](./contributeurs.md)
