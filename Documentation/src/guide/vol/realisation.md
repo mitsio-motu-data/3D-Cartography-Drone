@@ -40,6 +40,8 @@ Si vous faites un vol vertical, il est probable que vous ayez réglé le *headin
 
 Vous pouvez ré ajuster le heading au cour de la mission en cliquant sur `pause ⏸️`, comme exepliqué dans la section **Vols automatiques** de [Préparation](preparation.md).
 
+Lorsque que vous arrivez vers le haut du bâtiment, il est possible qu'une grande partie de l'image soit composée de ciel. Ceci ne nous intéresse pas. Dans ce cas, mettez la mission en `pause ⏸️` et inclinez un peu la caméra ver le bas. Reprenez la mission quand vous êtes satisfait. Vous pouvez également le faire sur les lignes de vol suivantes.
+
 ## Obstacles et capteurs
 
 Le drone possède des capteurs pour détecter les obstacles. Sur le [Mavic Air 2](https://www.dji.com/mavic-air-2/specs), ils sont situés à l'avant et à l'arrière seulement. Si le drone détecte un objet trop proche de lui, même s'il est en mission, il s'arrêtera. Dans ce cas, suivez la procédure du bouton `stop ⏹️`, comme exepliqué dans la section **Vols automatiques** de [Préparation].
