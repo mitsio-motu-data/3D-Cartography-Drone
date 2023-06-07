@@ -15,7 +15,6 @@ Nous appelerons **mission horizontale** un vol sur un plan parrallèle au sol (p
 > Nous allons essayer de vous guider au mieux dans le logiciel. Il est possible qu'avec
 > de nouvelles mises à jour, certains soient résolus et que d'autres apparaissent.
 
-
 ## Installation
 
 Commencez par installer Mission Planner en suivant les instructions de ce [lien](https://ardupilot.org/planner/docs/mission-planner-installation.html).
@@ -168,3 +167,7 @@ ___
 [^recouv]: Pour le projet de l'hôtel de la paix, le recouvrement était de 80% pour l'*overlap* et le *sidelap*.
 
 [^cross-grid]: Une *cross-grid* est nécessaire pour l'acquisition complète d'un terrain avec bâtiments par exemple. Pour pouvoir observer les façades, il faut orienter la caméra non pas perpendiculairement au sol mais à 45° par rapport au sol environ. Avec la caméra perpendiculaire, il manquera les façades de bâtiments dans la reconstructiojn. Pour pouvoir obtenir des photos de toutes les zones, il est dans ce cas indispensable de faire un acquisition en cross-grid. Sinon, certaines zones ne pourront pas être reconstituées.
+
+| Grille simple | Grille croisée ou *cross grid* |
+| -- | -- |
+| ![](../../images/guide/mission_planner/simple_grid.png) | ![](../../images/guide/mission_planner/cross_grid.png) |
