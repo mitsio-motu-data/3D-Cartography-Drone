@@ -16,5 +16,5 @@ Ce projet a été mis en place en avril 2023 pour participer à la sauvegarde du
 
 <figure align="center">
     <img src="../images/hdp_original_picture.jpg" | width=500/>
-    <figcaption>Stéreoscope de Holmes</figcaption>
+    <figcaption>Hôtel de la paix</figcaption>
 </figure>
