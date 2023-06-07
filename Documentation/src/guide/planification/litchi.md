@@ -1,13 +1,13 @@
 # Importation sur Litchi Fly
 
-[**Site de Litchi Fly**](https://flylitchi.com/)
-[**Guide pour l'utilisateur**](https://flylitchi.com/help#missionhub)
+- [**Site de Litchi Fly**](https://flylitchi.com/)
+- [**Guide pour l'utilisateur**](https://flylitchi.com/help#missionhub)
 
 > 💪 La planification touche à sa fin, plus que quelques étapes, courage !
 
 ## Mission Hub
 
-Une fois sur le site, rendez-vous sur `Mission Hub` ou directement sur ce [lien](https://flylitchi.com/hub).
+Une fois sur le site de Litchi Fly, rendez-vous sur `Mission Hub` ou directement sur ce [lien](https://flylitchi.com/hub).
 
 <figure align="center">
     <img src="../../images/guide/litchi/welcome.jpg" | width=600/>
