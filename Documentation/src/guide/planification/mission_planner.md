@@ -136,14 +136,14 @@ Cette section présente comment préparer une acquisition verticale, pour une fa
 
 Tout d'abord, sur Mission Planner, créez un polygon assez fin et parrallèle au mur que vous voulez acquérir, comme illustré sur l'image ci-dessous.
 <figure align="center">
-    <img src="../../images/guide/mission_planner/vertical_polygon.jpg" | width=650/>
+    <img src="../../images/guide/mission_planner/vertical_polygon.png" | width=650/>
     <figcaption>Polygone pour l'acquisition de façade</figcaption>
 </figure>
 
 À même titre que pour un vol horizontal, générez une grille automatiquement avec `Survey Grid`. Il faudra que la grille générée ne fasse qu'une seule ligne dans le polygone dessiné, le plus parallèle possible au bâtiment. Pour cela, vous pouvez vous aider du paramètre `Grid Options` > `Sidelap [%]` (et surtout pas `Overlap [%]`). La grille générée doit ressembler au résultat ce-dessous :
 
 <figure align="center">
-    <img src="../../images/guide/mission_planner/vertical_grid.jpg" | width=650/>
+    <img src="../../images/guide/mission_planner/vertical_grid.png" | width=650/>
     <figcaption>Chemin vers <em>Survey grid</em></figcaption>
 </figure>
 
