@@ -41,6 +41,7 @@ Pour cartographier un bâtiment de cette taille, il est presque indispensable de
 > - Caméra à 0 ou 45° (45° si des bâtiments sont sur le terrain).
 > - Grille simple ou croisée (croisée si des bâtiments sont sur le terrain).
 > - Altitude de 20 à 40m environ en fonction de la précision voulue et de la taille du terrain (et donc longueur de la mission et nombre de photos).
+> - À planifer sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md))
 
 Pour acquérir du sol, majoritairement du terrain. En fontion de la précision voulue, le vol peut-être assez bas mais peut monter sans problème jusqu'à 40 voire même 60m ou plus.
 
@@ -52,7 +53,7 @@ La façon la plus simple de le faire est de faire une grille simple. Cependant s
 > - Caméra à 0 ou 45° (45° si le toît a une forme vraiment compliquée).
 > - Grille simple ou croisée (croisée si le toît a une forme vraiment compliquée).
 > - Altitude à +/- 15m du toît environ en fonction de la précision voulue.
-> - À planifer sur Mission Planner
+> - À planifer sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md))
 
 Dans la majorité des cas, un vol en grille simple avec la caméra à 0° suffira. Attention, l'altitude de vol donnée ici est relative au toît et non pas au sol. Il faudra trouver un moyen de connaître la hauteur maximale du bâtiment cartographié. Vous pouvez estimer sa hauteur grâce à son nombre d'étages ou bien faire un prévol avec le drone pour aller relever les altitudes de la toiture. Pour cela, placez la caméra du drone à 90° et faite le voler jusqu'à ce que le niveau que vous souhaitez mesurer soit au centre de l'image. L'altitude du drone, à ce moment, correspond à la hauteur du toit.
 
@@ -74,7 +75,7 @@ Vous pouvez ensuite créer un plan avec les hauteurs de votre bâtiment comme ce
 > - Caméra à 90°.
 > - Grille simple.
 > - Distance de +/- 15m du toît environ en fonction de la précision voulue et du terrain.
-> - À planifer sur Mission Planner
+> - À planifer sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md))
 
 Pour chaque façade, il faudra faire une mission différente car la file de traitement prend (pour l'instant) seulement les missions sur une même ligne.
 
@@ -84,9 +85,11 @@ Pour chaque façade, il faudra faire une mission différente car la file de trai
 > - Caméra à 90°.
 > - Grille simple.
 > - Distance de +/- 15m du toît environ en fonction de la précision voulue et du terrain.
-> - À planifier sur Litchi Fly
+> - À planifier sur Litchi Fly (voir la partie [Grille pour les angles avec Litchi Fly](litchi_angles.md)) ou à faire en manuel
 
 L'acquisition des angles est primordiale pour que le logiciel de reconstruction comprenne le lien entre les façades et puisse tout reconstruire lui même. Il faut que les photos de ces missions couvrent un peu de chaque façade.
+
+(voir la partie [Grille pour les angles avec Litchi Fly](litchi_angles.md))
 
 ### Zone générale
 
@@ -94,7 +97,7 @@ L'acquisition des angles est primordiale pour que le logiciel de reconstruction 
 > - Caméra à 0 ou 45° (45° si des bâtiments sont sur la zone).
 > - Grille simple ou croisée (croisée si des bâtiments sont sur la zone).
 > - Altitude de +/- 40m environ en fonction de la précision voulue et de la taille du terrain (et donc longueur de la mission et nombre de photos).
-> - À planifer sur Mission Planner
+> - À planifer sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md))
 
 Bien que les caractéristiques soient très similaires avec l'acquisition du sol, ce sont deux choses très différentes. Par exemple, pour l'acquisition de l'hôtel de la paix, nous vons fait : 
 - Une **acquisition générale** de la zone à 40 et 50 m d'altitude en grille croisée (voir polygone bleu dans l'image ci-dessous) incluant le bâtiment principal et un peu de terrain. Cela permet d'obtenir de l'information générale sur le terrain et d'augmenter la qualité de la reconstruction. De plus, cela permet d'avoir des information (même si moyennement précises) sur tout le bâtiment et donc de s'assurer que le logiciel de reconstruction pourra faire le lien entre les différentes zones du bâtiment.

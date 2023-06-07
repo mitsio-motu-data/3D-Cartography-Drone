@@ -5,6 +5,7 @@
 - [**Guide pour l'utilisateur**](https://flylitchi.com/help#missionhub)
 
 > Dans certaines configurations, il faut utiliser Litchi Fly pour générer la grille de vol. Ceci est le cas pour les angles par exemple. En effet, il s'agit de vol vertical mais pas sur un seul axe comme pour les murs. Nous ne pouvons donc pas utiliser Mission Planner pour cela. De plus, Litchi Fly comprend des options qui vont nous aider dans cette situation.
+> Cependant, ces vols peuvent aussi être faits à la main assez facilement. Il faut dans ce cas faire très attention au recouvrement. Nous vous conseillons de prévoir les missions d'angles planifiées pour vous laisser le choix sur le terrain de la méthode à utiliser.
 
 Pour rappel, acquérir les angles est important pour pouvoir faire le lien entre les différentes façades lors de la reconstruction.
 
