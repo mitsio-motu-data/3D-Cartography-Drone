@@ -24,7 +24,7 @@ Commencez par installer Mission Planner en suivant les instructions de ce [lien]
 En ouvrant Mission Planner, vous arriverez sur un écran similaire. Rendez-vous dans la section **PLAN**, accessible par le boutton encadré en bleu. 
 
 <figure align="center">
-    <img src="../../images/guide/mission_planner/home.jpg"/>
+    <img src="../../images/guide/mission_planner/home.jpg" | width=650/>
     <figcaption>Écran d'accueil de Mission Planner</figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ Placez le point de départ et d'arrivée (*Home*) :
 L'idéal est de placer ce point vers la zone de la mission mais sa position n'a pas de véritable importance car il ne sera en fait pas utilisé dans nos mission. Le placer permet cependant de travailler plus facilement avec Mission Planner qui veut qu'un point *Home* soit défini. 
 
 <figure align="center">
-    <img src="../../images/guide/mission_planner/set_home.jpg"/>
+    <img src="../../images/guide/mission_planner/set_home.jpg" | width=650/>
     <figcaption>Définition d'un point <em>Home</em></figcaption>
 </figure>
 
@@ -44,14 +44,14 @@ L'idéal est de placer ce point vers la zone de la mission mais sa position n'a 
 Créez un polygon représentant la zone que le drone doit couvrir. `Clic droit` > `Polygon` > `Draw a Polygon` (ou `Load Polygon` pour importer un fichier)
 
 <figure align="center">
-    <img src="../../images/guide/mission_planner/draw_polygon.jpg"/>
+    <img src="../../images/guide/mission_planner/draw_polygon.jpg" | width=650/>
     <figcaption>Création d'un polygone</figcaption>
 </figure>
 
 Voici à quoi devrait ressembler votre interface une fois le polygone dessiné :
 
 <figure align="center">
-    <img src="../../images/guide/mission_planner/polygon.jpg"/>
+    <img src="../../images/guide/mission_planner/polygon.jpg" | width=650/>
     <figcaption>Polygone</figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ Il faut ensuite générer le parcours. Pour cela, utilisez la fonction de quadri
 
 
 <figure align="center">
-    <img src="../../images/guide/mission_planner/survey_grid.jpg"/>
+    <img src="../../images/guide/mission_planner/survey_grid.jpg" | width=650/>
     <figcaption>Chemin vers <em>Survey grid</em></figcaption>
 </figure>
 
@@ -75,7 +75,7 @@ Une nouvelle fenêtre apparaît. Elle va permettre de paramétrer le quadrillage
 Dans le panneau de droite : `Camera Config`
 
 <figure align="center">
-    <img src="../../images/guide/mission_planner/start_survey_grid.jpg"/>
+    <img src="../../images/guide/mission_planner/start_survey_grid.jpg" | width=650/>
 </figure>
 
 
@@ -107,7 +107,7 @@ Les étapes 1 et 2 sont nécessaires seulement si le modèle du drone n'est pas 
     Dans le panneau de droite : `Camera Config` > `Trigger Method` > `DO_DIGICAM_CONTROL`
 
 <figure align="center">
-    <img src="../../images/guide/mission_planner/cam_config.jpg"/>
+    <img src="../../images/guide/mission_planner/cam_config.jpg" | width=650/>
 </figure>
 
 Vous pouvez maintenant renseigner l'ensemble de vos paramètres de vol dans le menu `Grid Options`. Il faut notamment faire attention à : 
@@ -125,18 +125,39 @@ Enfin, retournez dans le menu `Simple` pour activer 3 options :
 Vérifiez que les points semblent cohérents. Une fois satisfait, cliquez sur `Accept`.
 
 <figure align="center">
-    <img src="../../images/guide/mission_planner/mission_finished.jpg"/>
+    <img src="../../images/guide/mission_planner/mission_finished.jpg" | width=650/>
 </figure>
 
-La fenêtre `Survez (Gris)` se ferme et tous les points apparaissent de le plan de vol.
+La fenêtre `Survey (Grid)` se ferme et tous les points apparaissent de le plan de vol.
 
-Vous y êtes presque ! 
+## Mission verticale
+
+Cette section présente comment préparer une acquisition verticale, pour une façade par exemple.
+
+Tout d'abord, sur Mission Planner, créez un polygon assez fin et parrallèle au mur que vous voulez acquérir, comme illustré sur l'image ci-dessous.
+<figure align="center">
+    <img src="../../images/guide/mission_planner/vertical_polygon.jpg" | width=650/>
+    <figcaption>Polygone pour l'acquisition de façade</figcaption>
+</figure>
+
+À même titre que pour un vol horizontal, générez une grille automatiquement avec `Survey Grid`. Il faudra que la grille générée ne fasse qu'une seule ligne dans le polygone dessiné, le plus parallèle possible au bâtiment. Pour cela, vous pouvez vous aider du paramètre `Grid Options` > `Sidelap [%]` (et surtout pas `Overlap [%]`). La grille générée doit ressembler au résultat ce-dessous :
+
+<figure align="center">
+    <img src="../../images/guide/mission_planner/vertical_grid.jpg" | width=650/>
+    <figcaption>Chemin vers <em>Survey grid</em></figcaption>
+</figure>
+
+Vérifiez que les points semblent cohérents. Une fois satisfait, cliquez sur `Accept`.
+
+## Enregistrement 
+
+Maintenant que vous avez généré votre grille, horizontale ou verticale, il ne vous reste plus qu'à la sauvegarder ! 
 
 1. Activez l'option `Verify Height` pour que Mission Planner vérifie les altitudes renseignées s'il a des données disponibles pour la région en question.
 2. Exportez les points. Ils sont enregistrés au format `.waypoints` que vous pouvez ouvrir avec un éditeur de texte.
 
 <figure align="center">
-    <img src="../../images/guide/mission_planner/mission_height.jpg"/>
+    <img src="../../images/guide/mission_planner/mission_height.jpg" | width=650/>
 </figure>
 
 > 👏 Et voilà pour la section Mission Planner ! Il ne reste maintenant plus qu'à convertir et personnaliser la mission
