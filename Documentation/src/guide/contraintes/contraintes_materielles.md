@@ -21,7 +21,7 @@ Voici les contraintes à prendre en compte avec ce drone :
 
 ## Ordinateur
 
-La phase de reconstruction dans un modèle 3D demande de la puissance de calcul. Le tableau ci-dessous est extrait de la [documentation de ODM](https://docs.opendronemap.org/installation/#id4) (logiciel que nous utilisons pour la reconstruction) et présente les recommendation de hardware à avoir en fonction du nombre d'images.
+La phase de reconstruction dans un modèle 3D demande de la puissance de calcul. Le tableau ci-dessous est extrait de la [documentation de ODM](https://docs.opendronemap.org/installation/#id4) (logiciel que nous utilisons pour la reconstruction) et présente les recommendations de hardware à avoir en fonction du nombre d'images.
 
 | Number of images | RAM of RAM + Swap |
 | ---------------: | ----------------: |
@@ -33,7 +33,9 @@ La phase de reconstruction dans un modèle 3D demande de la puissance de calcul.
 | 3500             | 192               |
 | 5000             | 256               |
 
-Un projet de la taille de celui du festival de la paix requiert par enxemble environ 2500 images. Aucun ordinateur de l'entreprise n'a 128Go de RAM. Plusieurs solutions sont possibles pour contourner ce problèmes : 
+Un projet de la taille de celui de l'hôtel de la paix requiert par exemble environ 2500 images. Aucun ordinateur de l'entreprise n'a 128Go de RAM. Plusieurs solutions seront possibles pour contourner ce problèmes : 
 1. Reconstruire le bâtiment par section et faire du recalage ensuite
 2. Allouer un très grand [swap](https://fr.wikipedia.org/wiki/Espace_d%27%C3%A9change) et traiter la totalité en une seule fois
+
+Nous approndirons ces points dans la section [Reconstruction](../reconstruction/reconstruction.md).
 
