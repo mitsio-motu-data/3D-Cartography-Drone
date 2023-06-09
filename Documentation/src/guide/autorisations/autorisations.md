@@ -8,3 +8,8 @@ Il peut être nécessaire de faire des demandes d'autorisation de vols. Il est i
 - Immatriculation (si applicable)
 - Papiers import/export par les douanes
 - Historique des réparations par le constructeur
+
+<figure align="center">
+    <img src="../../images/recherches/planning.jpg" | width=600/>
+    <figcaption>Répartition du temps conseillée entre les différentes étapes <a href="https://uav-guidelines.openaerialmap.org/pages/07-preparing-for-the-uav-mission/">(source)</a></figcaption>
+</figure>
