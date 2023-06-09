@@ -19,7 +19,7 @@ Avant de se lancer dans quoique ce soit, nous avons besoin de faire un inventair
 
 ## Planning du projet
 
-Il est important de prévoir un plénning général et tenable du projet. L'image ci-dessous illustre la répartition dans le temps des différentes étapes. Celui-ci s'est avéré très réaliste par rapport au déroulement de notre projet. À cela, nous avon ajouté avant tout une partie de recherches de la taille de la section processing.
+Il est important de prévoir un planning général et tenable du projet. L'image ci-dessous illustre la répartition dans le temps des différentes étapes. Celui-ci s'est avéré très réaliste par rapport au déroulement de notre projet. À cela, nous avons ajouté avant tout une partie de recherches de la taille de la section processing.
 
 Ce diagramme est issu d'un site de planification de vol d’UAV (Unmanned Aerial Vehicle) très intéressant à lire : [UAV Mapping Guidelines](https://uav-guidelines.openaerialmap.org/pages/07-preparing-for-the-uav-mission/). On peut voir que la manipulation du drone ne représente qu'une minorité de la mission.
 
@@ -30,7 +30,7 @@ Ce diagramme est issu d'un site de planification de vol d’UAV (Unmanned Aerial
 
 ## GPS
 
-Le drône **DJI Mavic Air 2** a un système de localisation **GPS+GLONASS** (GPS est américain, GLONASS est russe) d'après ses [specs](https://www.dji.com/mavic-air-2/specs). Chaque image des coordonées GPS qui sont enregistrées si assez de satellites sont disponibles pour établir la localisation du drone. Les informations sont enregistrées en altitude, latitude et longitude. Elles sont disponibles dans les métadonnées de chaque images. Pour les visualiser, vous pouvez utiliser la commande suivante : 
+Le drone **DJI Mavic Air 2** a un système de localisation **GPS+GLONASS** (GPS est américain, GLONASS est russe) d'après ses [specs](https://www.dji.com/mavic-air-2/specs). Chaque image des coordonnées GPS qui sont enregistrées si assez de satellites sont disponibles pour établir la localisation du drone. Les informations sont enregistrées en altitude, latitude et longitude. Elles sont disponibles dans les métadonnées de chaque images. Pour les visualiser, vous pouvez utiliser la commande suivante : 
 ```
 $ exiftool image.jpg
 ```
@@ -49,16 +49,16 @@ Nous avons trouvé deux raisons pour lesquelles les données GPS sont importante
 
 La qualité des images a son importance. La netteté est indispensable pour le bon fonctionnement pour la détection de points d'intérêt et donc pour la reconstruction. Il ne peut pas bien en détecter sur une image floue.
 
-Le drône **DJI Mavic Air 2** a plusieurs solutions de prise d'images : 
+Le drone **DJI Mavic Air 2** a plusieurs solutions de prise d'images : 
 - Vidéo (3840×2160 px en meilleure résolution)
 - Photo 12 mégapixel (4000x3000 px)
 - Photo 48 mégapixel (8000x6000 px)
 
-Le souci de la vidéo est qu'elle est très lourde à stocker, traiter et de moins bonne résolution que les photos. Nous choississons donc une acquisition par photos.
+Le souci de la vidéo est qu'elle est très lourde à stocker, traiter et de moins bonne résolution que les photos. Nous choisissons donc une acquisition par photos.
 
 Les photos en 48Mp sont prises avec le même capteur que les photos en 12Mp. Elles sont cependant beaucoup plus lourdes à stocker et traiter. Ce choix peut être envisagé si la qualité de rendu est bien meilleure. Cependant, l'utilisation du même capteur provoque souvent l'apparition de bruit dans les zones un peu sombres (ombres par exemple). ([Explications de l'utilisation d'un même capteur pour résolutions sortantes différentes](https://www.gsmarena.com/quad_bayer_sensors_explained-news-37459.php)). 
 
-Voici une vidéo de comparaison de reconstruction 3D avec le drône **DJI Mavic Air 2** en 12 et 48Mp. [Lien vers vidéo](https://www.youtube.com/watch?v=7-p04vKLEWI&ab_channel=Paladrone). Ci-dessous un tableau extrait de la vidéo comparant différents points entre les prises 12 et 48Mp. 
+Voici une vidéo de comparaison de reconstruction 3D avec le drone **DJI Mavic Air 2** en 12 et 48Mp. [Lien vers vidéo](https://www.youtube.com/watch?v=7-p04vKLEWI&ab_channel=Paladrone). Ci-dessous un tableau extrait de la vidéo comparant différents points entre les prises 12 et 48Mp. 
 
 <figure align="center">
     <img src="../images/recherches/12_48.png" | width=700/>
@@ -75,20 +75,20 @@ Il y a également la possibilité de prendre les images en RAW en plus. Le table
 
 ## Recouvrement
 
-L'algorithme de recontruction 3D utilise les différences de perspectives entre les points communs de deux images. C'est pourquoi, il est indispensable que des images successives aient une zone en commun. L'image ci dessous illustre à quoi correspond un pourcentage de zone commune ou *overlap*.
+L'algorithme de reconstruction 3D utilise les différences de perspectives entre les points communs de deux images. C'est pourquoi, il est indispensable que des images successives aient une zone en commun. L'image ci dessous illustre à quoi correspond un pourcentage de zone commune ou *overlap*.
 
 <figure align="center">
     <img src="../images/recherches/overlap.png" | width=600/>
     <figcaption>Pourcentages d'overlap</figcaption>
 </figure>
 
-Nous nous sommes demandé quel serait le recouvrement optimal à choisir entre nos images. D'après nos recherchesi il est recommandé pour faire une bonne acquisition d'avoir au moins 70% (idéalement 80%) de recouvrement horizontal et 60% de recouvrement vertical (idéalemnt 70%). Ces valeurs varient selon les sources mais correspondent aux ordres de grandeurs recommandés par [Open Drone Map](https://docs.opendronemap.org/tutorials/#flight-height) et [Pix4D](https://support.pix4d.com/hc/en-us/articles/203756125-How-to-verify-that-there-is-enough-overlap-between-the-images-PIX4Dmapper).
+Nous nous sommes demandé quel serait le recouvrement optimal à choisir entre nos images. D'après nos recherche si il est recommandé pour faire une bonne acquisition d'avoir au moins 70% (idéalement 80%) de recouvrement horizontal et 60% de recouvrement vertical (idéalement 70%). Ces valeurs varient selon les sources mais correspondent aux ordres de grandeurs recommandés par [Open Drone Map](https://docs.opendronemap.org/tutorials/#flight-height) et [Pix4D](https://support.pix4d.com/hc/en-us/articles/203756125-How-to-verify-that-there-is-enough-overlap-between-the-images-PIX4Dmapper).
 
 Voici une image afin d'illustrer les termes recouvrement horizontal (*forward overlap*) et vertical (*side overlap* ou *sidelap*) :
 
 <figure align="center">
     <img src="../images/recherches/two_overlaps.png" | width=600/>
-    <figcaption>Recouvrement horizontal (forward overlap) et vertical (sidelap)</figcaption>
+    <figcaption>Recouvrement horizontal (*forward overlap*) et vertical (*sidelap*)</figcaption>
 </figure>
 
 > ⚠️ Attention les valeurs de cette illustration ne correspondent pas aux recommandations dans notre cas.
@@ -105,7 +105,7 @@ Afin d'acquérir ces images avec un recouvrement donné de manière précise, il
 |  [Plugin QGIS drone_path](https://plugins.qgis.org/plugins/drone_path/) | 0€ | | CSV pour Litchi |
 | [MissionPlanner](https://ardupilot.org/planner/) | 0€ | OUI | Toutes les fonctionnalités que nous cherchons sont disponibles. Le logiciel n'est pas trop long à prendre en main. Plusieurs bugs sont cependant à relever. | CSV au format de Mission Planner |
 | [Dronelink](https://www.dronelink.com/) | 39€ /mois /utilisateur pour la version pro avec plus d'un utilisateur ([détails](https://app.dronelink.com/pricing)). | NON | [Mapping des façades](https://support.dronelink.com/hc/en-us/articles/4411563374099) compris, gestionnaire de vol compris. | Dronelink |
-| [DroneDeploy](https://www.dronedeploy.com/) | 329€ /mois pour une versione personnelle ([détails](https://www.dronedeploy.com/pricing.html)). | NON | Gestionnaire de vol et reconstruction compris dedans. | DroneDeploy |
+| [DroneDeploy](https://www.dronedeploy.com/) | 329€ /mois pour une version personnelle ([détails](https://www.dronedeploy.com/pricing.html)). | NON | Gestionnaire de vol et reconstruction compris dedans. | DroneDeploy |
 
 <figure align="center">
     <img src="../images/recherches/grid.png" | width=600/>
@@ -181,7 +181,7 @@ Nous avons eu l'occasion d'enfin faire un vol test sur un terrain vierge. Cela n
 
 ## Estimation de la hauteur
 
-Pour prévoir les vol qui prendre des photos du toît, nous avons besoin de connaître la hauteur du bâtiment.
+Pour prévoir les vol qui prendre des photos du toit, nous avons besoin de connaître la hauteur du bâtiment.
 
 <figure align="center">
     <img src="../images/recherches/hotel.jpg" | width=600/>
@@ -189,16 +189,16 @@ Pour prévoir les vol qui prendre des photos du toît, nous avons besoin de conn
 </figure>
 
 
-Sur cette image, on peut voir 6 étages de balcons et 2 étages en dessous. Il ne faut pas non plus oublier lépaisseur du toît et les décorations encadrées en bleu. 
+Sur cette image, on peut voir 6 étages de balcons et 2 étages en dessous. Il ne faut pas non plus oublier l'épaisseur du toit et les décorations encadrées en bleu. 
 Il semblerait que la taille moyenne d'un bâtiment de 7 étages soit de 23m, soit 3,3m par étage. (Environ 2,5m par étage, plus l'épaisseur entre les étages). Dans notre cas, nous pouvons alors essayer d'estimer la taille de l'hôtel : 
 - 8 étages soit 27m
-- L'épaisseur du toît semble faire presque la hauteur d'un étage, on rajoute 5m les décorations encadrées en bleu. Cela nous donne 8,5m à ajouter. 
+- L'épaisseur du toit semble faire presque la hauteur d'un étage, on rajoute 5m les décorations encadrées en bleu. Cela nous donne 8,5m à ajouter. 
 
 Nous estimons donc la taille du bâtiment à 30,5 et 35,5m à l'entrée.
 
-> Nous n'étions pas si loin, un vol de reconnaissance nous a fait savoir sur le toît est à 27m et que les décorations sont à 32m.
+> Nous n'étions pas si loin, un vol de reconnaissance nous a fait savoir sur le toit est à 27m et que les décorations sont à 32m.
 
-Nous nous demandons ensuite à quelle hauteur réaliser le vol du drone par rapport au toît. D'après cet [article](https://enterprise-insights.dji.com/blog/roof-inspection-workflow), la hauteur idéeal pour voler au dessus d'un toît serait de:
+Nous nous demandons ensuite à quelle hauteur réaliser le vol du drone par rapport au toit. D'après cet [article](https://enterprise-insights.dji.com/blog/roof-inspection-workflow), la hauteur idéal pour voler au dessus d'un toit serait de:
 - Bâtiment résidentiel - 7,5/15m
 - Bâtiment commercial - 15/30m
 
