@@ -8,7 +8,7 @@
 
 Réaliser un vol d'acquisition est long et fastidieux. De plus, les images de la zone acquise doivent être prises avec un recouvrement spécifique. Utiliser un logiciel qui planifie les missions permet de s'assurer que la prise d'images sera bonne et permet que l'opérateur drone réalise la mission plus facilement. Pour faire cela, nous utilisons [Mission Planner](https://ardupilot.org/planner/). C'est un logiciel gratuit et Open Source qui permet de prévoir des grilles de vol autonome.
 
-Nous appelerons **mission horizontale** un vol sur un plan parrallèle au sol (par exemple pour cartographier un parc) et **mission verticale** un vol sur un plan perpendiculaire au sol (par exemple pour cartographier une façade de bâtiment).
+Nous appellerons **mission horizontale** un vol sur un plan parallèle au sol (par exemple pour cartographier un parc) et **mission verticale** un vol sur un plan perpendiculaire au sol (par exemple pour cartographier une façade de bâtiment).
 
 
 > 🚨 Soyez prévenu, Mission Planner est un logiciel qui présente de nombreux bugs.
@@ -20,7 +20,7 @@ Nous appelerons **mission horizontale** un vol sur un plan parrallèle au sol (p
 Commencez par installer Mission Planner en suivant les instructions de ce [lien](https://ardupilot.org/planner/docs/mission-planner-installation.html).
 
 ## Ouverture de Mission Planner et *Home*
-En ouvrant Mission Planner, vous arriverez sur un écran similaire. Rendez-vous dans la section **PLAN**, accessible par le boutton encadré en bleu. 
+En ouvrant Mission Planner, vous arriverez sur un écran similaire. Rendez-vous dans la section **PLAN**, accessible par le bouton encadré en bleu. 
 
 <figure align="center">
     <img src="../../images/guide/mission_planner/home.jpg" | width=650/>
@@ -97,7 +97,7 @@ Les étapes 1 et 2 sont nécessaires seulement si le modèle du drone n'est pas 
     
 
 
-2. Vérifiez que les paramètres sont cohérents puis sauvegardez les. Mission Planner va vous demander de renseigner le modèle du drone (autrement dit, son nom). Cela permettra à Mission Planner de l'enregistrer et de vous le proposer dans les drones connus lors de votre prochaine plannification.
+2. Vérifiez que les paramètres sont cohérents puis sauvegardez les. Mission Planner va vous demander de renseigner le modèle du drone (autrement dit, son nom). Cela permettra à Mission Planner de l'enregistrer et de vous le proposer dans les drones connus lors de votre prochaine planification.
 
     Dans le panneau de droite : `Camera Config` > `Camera Options` > `Save`
 
@@ -133,7 +133,7 @@ La fenêtre `Survey (Grid)` se ferme et tous les points apparaissent de le plan 
 
 Cette section présente comment préparer une acquisition verticale, pour une façade par exemple.
 
-Tout d'abord, sur Mission Planner, créez un polygon assez fin et parrallèle au mur que vous voulez acquérir, comme illustré sur l'image ci-dessous.
+Tout d'abord, sur Mission Planner, créez un polygon assez fin et parallèle au mur que vous voulez acquérir, comme illustré sur l'image ci-dessous.
 <figure align="center">
     <img src="../../images/guide/mission_planner/vertical_polygon.png" | width=650/>
     <figcaption>Polygone pour l'acquisition de façade</figcaption>
@@ -166,7 +166,7 @@ ___
 
 [^recouv]: Pour le projet de l'hôtel de la paix, le recouvrement était de 80% pour l'*overlap* et le *sidelap*.
 
-[^cross-grid]: Une *cross-grid* est nécessaire pour l'acquisition complète d'un terrain avec bâtiments par exemple. Pour pouvoir observer les façades, il faut orienter la caméra non pas perpendiculairement au sol mais à 45° par rapport au sol environ. Avec la caméra perpendiculaire, il manquera les façades de bâtiments dans la reconstructiojn. Pour pouvoir obtenir des photos de toutes les zones, il est dans ce cas indispensable de faire un acquisition en cross-grid. Sinon, certaines zones ne pourront pas être reconstituées.
+[^cross-grid]: Une *cross-grid* est nécessaire pour l'acquisition complète d'un terrain avec bâtiments par exemple. Pour pouvoir observer les façades, il faut orienter la caméra non pas perpendiculairement au sol mais à 45° par rapport au sol environ. Avec la caméra perpendiculaire, il manquera les façades de bâtiments dans la reconstruction. Pour pouvoir obtenir des photos de toutes les zones, il est dans ce cas indispensable de faire un acquisition en cross-grid. Sinon, certaines zones ne pourront pas être reconstituées.
 
 | Grille simple | Grille croisée ou *cross grid* |
 | -- | -- |
