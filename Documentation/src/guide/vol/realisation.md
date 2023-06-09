@@ -12,7 +12,7 @@ Pour le jour J, assurez vous que toutes vos batteries sont chargées à bloc. La
     <figcaption>Fiche de suivi pour le vol à l'hôtel de la paix</figcaption>
 </figure>
 
-Nous avons déjà parlé dans la partie [Préparation](preparation.md) de tout ce qui était relatif au pilotage du drone et au lancement des missions. Nous présenterons ici des problèmatiques spécifiques que vous pourrez rencontrer le jour J.
+Nous avons déjà parlé dans la partie [Préparation](preparation.md) de tout ce qui était relatif au pilotage du drone et au lancement des missions. Nous présenterons ici des problématiques spécifiques que vous pourrez rencontrer le jour J.
 
 ## No flight zone
 
@@ -38,7 +38,7 @@ Fermez alors l'application `DJI` et ouvrez `Litchi Fly`. Vous devez pouvoir déc
 
 Si vous faites un vol vertical, il est probable que vous ayez réglé le *heading* du drone en *Initial*. Dans ce cas, assurez-vous que la position de départ au sol du drone est bien perpendiculaire à la façade acquise et avec la caméra en direction de ce mur. N'oubliez pas de régler la caméra à 90° avant de décoller.
 
-Vous pouvez ré ajuster le heading au cour de la mission en cliquant sur `pause ⏸️`, comme exepliqué dans la section **Vols automatiques** de [Préparation](preparation.md).
+Vous pouvez ré ajuster le heading au cour de la mission en cliquant sur `pause ⏸️`, comme expliqué dans la section **Vols automatiques** de [Préparation](preparation.md).
 
 Lorsque que vous arrivez vers le haut du bâtiment, il est possible qu'une grande partie de l'image soit composée de ciel. Ceci ne nous intéresse pas. Dans ce cas, mettez la mission en `pause ⏸️` et inclinez un peu la caméra ver le bas. Reprenez la mission quand vous êtes satisfait. Vous pouvez également le faire sur les lignes de vol suivantes.
 
@@ -50,7 +50,7 @@ Le [Mavic Air 2](https://www.dji.com/mavic-air-2/specs) n'a cependant pas de cap
 
 ## Gestion de la batterie
 
-Une fois connecté au drone avec `Litchi Fly`, vous pourrez suivre l'état de la batterie de votre drone grâce à la barre d'état en haut de l'écran. Quand il atteindre **20%** de batterie restante, il vous demandera l'autorisation de rentrer afin que la batterie soit changée. Vous pouvez accepter ou continuer la mission (parfois, il est si proche qu'il n'est pas nécessaire qu'il rentre tout de suite). ⚠️ Attention cependant, veillez à le faire tout de même rentrer avant qu'il atteigne **10%** sinon il fera un atterrissage forcé là ou il se trouve. Ça peut être très problématique si vous vous trouvez au dessus d'un toît ou arbre par exemple. Si jamais cela arrivait, sachez que vous pouvez tout de même le décaler droite/gauche et avant/arrière avec les joysticks mais nous n'avez pas de contrôle haut/bas. Il faut donc être attentifs et réactif si cela arrive.
+Une fois connecté au drone avec `Litchi Fly`, vous pourrez suivre l'état de la batterie de votre drone grâce à la barre d'état en haut de l'écran. Quand il atteindre **20%** de batterie restante, il vous demandera l'autorisation de rentrer afin que la batterie soit changée. Vous pouvez accepter ou continuer la mission (parfois, il est si proche qu'il n'est pas nécessaire qu'il rentre tout de suite). ⚠️ Attention cependant, veillez à le faire tout de même rentrer avant qu'il atteigne **10%** sinon il fera un atterrissage forcé là ou il se trouve. Ça peut être très problématique si vous vous trouvez au dessus d'un toit ou arbre par exemple. Si jamais cela arrivait, sachez que vous pouvez tout de même le décaler droite/gauche et avant/arrière avec les joysticks mais nous n'avez pas de contrôle haut/bas. Il faut donc être attentifs et réactif si cela arrive.
 
 Dans tous les cas, une fois que votre drone est revenu, changez sa batterie.
 
