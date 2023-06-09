@@ -9,9 +9,6 @@
 
 - [Obtention des autorisations](./guide/autorisations/autorisations.md)
 - [Identification des contraintes](./guide/contraintes/contraintes.md)
-    - [Contraintes d'organisation](./guide/contraintes/contraintes_orga.md)
-    - [Contraintes matérielles](./guide/contraintes/contraintes_materielles.md)
-    - [Contraintes sur le terrain](./guide/contraintes/contraintes_terrain.md)
 - [Planification de la mission](./guide/planification/planification.md)
     - [Grille de survol avec Mission Planner](./guide/planification/mission_planner.md)
     - [Grille pour les angles avec Litchi Fly](./guide/planification/litchi_angles.md)

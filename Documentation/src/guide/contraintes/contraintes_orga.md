@@ -1,1 +1,0 @@
-# Contraintes d'organisation
