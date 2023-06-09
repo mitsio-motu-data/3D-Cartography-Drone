@@ -1,12 +1,12 @@
 # Planification de la mission
 
-Le drone[**Mavic Air 2**](https://www.dji.com/mavic-air-2/specs) de [DJI](https://www.dji.com/) est normalement destiné à un usage personnel et non professionnel. Il n'inclut pas la possibilité de prévoir des vols autonomes et doit normalement être piloté à la main par l'opérateur. Cependant, il est possible de contourner cela grâce à l'utilisation de différents logiciels que nous allons présenter ici.
+Le drone [**Mavic Air 2**](https://www.dji.com/mavic-air-2/specs) de [DJI](https://www.dji.com/) est normalement destiné à un usage personnel et non professionnel. Il n'inclut pas la possibilité de prévoir des vols autonomes et doit normalement être piloté à la main par l'opérateur. Cependant, il est possible de contourner cela grâce à l'utilisation de différents logiciels que nous allons présenter ici.
 
-Les étapes à suivre pour mettre en place le vol autome sont les suivantes : 
+Les étapes à suivre pour mettre en place le vol autonome sont les suivantes : 
 
-- Prévoir des points GPS à rallier grâce à [**Mission Planner**](mission_planner.md).
-- Convertir les points dans le format de **Litchi** et éditer la mission (verticalité par exemple) grâce à [**Carto3D**](carto3d.md).
-- Finaliser la mission sur [**Litchi**](litchi.md).
+- Prévoir des points GPS à rallier grâce à [**Mission Planner**](mission_planner.md) ou [**Litchi Fly**](litchi_angles.md).
+- Convertir les points dans le format de **Litchi Fly** et éditer la mission (verticalité par exemple) grâce à [**Carto3D**](carto3d.md).
+- Finaliser la mission sur [**Litchi Fly**](litchi.md).
 
 Plus précisément, voici le diagramme complet représentant la file de traitement pour la préparation des missions. Cela permet également de clarifier la place et l'utilité de chaque logiciel dans la file de traitement.
 
@@ -23,8 +23,8 @@ Plus précisément, voici le diagramme complet représentant la file de traiteme
 > À vous ensuite d'adapter ces informations à votre projet ! 😉
 
 Pour cartographier un bâtiment de cette taille, il est presque indispensable de planifier les vols pour plusieurs raisons : 
-- C'est très fastidieux à la main et une bonne maîtrise de pilotage de drones est nécessaire
-- Les images doivent être prises d'une manière très précises (elles soivent avoir un certain pourcentage en commun). Planifier le vol permet que les images soient bien prises. À la main, les erreurs sont trop facile à faire. Les erreurs d'acquisition entravent grandement la qualité de la reconstruction (voire la rendent impossible). Cependant, nous verrons que dans certains cas, les vols ne peuvent s'effectuer qu'à la main.
+- C'est très fastidieux à la main et une bonne maîtrise de pilotage de drones est nécessaire.
+- Les images doivent être prises d'une manière très précises(elles doivent avoir un certain pourcentage en commun). Planifier le vol permet que les images soient bien prises. À la main, les erreurs sont trop faciles à faire. Les erreurs d'acquisition entravent grandement la qualité de la reconstruction (voire la rendent impossible). Cependant, nous verrons que dans certains cas, les vols ne peuvent s'effectuer qu'à la main.
 - Un vol planifié sera souvent plus rapidement effectué sur le terrain qu'à la main. Cela permet donc d'économiser de la batterie.
 
 ⚠️ Cependant, il n'est pas possible de planifier une seule très grande mission pour tout le bâtiment. Il faut découper le tout en plusieurs morceaux. Voyons donc maintenant comment sectionner cette mission pour la planifier. Les paramètres conseillés ne sont pas obligatoires. N'hésitez pas à les adapter si vous pensez que c'est nécessaire.
@@ -41,51 +41,51 @@ Pour cartographier un bâtiment de cette taille, il est presque indispensable de
 > - Caméra à 0 ou 45° (45° si des bâtiments sont sur le terrain).
 > - Grille simple ou croisée (croisée si des bâtiments sont sur le terrain).
 > - Altitude de 20 à 40m environ en fonction de la précision voulue et de la taille du terrain (et donc longueur de la mission et nombre de photos).
-> - À planifer sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md))
+> - À planifier sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md))
 
-Pour acquérir du sol, majoritairement du terrain. En fontion de la précision voulue, le vol peut-être assez bas mais peut monter sans problème jusqu'à 40 voire même 60m ou plus.
+Pour acquérir du sol, majoritairement du terrain. En fonction de la précision voulue, le vol peut être assez bas mais peut monter sans problème jusqu'à 40 voire même 60m ou plus.
 
 La façon la plus simple de le faire est de faire une grille simple. Cependant si des bâtiments sont présents sur le terrain et que vous ne voulez pas perdre les façades, vous pouvez faire une acquisition en grille croisée avec la caméra orientée à 45%. Attention, celle-ci sera beaucoup plus longue et lourde en stockage et traitement.
 
-### Le toît
+### Le toit
 
-> - Vol horizontal
-> - Caméra à 0 ou 45° (45° si le toît a une forme vraiment compliquée).
-> - Grille simple ou croisée (croisée si le toît a une forme vraiment compliquée).
-> - Altitude à +/- 15m du toît environ en fonction de la précision voulue.
-> - À planifer sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md))
+> - Vol horizontal.
+> - Caméra à 0 ou 45° (45° si le toit a une forme vraiment compliquée).
+> - Grille simple ou croisée (croisée si le toit a une forme vraiment compliquée).
+> - Altitude à +/- 15m du toit environ en fonction de la précision voulue.
+> - À planifier sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md)).
 
-Dans la majorité des cas, un vol en grille simple avec la caméra à 0° suffira. Attention, l'altitude de vol donnée ici est relative au toît et non pas au sol. Il faudra trouver un moyen de connaître la hauteur maximale du bâtiment cartographié. Vous pouvez estimer sa hauteur grâce à son nombre d'étages ou bien faire un prévol avec le drone pour aller relever les altitudes de la toiture. Pour cela, placez la caméra du drone à 90° et faite le voler jusqu'à ce que le niveau que vous souhaitez mesurer soit au centre de l'image. L'altitude du drone, à ce moment, correspond à la hauteur du toit.
+Dans la majorité des cas, un vol en grille simple avec la caméra à 0° suffira. Attention, l'altitude de vol donnée ici est relative au toit et non pas au sol. Il faudra trouver un moyen de connaître la hauteur maximale du bâtiment cartographié. Vous pouvez estimer sa hauteur grâce à son nombre d'étages ou bien faire un prévol avec le drone pour aller relever les altitudes de la toiture. Pour cela, placez la caméra du drone à 90° et faite le voler jusqu'à ce que le niveau que vous souhaitez mesurer soit au centre de l'image. L'altitude du drone, à ce moment, correspond à la hauteur du toit.
 
 <figure align="center">
     <img src="../../images/guide/planification/roof.JPG" | width=600/>
-    <figcaption>Exemple d'un bon rendu de la caméra pour mesurer la hauteur d'un bâtiment </figcaption>
+    <figcaption>Exemple d'un bon rendu de la caméra pour mesurer la hauteur d'un bâtiment</figcaption>
 </figure>
 
 Vous pouvez ensuite créer un plan avec les hauteurs de votre bâtiment comme celui-ci par exemple : 
 
 <figure align="center">
     <img src="../../images/guide/planification/roof_altitudes.jpg" | width=600/>
-    <figcaption>Hauteurs du toît et terrasses de l'hôtel de la paix</figcaption>
+    <figcaption>Hauteurs du toit et terrasses de l'hôtel de la paix</figcaption>
 </figure>
 
 ### Les façades
 
-> - Vol vertical
+> - Vol vertical.
 > - Caméra à 90°.
 > - Grille simple.
-> - Distance de +/- 15m du toît environ en fonction de la précision voulue et du terrain.
-> - À planifer sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md))
+> - Distance de +/- 15m du toit environ en fonction de la précision voulue et du terrain.
+> - À planifier sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md)).
 
 Pour chaque façade, il faudra faire une mission différente car la file de traitement prend (pour l'instant) seulement les missions sur une même ligne.
 
 ### Les angles
 
-> - Vol vertical
+> - Vol vertical.
 > - Caméra à 90°.
 > - Grille simple.
-> - Distance de +/- 15m du toît environ en fonction de la précision voulue et du terrain.
-> - À planifier sur Litchi Fly (voir la partie [Grille pour les angles avec Litchi Fly](litchi_angles.md)) ou à faire en manuel
+> - Distance de +/- 15m du toit environ en fonction de la précision voulue et du terrain.
+> - À planifier sur Litchi Fly (voir la partie [Grille pour les angles avec Litchi Fly](litchi_angles.md)) ou à faire en manuel.
 
 L'acquisition des angles est primordiale pour que le logiciel de reconstruction comprenne le lien entre les façades et puisse tout reconstruire lui même. Il faut que les photos de ces missions couvrent un peu de chaque façade.
 
@@ -93,13 +93,13 @@ L'acquisition des angles est primordiale pour que le logiciel de reconstruction 
 
 ### Zone générale
 
-> - Vol horizontal
+> - Vol horizontal.
 > - Caméra à 0 ou 45° (45° si des bâtiments sont sur la zone).
 > - Grille simple ou croisée (croisée si des bâtiments sont sur la zone).
 > - Altitude de +/- 40m environ en fonction de la précision voulue et de la taille du terrain (et donc longueur de la mission et nombre de photos).
-> - À planifer sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md))
+> - À planifier sur Mission Planner (voir la partie [Grille de survol avec Mission Planner](mission_planner.md)).
 
-Bien que les caractéristiques soient très similaires avec l'acquisition du sol, ce sont deux choses très différentes. Par exemple, pour l'acquisition de l'hôtel de la paix, nous vons fait : 
+Bien que les caractéristiques soient très similaires avec l'acquisition du sol, ce sont deux choses très différentes. Par exemple, pour l'acquisition de l'hôtel de la paix, nous avons fait : 
 - Une **acquisition générale** de la zone à 40 et 50 m d'altitude en grille croisée (voir polygone bleu dans l'image ci-dessous) incluant le bâtiment principal et un peu de terrain. Cela permet d'obtenir de l'information générale sur le terrain et d'augmenter la qualité de la reconstruction. De plus, cela permet d'avoir des information (même si moyennement précises) sur tout le bâtiment et donc de s'assurer que le logiciel de reconstruction pourra faire le lien entre les différentes zones du bâtiment.
 - Une **acquisition de type sol** sur la zone autour de la piscine. À plus basse altitude, elle permet de se focaliser sur une zone qui nous intéresse et d'avoir une meilleure résolution dans une zone spécifique. Certains petits bâtiments étaient présents dans cette zone. Nous avons fait l'erreur de faire malgré tout une acquisition en grille simple et non croisée. Il nous manque donc un peu des façades de ces bâtiments.
 
@@ -110,7 +110,7 @@ Bien que les caractéristiques soient très similaires avec l'acquisition du sol
 
 ### Zones délicates
 
-Certaines zones, trop étroites par exemple doivent être acquises de manière manuelle. À vous de juger les zones pour lesquelles c'est nécessaire. Attention à l'opérateur drone de respecter les recouvrement entre les images.
+Certaines zones, trop étroites par exemple doivent être acquises de manière manuelle. À vous de juger les zones pour lesquelles c'est nécessaire. Attention à l'opérateur drone de respecter les recouvrements entre les images.
 
 ## Organisation de la planification
 
@@ -145,7 +145,7 @@ En plus de cette nomenclature, nous ajoutions :
     - Phantom Pro v4 : `pp`
 - en **suffixe** la distance à la surface de la mission (en m)
 
-Ainsi, le pan de mur en rose clair dans l'angle haut droit de l'image s'appelerait pour le Mavic Air 2 : `ma_edge_back_right_8`.
+Ainsi, le pan de mur en rose clair dans l'angle haut droit de l'image s'appellerait pour le Mavic Air 2 : `ma_edge_back_right_8`.
 
 > ✍️ C'est une pratique rendant le travail beaucoup et la collaboration beaucoup plus clairs. Il est également
 > de documenter la nomenclature qui aura été choisie pour que le travail soit repris facilement par 
