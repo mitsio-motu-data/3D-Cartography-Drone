@@ -20,11 +20,11 @@ L'installation et l'utilisation de **Carto3D** sont détaillées sur le [**Dép�
 
 ## Distance entre les lignes pour une mission verticale
 
-Dans le cas d'une mission verticale, il faut faire attention à la distance entre les lignes (*flight lines*) pour conserver le recouvrement que l'on souhaite. La distance entre les *waypoints* est déjà bonne car ils ont été générés avec *Mission Planner* en connaissant les contraites de caméra et de recouvrement. Cependant, il faut renseigner à **Carto3D** la bonne distance entre les lignes pour converver un *Sidelap* correct.
+Dans le cas d'une mission verticale, il faut faire attention à la distance entre les lignes (*flight lines*) pour conserver le recouvrement que l'on souhaite. La distance entre les *waypoints* est déjà bonne car ils ont été générés avec *Mission Planner* en connaissant les contraintes de caméra et de recouvrement. Cependant, il faut renseigner à **Carto3D** la bonne distance entre les lignes pour conserver un *Sidelap* correct.
 
 <figure align="center">
     <img src="../../images/guide/carto3d/flight_lines.jpg" | width=600/>
-    <figcaption>Scéma issu de Carto3D illustrant les <em>flight lines</em></figcaption>
+    <figcaption>Schéma issu de Carto3D illustrant les <em>flight lines</em></figcaption>
 </figure>
 
  Ci-dessous, un tableau présentant la distance entre les lignes de vol pour avoir un recouvrement *Sidelap* de **80%** en fonction de la distance à la surface et du drone utilisé :
