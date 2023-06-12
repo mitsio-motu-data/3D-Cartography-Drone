@@ -66,6 +66,8 @@ docker run -ti --rm -v <chemin_vers>/datasets:/datasets --gpus all opendronemap/
                                                         ^^^^^^^^^^                 ^^^^
 ```
 
+> ⚠️ D'après @Saijin_Naib, Community Support sur le [forum OpenDroneMap](https://community.opendronemap.org/) et contributeur de [OpenDroneMap/ODM](https://github.com/OpenDroneMap/ODM), la [détection et l'extraction des points d'intérêts est bien plus robuste sur CPU](https://community.opendronemap.org/t/post-processing-after-odm/16314/5?u=adrien-anton-ludwig).
+
 ## Processus de reconstruction recommandé
 
 Deux options s'offrent à nous :
