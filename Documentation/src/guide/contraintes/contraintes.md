@@ -55,7 +55,7 @@ Un projet de la taille de celui de l'hôtel de la paix requiert par exemble envi
 1. Reconstruire le bâtiment par section et faire du recalage ensuite
 2. Allouer un très grand [swap](https://fr.wikipedia.org/wiki/Espace_d%27%C3%A9change) et traiter la totalité en une seule fois
 
-Nous approndirons ces points dans la section [Reconstruction](../reconstruction/reconstruction.md).
+Nous approfondirons ces points dans la section [Reconstruction](../reconstruction/reconstruction.md).
 
 
 ## Contraintes du terrain
