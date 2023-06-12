@@ -131,3 +131,24 @@ Comme évoqué sur la page précédente, nous recommandons de supprimer les imag
 Voici un exemple d'images que nous avons oublié de supprimer et qui ont généré une erreur lors de la reconstruction.
 
 ![Palmier](../../images/guide/odm/palmier.jpg)
+
+## Paramètres explorés
+
+Les paramètres à utilisés varient beaucoup d'une mission à l'autre.
+
+Nous allons nous atarder ici sur les paramètres que nous avons explorés ici, relatifs à notre projet.
+
+N'héistez pas à explorer l'ensemble des paramètres dans [la documentation d'ODM].
+Nous recommandons aussi le livre [OpenDroneMap: The Missing Guide](https://odmbook.com/).
+
+### `mesh-size`
+
+
+
+### `feature-quality` and `min-num-features`
+
+
+
+### `pc-quality`
+
+
