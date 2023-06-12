@@ -141,9 +141,27 @@ Nous allons nous atarder ici sur les paramètres que nous avons explorés ici, r
 N'héistez pas à explorer l'ensemble des paramètres dans [la documentation d'ODM].
 Nous recommandons aussi le livre [OpenDroneMap: The Missing Guide](https://odmbook.com/).
 
+Nous remercions la communauté d'OpenDroneMap pour leur aide sur le [forum](https://community.opendronemap.org/) qui nous a guidé dans nos choix.
+
 ### `mesh-size`
 
+OpenDroneMap offre la possibilité de limiter la taille du maillage généré, afin de réduire la taille du fichier final et de réduire le temps de reconstruction, en utilisant le paramètre `--mesh-size`.
 
+Par défaut, la valeur est de `200000`, ce qui signifie que le maillage ne doit pas dépasser 200 000 sommets. Cela ne prend pas en compte la taille de la scène ou la densité des points. Ce qui peut amener à des maillages très différents en fonction de la scène. Par exemple, un maillage de 200 000 sommets pour une scène de 100 m² n'aura pas la même densité qu'un maillage de 200 000 sommets pour une scène de 1000 m². Exemple en image :
+
+| 1 façade | Bâtiment entier |
+| :------: | :-------------: |
+| ![1 façade](../../images/guide/odm/mesh_size_1.png) | ![Bâtiment entier](../../images/guide/odm/mesh_size_2.png) |
+
+Nous pouvons constater que les deux maillages ont à peu près le même nombre de sommets et de faces mais une densité très différente.
+
+Pour éviter que le faible nombre de sommets limite la reconstruction, nous avons utilisé le paramètre `--mesh-size` avec une valeur de `1000000`. Cependant, cela n'a pas eu l'effet escompté. Voici une comparaison :
+
+| `--mesh-size 200000` | `--mesh-size 1000000` |
+| :------------------: | :-------------------: |
+| ![mesh-size 200000](../../images/guide/odm/mesh_size_200000.png) | ![mesh-size 1000000](../../images/guide/odm/mesh_size_1000000.png) |
+
+Dans ce cas, on peut supposer que c'est le nuage de points qui limite la reconstruction et non le maillage. Ce qui nous amène aux paramètres suivants.
 
 ### `feature-quality` and `min-num-features`
 
