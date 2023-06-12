@@ -6,16 +6,16 @@
 ## Logiciels et matériel
 
 - [Specs du drone Mavic Air 2](https://www.dji.com/mavic-air-2/specs)
-- [Open Drone Map](https://opendronemap.org/)
-- [Litchi](https://flylitchi.com/)
+- [Site d'Open Drone Map](https://opendronemap.org/)
+- [Site de Litchi Fly](https://flylitchi.com/)
 - [Documentation Mission Planner](https://ardupilot.org/planner/docs/mission-planner-overview.html)
 
 ## Planification de vol
 
 ### Préparation / réalisation des cartes / méthodes
 
-- [Preparing for the UAV Mission](https://uav-guidelines.openaerialmap.org/pages/07-preparing-for-the-uav-mission/)
-- [Open Drone Map - Flying tips](https://docs.opendronemap.org/flying/)
+- Article internet sur la préparation de mission : [Preparing for the UAV Mission](https://uav-guidelines.openaerialmap.org/pages/07-preparing-for-the-uav-mission/)
+- Astuces d'Open Drone Map pour les vols : [Open Drone Map - Flying tips](https://docs.opendronemap.org/flying/)
 - [Réaliser des cartes de qualité](https://help.dronedeploy.com/hc/en-us/articles/1500004964282-Making-Successful-Maps)
 - [Augmenter la qualité de ses plans de vol pour une meilleure reconstruction](https://www.hammermissions.com/post/quality-drone-maps-and-3d-models)
 - [Comment réaliser de bonne cartes de vol](https://civiltracker.xyz/how-to-make-great-drone-maps/)
@@ -23,10 +23,10 @@
 ### Logiciels
 
 - [Comparatif de différents logiciel](https://geonadir.com/what-is-the-best-desktop-drone-mapping-software/)
-- [grid-photogrammetry](https://afbayonac.github.io/grid-photogrammetry/)
-- [Ancien land](https://ancient.land/)
+- Générateur de grille : [Grid-photogrammetry](https://afbayonac.github.io/grid-photogrammetry/)
+- Générateur de grille : [Ancien land](https://ancient.land/)
     - [Vidéo de démo](https://www.youtube.com/watch?v=8NN9ETHamwY&ab_channel=JamesDeRose)
-- [Plugin QGIS drone_path](https://plugins.qgis.org/plugins/drone_path/)
+- Générateur de grille : [Plugin QGIS drone_path](https://plugins.qgis.org/plugins/drone_path/)
 - [Dronelink](https://www.dronelink.com/)
     - [Prix](https://app.dronelink.com/pricing)
     - [Grid mapping](https://support.dronelink.com/hc/en-us/articles/4405635351315)
