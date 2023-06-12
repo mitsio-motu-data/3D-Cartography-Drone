@@ -12,22 +12,23 @@ Plus précisément, voici le diagramme complet représentant la file de traiteme
 
 <figure align="center">
     <img src="../../images/guide/planification/chart.png" | width=650/>
+    <figcaption>Diagramme présentant toute les étapes de la planification de vol - Généré grâce à <a href="https://www.lucidchart.com/pages/">Lucid Chart</a></figcaption>
 </figure>
 
 ## Quels sont les vols à prévoir ?
 
-> La réponse à cette question dépend évidemment de chaque projet. Nous allons ici considérer qu'il s'agit
+Pour cartographier un bâtiment de cette taille, il est presque indispensable de planifier les vols pour plusieurs raisons : 
+- C'est très fastidieux à la main et une bonne maîtrise de pilotage de drones est nécessaire.
+- Les images doivent être prises d'une manière très précise (elles doivent avoir un certain pourcentage de zone couverte en commun). Planifier le vol permet que les images soient bien prises. À la main, les erreurs sont trop faciles à faire. Les erreurs d'acquisition entravent grandement la qualité de la reconstruction (voire la rendent impossible). Cependant, nous verrons que dans certains cas, les vols ne peuvent s'effectuer qu'à la main.
+- Un vol planifié sera souvent plus rapidement effectué sur le terrain qu'à la main. Cela permet donc d'économiser de la batterie.
+
+⚠️ Cependant, il n'est pas possible de planifier une seule très grande mission pour tout le bâtiment. Il faut découper le tout en plusieurs morceaux. Voyons donc maintenant comment sectionner cette mission pour la planifier. Les paramètres conseillés ne sont pas obligatoires. N'hésitez pas à les adapter si vous pensez que c'est nécessaire.
+
+> Nous allons ici considérer qu'il s'agit
 > de la cartographie d'un grand bâtiment, comme ça a été le cas pour l'hôtel de la paix. C'est probablement
 > une des configurations la plus complexe (par sa grande taille et sa forme biscornue) qui permettra d'aborder de nombreux points.
 >
 > À vous ensuite d'adapter ces informations à votre projet ! 😉
-
-Pour cartographier un bâtiment de cette taille, il est presque indispensable de planifier les vols pour plusieurs raisons : 
-- C'est très fastidieux à la main et une bonne maîtrise de pilotage de drones est nécessaire.
-- Les images doivent être prises d'une manière très précises(elles doivent avoir un certain pourcentage en commun). Planifier le vol permet que les images soient bien prises. À la main, les erreurs sont trop faciles à faire. Les erreurs d'acquisition entravent grandement la qualité de la reconstruction (voire la rendent impossible). Cependant, nous verrons que dans certains cas, les vols ne peuvent s'effectuer qu'à la main.
-- Un vol planifié sera souvent plus rapidement effectué sur le terrain qu'à la main. Cela permet donc d'économiser de la batterie.
-
-⚠️ Cependant, il n'est pas possible de planifier une seule très grande mission pour tout le bâtiment. Il faut découper le tout en plusieurs morceaux. Voyons donc maintenant comment sectionner cette mission pour la planifier. Les paramètres conseillés ne sont pas obligatoires. N'hésitez pas à les adapter si vous pensez que c'est nécessaire.
 
 > 📚 Quelques termes et notions avant de commencer !
 > - **Vol horizontal** : Vol dont le plan est parallèle au sol. Permet d'acquérir le sol par exemple.
