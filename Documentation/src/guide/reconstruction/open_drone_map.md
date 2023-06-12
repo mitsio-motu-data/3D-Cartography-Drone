@@ -1,29 +1,27 @@
 # Open Drone Map
 
-[**Site d'Open Drone Map**](https://opendronemap.org/)
-[**Dépôt d'Open Drone Map**](https://community.opendronemap.org/)
+[**Site d'Open Drone Map**](https://opendronemap.org/) \
+[**Dépôt d'Open Drone Map**](https://community.opendronemap.org/) \
 [**Forum d'Open Drone Map**](https://github.com/OpenDroneMap/ODM)
 
-> ⚠️ FIXME ⚠️
->
-> Expliquer ce qu'est Open Drone Map.
-> 
-> ```
-> Today companies, government entities, professionals and hobbyists alike use some
-> or all parts of OpenDroneMap to perform a varieties of tasks, including:
-> • Monitoring crops in agriculture.
-> • Mapping land areas.
-> • Performing hydrological analysis.
-> • Reporting construction progress.
-> • Classifying and counting trees.
-> • Analyzing stockpile volumes.
-> • Documenting car crashes.
-> • Inspecting roofs and cell towers.
-> • Documenting proof of work completion.
-> • Archeological artifact scanning.
-> • Improving OpenStreetMap.
-> • Stitching historical aerial images.
-> ```
+
+OpenDroneMap est une palette d'outils de photogrammétrie open source permettant de transformer des images aériennes (généralement prises par un drone) en cartes et en modèles 3D. Le logiciel est hébergé et distribué gratuitement sur GitHub.
+
+Il est intéressant de faire la différence entre ODM et WebODM:
+
+- ODM est le projet initial d'OpenDroneMap. C'est lui qui s'occupe de tout le travail de traitement et d'analyse des images jusqu'à la génération du modèle 3D. C'est un outil en ligne de commandes.
+
+- WebODM est une interface web permettant d'utiliser ODM plus facilement, à travers une interface graphique.
+
+Nous utilisons ici OpenDroneMap afin de générer le modèle 3D de l'Hôtel de la Paix. 
+
+Mais OpenDroneMap peut être utilisé dans différents buts :
+- Surveillance des cultures.
+- Cartographier des zones terrestres.
+- Effectuer des analyses hydrologiques.
+- Rendre compte de l'avancement des travaux de construction.
+- Classer et compter les arbres.
+- ...
 
 ## Installation
 
