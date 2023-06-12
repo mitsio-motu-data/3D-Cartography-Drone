@@ -28,4 +28,5 @@ ___
 - [Bibliographie](./recherches/bibliographie.md)
 ___
 
+- [Crédits](./credits.md)
 - [Contributeurs](./contributeurs.md)
