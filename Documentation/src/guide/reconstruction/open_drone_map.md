@@ -165,7 +165,13 @@ Dans ce cas, on peut supposer que c'est le nuage de points qui limite la reconst
 
 ### `feature-quality` and `min-num-features`
 
+Une des premières et plus importantes étapes de la reconstruction est la détection et l'extraction des points d'intérêts (features). C'est cette étape qui va permettre de mettre en correspondance les images entre elles et de reconstruire la scène.
 
+OpenDroneMap offre la possibilité de contrôler la qualité de ces points d'intérêts avec les paramètres `--feature-quality` et `--min-num-features`.
+
+Le paramètre `--feature-quality` permet de contrôler le redimensionnement des images. Il accepte les valeurs suivantes : `ultra`, `high`, `medium`, `low`, `lowest`. Par défaut, la valeur est `high`, cela correspond à un redimensionnement à 1/2. Pour obtenir de meilleurs résultats, nous avons utilisé la valeur `ultra`, ce qui revient à ne pas redimensionner les images. Cependant, cela augmente le temps de reconstruction.
+
+Le paramètre `--min-num-features` permet de contrôler le nombre de points d'intérêts à extraire pour chaque image. Par défaut, la valeur est `10000`. Augmenter cette valeur permet d'augmenter la densité de points d'intérêts. Cependant, cela augmente aussi le temps de reconstruction. Pour obtenir un indicateur de la valeur à utiliser, on peut regarder la partie `Features` dans le fichier `odm_report/report.pdf` généré à la fin de la reconstruction.
 
 ### `pc-quality`
 
