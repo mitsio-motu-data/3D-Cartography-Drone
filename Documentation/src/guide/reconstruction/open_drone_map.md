@@ -176,3 +176,8 @@ Le paramètre `--min-num-features` permet de contrôler le nombre de points d'in
 ### `pc-quality`
 
 
+Une autre étape importante de la reconstruction est la génération du nuage de points. C'est cette étape qui va permettre de générer le maillage et le modèle 3D.
+
+OpenDroneMap offre la possibilité de contrôler la qualité de ce nuage de points avec le paramètre `--pc-quality` (pour "point cloud quality"). Ce paramètre influence la résolution de la  carte de profondeur (depthmap) et donc la densité du nuage de points.
+
+Il accepte les valeurs suivantes : `ultra`, `high`, `medium`, `low`, `lowest`. Par défaut, la valeur est `medium`. Attention, une valeur trop haute peu introduire du bruit. Il faut aussi prendre en compte que chaque palier multiplie le temps de calcul par 4 environ.
