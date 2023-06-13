@@ -1,8 +1,8 @@
 # Open Drone Map
 
-[**Site d'Open Drone Map**](https://opendronemap.org/) \
-[**Dépôt d'Open Drone Map**](https://community.opendronemap.org/) \
-[**Forum d'Open Drone Map**](https://github.com/OpenDroneMap/ODM)
+- [**Site d'Open Drone Map**](https://opendronemap.org/) \
+- [**Dépôt d'Open Drone Map**](https://community.opendronemap.org/) \
+- [**Forum d'Open Drone Map**](https://github.com/OpenDroneMap/ODM)
 
 OpenDroneMap est une palette d'outils de photogrammétrie open source permettant de transformer des images aériennes (généralement prises par un drone) en cartes et en modèles 3D. Le logiciel est hébergé et distribué gratuitement sur GitHub.
 
@@ -48,7 +48,7 @@ datasets
 └── mission_n
 ```
 
-> Les images doivent **obligatoirement** être dans un dossier `images` à la racine de la mission.
+> ⚠️ Les images doivent **obligatoirement** être dans un dossier `images` à la racine de la mission.
 
 Pour reconstruire la mission 1, il faut lancer la commande suivante :
 
@@ -135,10 +135,10 @@ Les paramètres à utilisés varient beaucoup d'une mission à l'autre.
 
 Nous allons nous atarder ici sur les paramètres que nous avons explorés ici, relatifs à notre projet.
 
-N'héistez pas à explorer l'ensemble des paramètres dans [la documentation d'ODM].
+N'héistez pas à explorer l'ensemble des paramètres dans [la documentation d'ODM](https://docs.opendronemap.org/arguments/).
 Nous recommandons aussi le livre [OpenDroneMap: The Missing Guide](https://odmbook.com/).
 
-Nous remercions la communauté d'OpenDroneMap pour leur aide sur le [forum](https://community.opendronemap.org/) qui nous a guidé dans nos choix.
+Nous remercions la [communauté d'OpenDroneMap](https://community.opendronemap.org/) pour [leur aide sur le forum](https://community.opendronemap.org/t/post-processing-after-odm/16314?u=adrien-anton-ludwig) qui nous a guidé dans nos choix.
 
 ### `mesh-size`
 
