@@ -100,7 +100,7 @@ Voici un exemple de reconstruction avec des coordonnées GPS aberrantes par rapp
 
 | Avec les images aberrantes | Sans les images aberrantes |
 | :------------------------: | :-----------------------: |
-| ![Avec les images aberrantes](../../images/guide/odm/with_gps_aberrant_images.png) | ![Sans les images aberrantes](../../images/guide/odm/without_gps_aberrant_images.png) |
+| ![Avec les images aberrantes](../../images/guide/odm/with_gps_aberrant_images.jpg) | ![Sans les images aberrantes](../../images/guide/odm/without_gps_aberrant_images.jpg) |
 
 Pour trouver les images aberrantes, on peut utiliser QGIS.
 Pour cela, il faut utiliser la fonction `Import GeoTagged Photos` et sélectionner le dossier contenant les images.
@@ -109,7 +109,7 @@ Certaines aberrations sont visibles à l'oeil nu.
 Par exemple, sur la figure ci-dessous, nous savons que toutes les images devraient être localisées dans la zone verte.
 On peut donc identifier les images aberrantes.
 
-![QGIS_GPS_aberrant](../../images/guide/odm/qgis_gps_aberrant.png)
+![QGIS_GPS_aberrant](../../images/guide/odm/qgis_gps_aberrant.jpg)
 
 D'autres aberrations sont moins visibles, comme des images **non localisées** ou **mal localisées**.
 
@@ -127,7 +127,7 @@ Comme évoqué sur la page précédente, nous recommandons de supprimer les imag
 
 Voici un exemple d'images que nous avons oublié de supprimer et qui ont généré une erreur lors de la reconstruction.
 
-![Palmier](../../images/guide/odm/palmier.jpg)
+![Palmier](../../images/guide/odm/palm_tree.jpg)
 
 ## Paramètres explorés
 
@@ -148,7 +148,7 @@ Par défaut, la valeur est de `200000`, ce qui signifie que le maillage ne doit 
 
 | 1 façade | Bâtiment entier |
 | :------: | :-------------: |
-| ![1 façade](../../images/guide/odm/mesh_size_1.png) | ![Bâtiment entier](../../images/guide/odm/mesh_size_2.png) |
+| ![1 façade](../../images/guide/odm/mesh_wall.jpg) | ![Bâtiment entier](../../images/guide/odm/mesh_whole_hdp.jpg) |
 
 Nous pouvons constater que les deux maillages ont à peu près le même nombre de sommets et de faces mais une densité très différente.
 
@@ -156,7 +156,7 @@ Pour éviter que le faible nombre de sommets limite la reconstruction, nous avon
 
 | `--mesh-size 200000` | `--mesh-size 1000000` |
 | :------------------: | :-------------------: |
-| ![mesh-size 200000](../../images/guide/odm/mesh_size_200000.png) | ![mesh-size 1000000](../../images/guide/odm/mesh_size_1000000.png) |
+| ![mesh-size 200000](../../images/guide/odm/mesh_whole_hdp_200000.jpg) | ![mesh-size 1000000](../../images/guide/odm/mesh_whole_hdp_1000000.jpg) |
 
 Dans ce cas, on peut supposer que c'est le nuage de points qui limite la reconstruction et non le maillage. Ce qui nous amène aux paramètres suivants.
 
