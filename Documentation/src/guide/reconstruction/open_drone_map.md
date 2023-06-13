@@ -4,7 +4,6 @@
 [**Dépôt d'Open Drone Map**](https://community.opendronemap.org/) \
 [**Forum d'Open Drone Map**](https://github.com/OpenDroneMap/ODM)
 
-
 OpenDroneMap est une palette d'outils de photogrammétrie open source permettant de transformer des images aériennes (généralement prises par un drone) en cartes et en modèles 3D. Le logiciel est hébergé et distribué gratuitement sur GitHub.
 
 Il est intéressant de faire la différence entre ODM et WebODM:
@@ -13,9 +12,10 @@ Il est intéressant de faire la différence entre ODM et WebODM:
 
 - WebODM est une interface web permettant d'utiliser ODM plus facilement, à travers une interface graphique.
 
-Nous utilisons ici OpenDroneMap afin de générer le modèle 3D de l'Hôtel de la Paix. 
+Nous utilisons ici OpenDroneMap afin de générer le modèle 3D de l'Hôtel de la Paix.
 
 Mais OpenDroneMap peut être utilisé dans différents buts :
+
 - Surveillance des cultures.
 - Cartographier des zones terrestres.
 - Effectuer des analyses hydrologiques.
@@ -33,9 +33,9 @@ Dans la suite de ce document, nous montrerons les commandes avec Docker.
 
 ## Utilisation
 
-Pour une structure de fichiers comme ceci : 
+Pour une structure de fichiers comme ceci :
   
-```
+```plaintext
 datasets
 ├── mission_1
 │   ├── images
@@ -71,6 +71,7 @@ docker run -ti --rm -v <chemin_vers>/datasets:/datasets --gpus all opendronemap/
 ## Processus de reconstruction recommandé
 
 Deux options s'offrent à nous :
+
 1. Reconstruire chaque mission séparément et fusionner les nuages de points.
 2. Reconstruire l'ensemble des missions en même temps.
 
@@ -85,10 +86,6 @@ Dans tous les cas, nous recommandons de commencer par reconstruire chaque missio
 En effet, il est plus facile de corriger les erreurs sur une mission que sur l'ensemble des missions.
 
 > Il n'y a pas de réponse universelle quant à la méthode à choisir. Ces choix vont aussi dépendre du projet et de l'acquisition des images.
-
-## Exemple de reconstruction
-
-⚠️ FIXME ⚠️
 
 ## Erreurs rencontrées
 
@@ -116,7 +113,7 @@ On peut donc identifier les images aberrantes.
 
 D'autres aberrations sont moins visibles, comme des images **non localisées** ou **mal localisées**.
 
-Pour les images mal localisées, il est possible de les mettre en évidence en utilisant la fonction `Zoom to Layer Extent` sur la couche `Photos`. 
+Pour les images mal localisées, il est possible de les mettre en évidence en utilisant la fonction `Zoom to Layer Extent` sur la couche `Photos`.
 
 Les images non localisées n'apparaissent pas sur la carte.
 On peut les trouver en sélectionnant toutes les images visibles sur la cartes et en inversant la sélection.
@@ -174,7 +171,6 @@ Le paramètre `--feature-quality` permet de contrôler le redimensionnement des 
 Le paramètre `--min-num-features` permet de contrôler le nombre de points d'intérêts à extraire pour chaque image. Par défaut, la valeur est `10000`. Augmenter cette valeur permet d'augmenter la densité de points d'intérêts. Cependant, cela augmente aussi le temps de reconstruction. Pour obtenir un indicateur de la valeur à utiliser, on peut regarder la partie `Features` dans le fichier `odm_report/report.pdf` généré à la fin de la reconstruction.
 
 ### `pc-quality`
-
 
 Une autre étape importante de la reconstruction est la génération du nuage de points. C'est cette étape qui va permettre de générer le maillage et le modèle 3D.
 
