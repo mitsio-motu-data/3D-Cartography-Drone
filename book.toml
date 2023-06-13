@@ -1,0 +1,6 @@
+[book]
+authors = ["Adèle Pluquet"]
+language = "en"
+multilingual = false
+src = "src"
+title = "theme"
