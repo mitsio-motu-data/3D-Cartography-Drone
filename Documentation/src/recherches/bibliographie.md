@@ -2,7 +2,6 @@
 
 > Cette section regroupe tous les liens vers les documentations que nous avons trouvées intéressantes.
 
-
 ## Logiciels et matériel
 
 - [Specs du drone Mavic Air 2](https://www.dji.com/mavic-air-2/specs)
@@ -37,10 +36,12 @@
     - [Prix](https://www.dronedeploy.com/pricing.html)
 
 Démonstrations vidéo :
+
 - [Vidéo démo Mission Planner To Litchi](https://www.youtube.com/watch?v=Vdxp_iXCcys&ab_channel=Taranis)
 - [Vidéo mission avec Litchi](https://www.youtube.com/watch?v=mn8U-YJe1xY&ab_channel=WindsweptRobert)
 
 ## Reconstruction 3D
+
 - [Introduction To Feature Detection And Matching](https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d)
 - [A Comprehensive Guide To Use OpenDroneMap](https://odmbook.com/)
 - [Peu de bénéfice à calibrer les images d'après WebODM](https://github.com/OpenDroneMap/WebODM/issues/340)
