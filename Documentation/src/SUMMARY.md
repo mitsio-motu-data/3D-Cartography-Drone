@@ -1,6 +1,7 @@
 # Summary
 
 # Introduction
+
 - [Présentation du projet](./introduction/presentation_projet.md)
 - [Mitsio Motu](./introduction/mm.md)
 
@@ -19,13 +20,13 @@
 - [Reconstruction 3D](./guide/reconstruction/reconstruction.md)
     - [Quelques notions de photogrammétrie](./guide/reconstruction/photogrammetrie.md)
     - [Open Drone Map](./guide/reconstruction/open_drone_map.md)
-___
 
 # Recherches menées
 
 - [Recherches](./recherches/recherches.md)
 - [Bibliographie](./recherches/bibliographie.md)
-___
+
+# Remerciements
 
 - [Crédits](./credits.md)
 - [Contributeurs](./contributeurs.md)
