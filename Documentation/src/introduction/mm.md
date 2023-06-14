@@ -1,5 +1,9 @@
 <figure align="center">
-    <img src="../images/introduction/mm.png" | width=150/>
+    <p>
+        <a href="https://www.mitsiomotu.com/" target="_blank" rel="noopener noreferrer">
+            <img src="../images/introduction/mm.png" | width=150/>
+        </a>
+    </p>
 </figure>
 
 # Mitsio Motu
@@ -11,18 +15,6 @@ Cette documentation a été rédigée dans le cadre d'un projet de cartographie 
 Mitsio Motu réalise régulièrement des collectes de données auprès des populations d'Afrique de l'Ouest. Par exemple, en 2022, ce sont 700 collecteurs qui ont parcouru le Togo pendant 7 mois pour recenser toutes les infrastructures du pays : hôpitaux, écoles, restaurants, points d'eau, ... La donnée collectée permet de proposer des plans de déploiement d'infrastructures (lampadaires par exemple) adaptés aux besoins de la population.
 
 <figure align="center">
-    <img src="../images/introduction/mm_prise.jpeg" | width=650w/>
-    <figcaption>Collecteur sur  le terrain</em></figcaption>
+    <img src="../images/introduction/mm_prise.jpeg" | width=650/>
+    <figcaption>Collecteur sur  le terrain</figcaption>
 </figure>
-
----
-
-> ❔ À qui s'adresse cette documentation ?
-> 
-> Cette documentation regroupe : 
-> - Toutes les questions que nous nous sommes posés dans la mise en place de ce projet de reconstruction 3D ainsi que les réponses sourcées que nous y avons trouvées.
-> - La méthodologie que nous avons mise en place pour le projet.
-> 
-> Ainsi, elle s'adresse autant aux employés de **[Mitsio Motu](https://www.mitsiomotu.com/)** qu'à toute personne intéressée par la cartographie 3D de bâtiments.
-> Bien que spécifique à notre projet, cette documentation est assez générale pour que chacun puisse en tirer des informations utiles.
- 
