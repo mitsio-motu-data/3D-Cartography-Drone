@@ -1,7 +1,7 @@
 # Summary
 
 # Introduction
-- [Objectifs et historique du projet](./introduction/objectifs_historique.md)
+- [Présentation du projet](./introduction/presentation_projet.md)
 - [Mitsio Motu](./introduction/mm.md)
 - [Quelques notions de photogrammétrie](./introduction/photogrammetrie.md)
 
