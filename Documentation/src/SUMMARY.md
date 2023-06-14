@@ -3,7 +3,6 @@
 # Introduction
 - [Présentation du projet](./introduction/presentation_projet.md)
 - [Mitsio Motu](./introduction/mm.md)
-- [Quelques notions de photogrammétrie](./introduction/photogrammetrie.md)
 
 # Guide
 
@@ -18,8 +17,8 @@
     - [Préparation](./guide/vol/preparation.md)
     - [Réalisation](./guide/vol/realisation.md)
 - [Reconstruction 3D](./guide/reconstruction/reconstruction.md)
+    - [Quelques notions de photogrammétrie](./guide/reconstruction/photogrammetrie.md)
     - [Open Drone Map](./guide/reconstruction/open_drone_map.md)
-
 ___
 
 # Recherches menées
