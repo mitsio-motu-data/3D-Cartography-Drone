@@ -1,0 +1,394 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Préparation - Cartographie 3D avec un drone - Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../../../introduction/presentation_projet/presentation_projet.html"><strong aria-hidden="true">1.</strong> Présentation du projet</a></li><li class="chapter-item expanded "><a href="../../../introduction/mm/mm.html"><strong aria-hidden="true">2.</strong> Mitsio Motu</a></li><li class="chapter-item expanded affix "><li class="part-title">Guide</li><li class="chapter-item expanded "><a href="../../../guide/autorisations/autorisations.html"><strong aria-hidden="true">3.</strong> Obtention des autorisations</a></li><li class="chapter-item expanded "><a href="../../../guide/contraintes/contraintes.html"><strong aria-hidden="true">4.</strong> Identification des contraintes</a></li><li class="chapter-item expanded "><a href="../../../guide/planification/planification.html"><strong aria-hidden="true">5.</strong> Planification de la mission</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../guide/planification/mission_planner/mission_planner.html"><strong aria-hidden="true">5.1.</strong> Grille de survol avec Mission Planner</a></li><li class="chapter-item expanded "><a href="../../../guide/planification/litchi_angles/litchi_angles.html"><strong aria-hidden="true">5.2.</strong> Grille pour les angles avec Litchi Fly</a></li><li class="chapter-item expanded "><a href="../../../guide/planification/carto3d/carto3d.html"><strong aria-hidden="true">5.3.</strong> Conversion du format avec Carto3D</a></li><li class="chapter-item expanded "><a href="../../../guide/planification/litchi/litchi.html"><strong aria-hidden="true">5.4.</strong> Importation sur Litchi Fly</a></li></ol></li><li class="chapter-item expanded "><a href="../../../guide/vol/vol.html"><strong aria-hidden="true">6.</strong> Réalisation du vol</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../guide/vol/preparation/preparation.html" class="active"><strong aria-hidden="true">6.1.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../../../guide/vol/realisation/realisation.html"><strong aria-hidden="true">6.2.</strong> Réalisation</a></li></ol></li><li class="chapter-item expanded "><a href="../../../guide/reconstruction/reconstruction.html"><strong aria-hidden="true">7.</strong> Reconstruction 3D</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../guide/reconstruction/photogrammetrie/photogrammetrie.html"><strong aria-hidden="true">7.1.</strong> Quelques notions de photogrammétrie</a></li><li class="chapter-item expanded "><a href="../../../guide/reconstruction/open_drone_map/open_drone_map.html"><strong aria-hidden="true">7.2.</strong> Open Drone Map</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Recherches menées</li><li class="chapter-item expanded "><a href="../../../recherches/recherches.html"><strong aria-hidden="true">8.</strong> Recherches</a></li><li class="chapter-item expanded "><a href="../../../recherches/bibliographie/bibliographie.html"><strong aria-hidden="true">9.</strong> Bibliographie</a></li><li class="chapter-item expanded affix "><li class="part-title">Remerciements</li><li class="chapter-item expanded "><a href="../../../remerciements/credits.html"><strong aria-hidden="true">10.</strong> Crédits</a></li><li class="chapter-item expanded "><a href="../../../remerciements/contributeurs.html"><strong aria-hidden="true">11.</strong> Contributeurs</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mitsiomotu">Mitsio Motu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Cartographie 3D avec un drone - Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mitsio-motu-data/3D-Cartography-Drone" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="préparation"><a class="header" href="#préparation">Préparation</a></h1>
+<p><a href="https://dl.djicwdn.com/downloads/Mavic_Air_2/Mavic_Air_2_User_Manual_v1.6_enIII.pdf">📑 Manuel d'utilisation du Mavic Air 2</a></p>
+<h2 id="préparation-du-drone"><a class="header" href="#préparation-du-drone">Préparation du drone</a></h2>
+<p>Pour ne pas perdre de temps sur le terrain, il est important de faire quelques préparatifs.</p>
+<ol>
+<li>
+<p>Prenez connaissance du <a href="https://dl.djicdn.com/downloads/Mavic_Air_2/Mavic_Air_2_User_Manual_v1.6_enIII.pdf">Manuel d'utilisation du Mavic Air 2</a>.</p>
+</li>
+<li>
+<p>Commencez par installer l'application <strong>Litchi Fly</strong> si ce n'est pas déjà fait (⚠️ l'application peut être installée sur trois appareils simultanément au maximum) :</p>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=com.aryuthere.visionplus&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">Lien sur Google Play</a></li>
+<li><a href="https://apps.apple.com/app/id1059218666?mt=8&amp;uo=4">Lien sur l'App Store</a></li>
+</ul>
+</li>
+<li>
+<p>Installez l'application <strong>DJI</strong> qui correspond à votre modèle de drone (nécessaire pour les mises à jour du drone et la désactivation des <em>No Flight Zone</em> dont nous parlerons plus tard).
+⚠️ Sur Android, l'application n'est pas disponible sur le <em>Play Store</em>.
+Il faut télécharger et installer un <em>apk</em> directement depuis le site de DJI.
+Beaucoup de fausses applications sont disponibles sur les stores.
+Apple ou Android, nous vous conseillons de télécharger les applications depuis le site de DJI :</p>
+<ul>
+<li><a href="https://www.dji.com/downloads/djiapp/dji-fly">DJI Fly</a> : Mavic Air 2</li>
+<li><a href="https://www.dji.com/downloads/djiapp/dji-go-4">DJI Go 4</a> : Mavic Pro 1, Phantom 4</li>
+</ul>
+</li>
+<li>
+<p>Branchez votre téléphone à la télécommande et autorisez tous les transferts de données.
+À un stade, votre téléphone vous proposera de toujours utiliser <code>DJI Fly</code> ou <code>Litchi FLy</code>.
+Comme il faudra souvent basculer entre les deux, faites en sorte de ne pas activer cette option pour pouvoir choisir à chaque connexion.
+Allumez le drone et la télécommande en faisant, sur chacun, un clic rapide et un clic long sur le bouton <em>power</em>.
+Rendez-vous maintenant dans l'application <code>DJI Fly</code>.</p>
+</li>
+</ol>
+<figure align="center">
+    <img src="choice.jpg" | height="450" />
+    <figcaption>Ne surtout pas cocher "Se souvenir de mon choix"</figcaption>
+</figure>
+<ol start="5">
+<li>Vous aurez peut-être des calibrations à faire, suivez les instructions de l'application.
+Ensuite, rendez-vous dans le menu pour vérifier si des mises à jours firmware sont disponibles en faisant :
+<code>... &gt; À propos &gt; Firmware de l'appareil &gt; Rechercher des mises à jour</code></li>
+</ol>
+<figure align="center">
+    <img src="menu.jpg" | width="500" />
+    <img src="find_maj.jpg" | width="500" />
+    <img src="maj1.jpg" | width="500" />
+    <img src="maj2.jpg" | width="500" />
+    <figcaption>Étape pour les mises à jours firmware</figcaption>
+</figure>
+<ol start="6">
+<li>
+<p>Fermez l'application <code>DJI Fly</code> puis ouvrez <code>Litchi Fly</code>.
+(Il faut bien fermer totalement l'application et non pas la mettre seulement en fond).
+Vérifiez que votre drone se connecte bien.
+Si c'est le cas, vous être prêt pour les prochaines étapes !</p>
+</li>
+<li>
+<p>Chargez toutes les batteries et la manette avant tout vol !
+Même si le drone n'a pas été utilisé depuis le dernier chargement, les batteries se déchargent lorsqu'elles sont stockées.</p>
+</li>
+</ol>
+<h2 id="le-matériel-pour-les-vols"><a class="header" href="#le-matériel-pour-les-vols">Le matériel pour les vols</a></h2>
+<p>Peu de matériel est à prévoir en plus du drone (le matériel du drone est dans sa sacoche) :</p>
+<ul>
+<li>🔋 Batteries chargées.</li>
+<li>🎮 Télécommande chargée.</li>
+<li>📱 Téléphone(s) chargé(s).</li>
+<li>🕶️ Lunettes de soleil pour les opérateurs (surveiller le drone dans le ciel peut être compliqué avec le soleil).</li>
+<li>🕶️ Lunettes de soleil pour le drone, ou plutôt, les filtres UV de la caméra.
+Cela évite que les images soient sur exposées et donc inutilisables.</li>
+<li>Tapis de décollage et atterrissage si on est dans une zone poussiéreuse (sable, terre, ...).
+Cela évite que le sol se soulève et endommage le drone.
+Un tapis de voiture fait très bien l'affaire.</li>
+<li>💻 Ordinateur chargé pour ré-ajuster les missions Litchi sur place.</li>
+</ul>
+<h2 id="vol-dessai"><a class="header" href="#vol-dessai">Vol d'essai</a></h2>
+<p>Avant d'opérer le vol final, il faut que vous soyez familier avec le drone et les applications qui permettent de le contrôler.
+Trouvez un terrain assez dégagé pour faire vos essais.
+Une fois que vous connaissez le lieu de l'essai, planifiez quelques missions que vous pourrez essayer sur place.
+Cela permettra de vérifier que vous avez bien compris les étapes de planification de vol et de faire un premier test avec le logiciel de reconstruction.
+Vous pourrez ainsi avoir une meilleure vision de la file générale des opérations.
+De plus, vous pourrez éventuellement détecter des problèmes dans la prise d'image de la mission et rectifier cela pour la véritable acquisition.</p>
+<blockquote>
+<p>📆 Idéalement, celui-ci a lieu au début du projet, avant la planification des vols automatiques pour la mission finale.</p>
+</blockquote>
+<p>Essayez les différents filtres UV pour la caméra afin de vous familiariser avec leur mise en place et effet.
+Prenez des photos avec chaque filtre installé.</p>
+<h3 id="vol-manuel"><a class="header" href="#vol-manuel">Vol manuel</a></h3>
+<p>Commencez par faire un petit tour en vol manuel avec le drone.
+Bien que les missions soient automatisées, il faut souvent intervenir à la main.
+Pour cela, commencez par faire décoller le drone en appuyant sur l'icône correspondant dans <code>DJI Fly</code> ou <code>Litchi Fly</code>.
+Le drone va s'élever à 1,2m d'altitude et vous pourrez alors le contrôler.
+Le point de décollage est enregistré comme point de <em>Home</em> par le drone.
+Il reviendra ici lorsque vous lui direz d'atterrir en mode <em>RTH (Return To Home)</em>.</p>
+<figure align="center">
+    <img src="takeoff.jpg" | width=600 />
+    <figcaption>Icône de décollage du drone (DJI Fly). La même icône est utilisée sur Litchi Fly</figcaption>
+</figure>
+<p>Plusieurs configurations de commandes peuvent être utilisées pour les joysticks.
+Ils peuvent être changés dans <code>DJI Fly</code>.
+Trois modes pré-configurés existent (cf. p32 <a href="https://dl.djicwdn.com/downloads/Mavic_Air_2/Mavic_Air_2_User_Manual_v1.6_enIII.pdf">Manuel d'utilisation du Mavic Air 2</a>).
+Voici le mode utilisé pour le drone <a href="https://www.dji.com/mavic-air-2/specs">Mavic Air 2</a> de <a href="https://www.mitsiomotu.com/">Mitsio Motu</a> :</p>
+<figure align="center">
+    <img src="commands.jpg" | width=600 />
+    <figcaption>Commandes des joysticks (Mode 2)</figcaption>
+</figure>
+<p>À l'arrière de la télécommandes, des boutons sont disponibles pour gérer la partie caméra, photos et vidéos :</p>
+<figure align="center">
+    <img src="other_commands.jpg" | width=600 />
+    <figcaption>Inclinaison caméra, prise de photos et vidéos</figcaption>
+</figure>
+<p>Amusez-vous, c'est l'occasion de prendre de jolies photos ! 📸</p>
+<h3 id="vols-automatiques"><a class="header" href="#vols-automatiques">Vols automatiques</a></h3>
+<p>C'est le moment de tester les vols que vous avez préparés pour cette session d'essai.</p>
+<figure align="center">
+    <img src="anac_hor.jpg" | width=600 />
+    <img src="anac_vert.jpg" | width=600 />
+    <figcaption>Exemples de mission de test en terrain dégagé</figcaption>
+</figure>
+<p>Rendez vous dans la section <code>Waypoint</code> dans l'application et chargez votre mission.<sup class="footnote-reference"><a href="#rappel">1</a></sup>
+Réglez ensuite le degré de la caméra à celui souhaité pour la mission grâce à la roulette en haut à gauche de la manette.
+Vous pouvez voir à quel degré exactement la caméra est inclinée, comme illustré dans l'image ci-dessous :</p>
+<figure align="center">
+    <img src="degree.jpg" | width=600 />
+    <figcaption>Réglage de l'inclinaison de la caméra</figcaption>
+</figure>
+<p>Vérifiez que le format de capture des photos.
+Le drone <a href="https://www.dji.com/mavic-air-2/specs">Mavic Air 2</a>
+peut enregistrer les images en <a href="https://fr.wikipedia.org/wiki/JPEG">JPEG</a>
+uniquement ou en <a href="https://fr.wikipedia.org/wiki/JPEG">JPEG</a> +
+<a href="https://fr.wikipedia.org/wiki/RAW_(format_d%27image)">RAW</a>.
+Le format RAW est très adapté pour retoucher les images mais est beaucoup plus lourd que le format JPEG.
+Si l'on ne souhaite pas retoucher les images, il n'est pas nécessaire de les enregistrer dans ce format.
+Pour la reconstruction 3D ce format n'est pas forcément nécessaire.</p>
+<figure align="center">
+    <img src="format.jpg" | width=600 />
+    <figcaption>Réglage du format d'enregistrement des photos</figcaption>
+</figure>
+<p>Assurez vous que les images sont bien enregistrées sur la mémoire externe et non interne du drone (avec 8Go, elle sera vite saturée, encore plus si vous enregistrez les fichiers RAW).
+Pour cela, rendez-vous dans les paramètres : <code>... &gt; Caméra &gt; Emplacement de stockage</code>.</p>
+<figure align="center">
+    <img src="disk.jpg" | width=600 />
+    <figcaption>Choix de l'emplacement de stockage</figcaption>
+</figure>
+<p>Lancez ensuite simplement le vol en cliquant sur <code>Play</code>.</p>
+<figure align="center">
+    <img src="start_lf.jpg" | width=600 />
+    <figcaption>Démarrage d'une mission Litchi Fly</figcaption>
+</figure>
+<p>C'est parti !
+Plus qu'à laisser le drone faire son travail.
+Vérifiez tout de même qu'il effectue bien ce qui est prévu et que ça correspond à ce que vous souhaitiez.
+Vous perdez alors tout le contrôle du drone par les joysticks.
+Cependant, vous pouvez empêcher le drone de foncer dans un mur en cliquant sur les boutons <code>pause ⏸️</code> ou <code>stop ⏹️</code> :</p>
+<ul>
+<li>
+<p><code>pause ⏸️</code> :
+Les joysticks n'ont toujours pas d'effet.
+Le drone ne peut pas être déplacé.
+Vous pouvez cependant rectifier le <em>heading</em> du drone en faisant glisser votre doigt sur l'image sur votre téléphone.
+Cependant, cette solution n'est pas très précise.
+La mission continue depuis ce point quand vous appuyez sur <code>play ▶️️</code>.</p>
+<p>Ce bouton est très utile dès que vous avez un doute sur une potentielle collision du drone.
+Dès que vous avez un doute, utilisez le.
+Vous aurez alors le temps de vérifier si le drone peut continuer ou non.</p>
+</li>
+<li>
+<p><code>stop ⏹️</code> :
+La mission est arrêtée.
+Vous reprenez tout le contrôle du drone.
+Quand vous êtes sûr que vous allez rencontrer un obstacle, il faut appuyer sur ce bouton.
+Vous pouvez alors contourner manuellement l'obstacle.
+Ensuite, relancez la mission au <em>waypoint</em> le plus proche et sécuritaire, après l'obstacle.
+Comme Litchi n'indique pas à quel <em>waypoint</em> de la mission se trouve le drone, ce sera à vous d'estimer à quel <em>waypoint</em> reprendre la mission.</p>
+</li>
+</ul>
+<h2 id="reconnaissance-sur-le-terrain"><a class="header" href="#reconnaissance-sur-le-terrain">Reconnaissance sur le terrain</a></h2>
+<p>La reconnaissance sur le terrain est elle aussi importante.
+Elle permet d'identifier certains problèmes potentiels et de mieux comprendre l'organisation de l'environnement.
+Par exemple, à l'Hôtel de la Paix, nous avons constaté qu'il y avait de nombreux palmiers proches des façades.
+En plus d'être problématiques pour la prise d'images et la reconstruction, cela augmente les risques de collision.</p>
+<blockquote>
+<p>📆 Idéalement, la reconnaissance a lieu avant (ou au début) de la planification des missions automatiques.</p>
+</blockquote>
+<p>C'est également l'occasion de faire des relevés de hauteur de bâtiment si nécessaire.
+La méthode à suivre est renseignée dans la partie <a href="../planification/planification.html#le-toit">Planification de la mission, section <strong>Le toit</strong></a>.</p>
+<p>Si l'occasion se présente, il peut être intéressant de prévoir un premier survol très grossier de la zone.
+Vous pouvez pour cela prévoir une mission en grille croisée, caméra à 45° en altitude assez haute (&gt;40m).</p>
+<hr />
+<div class="footnote-definition" id="rappel"><sup class="footnote-definition-label">1</sup>
+<p>Voir la partie <a href="../planification/litchi.html#application-mobile">Importation sur Litchi Fly, section <strong>Application mobile</strong></a> pour voir comment faire.</p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../guide/vol/vol.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../guide/vol/realisation/realisation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../guide/vol/vol.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../guide/vol/realisation/realisation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

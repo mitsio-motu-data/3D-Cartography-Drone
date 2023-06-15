@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Open Drone Map - Cartographie 3D avec un drone - Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../../../introduction/presentation_projet/presentation_projet.html"><strong aria-hidden="true">1.</strong> Présentation du projet</a></li><li class="chapter-item expanded "><a href="../../../introduction/mm/mm.html"><strong aria-hidden="true">2.</strong> Mitsio Motu</a></li><li class="chapter-item expanded affix "><li class="part-title">Guide</li><li class="chapter-item expanded "><a href="../../../guide/autorisations/autorisations.html"><strong aria-hidden="true">3.</strong> Obtention des autorisations</a></li><li class="chapter-item expanded "><a href="../../../guide/contraintes/contraintes.html"><strong aria-hidden="true">4.</strong> Identification des contraintes</a></li><li class="chapter-item expanded "><a href="../../../guide/planification/planification.html"><strong aria-hidden="true">5.</strong> Planification de la mission</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../guide/planification/mission_planner/mission_planner.html"><strong aria-hidden="true">5.1.</strong> Grille de survol avec Mission Planner</a></li><li class="chapter-item expanded "><a href="../../../guide/planification/litchi_angles/litchi_angles.html"><strong aria-hidden="true">5.2.</strong> Grille pour les angles avec Litchi Fly</a></li><li class="chapter-item expanded "><a href="../../../guide/planification/carto3d/carto3d.html"><strong aria-hidden="true">5.3.</strong> Conversion du format avec Carto3D</a></li><li class="chapter-item expanded "><a href="../../../guide/planification/litchi/litchi.html"><strong aria-hidden="true">5.4.</strong> Importation sur Litchi Fly</a></li></ol></li><li class="chapter-item expanded "><a href="../../../guide/vol/vol.html"><strong aria-hidden="true">6.</strong> Réalisation du vol</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../guide/vol/preparation/preparation.html"><strong aria-hidden="true">6.1.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../../../guide/vol/realisation/realisation.html"><strong aria-hidden="true">6.2.</strong> Réalisation</a></li></ol></li><li class="chapter-item expanded "><a href="../../../guide/reconstruction/reconstruction.html"><strong aria-hidden="true">7.</strong> Reconstruction 3D</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../guide/reconstruction/photogrammetrie/photogrammetrie.html"><strong aria-hidden="true">7.1.</strong> Quelques notions de photogrammétrie</a></li><li class="chapter-item expanded "><a href="../../../guide/reconstruction/open_drone_map/open_drone_map.html" class="active"><strong aria-hidden="true">7.2.</strong> Open Drone Map</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Recherches menées</li><li class="chapter-item expanded "><a href="../../../recherches/recherches.html"><strong aria-hidden="true">8.</strong> Recherches</a></li><li class="chapter-item expanded "><a href="../../../recherches/bibliographie/bibliographie.html"><strong aria-hidden="true">9.</strong> Bibliographie</a></li><li class="chapter-item expanded affix "><li class="part-title">Remerciements</li><li class="chapter-item expanded "><a href="../../../remerciements/credits.html"><strong aria-hidden="true">10.</strong> Crédits</a></li><li class="chapter-item expanded "><a href="../../../remerciements/contributeurs.html"><strong aria-hidden="true">11.</strong> Contributeurs</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mitsiomotu">Mitsio Motu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Cartographie 3D avec un drone - Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mitsio-motu-data/3D-Cartography-Drone" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="open-drone-map"><a class="header" href="#open-drone-map">Open Drone Map</a></h1>
+<ul>
+<li><a href="https://opendronemap.org/"><strong>Site d'OpenDroneMap</strong></a></li>
+<li><a href="https://docs.opendronemap.org/"><strong>Documentation d'OpenDroneMap</strong></a></li>
+<li><a href="https://community.opendronemap.org/"><strong>Dépôt d'OpenDroneMap</strong></a></li>
+<li><a href="https://github.com/OpenDroneMap/ODM"><strong>Forum d'OpenDroneMap</strong></a></li>
+</ul>
+<p>OpenDroneMap est une palette d'outils de photogrammétrie open source permettant de transformer des images aériennes (généralement prises par un drone) en cartes et en modèles 3D. Le logiciel est hébergé et distribué gratuitement sur GitHub.</p>
+<p>Il est intéressant de faire la différence entre ODM et WebODM:</p>
+<ul>
+<li>
+<p><a href="https://github.com/OpenDroneMap/ODM">ODM</a> est le projet initial d'OpenDroneMap. C'est lui qui s'occupe de tout le travail de traitement et d'analyse des images jusqu'à la génération du modèle 3D. C'est un outil en lignes de commandes.</p>
+</li>
+<li>
+<p><a href="https://github.com/OpenDroneMap/WebODM">WebODM</a> est une interface web permettant d'utiliser ODM plus facilement, à travers une interface graphique.</p>
+</li>
+</ul>
+<p>Nous utilisons ici OpenDroneMap afin de générer le modèle 3D de l'Hôtel de la Paix. L'utiliser en lignes de commandes nous permet de paramétrer les différentes options plus facilement. Elles sont cependant presque toutes disponibles également avec WebODM.</p>
+<p>OpenDroneMap peut être utilisé dans différents buts :</p>
+<ul>
+<li>Surveillance des cultures.</li>
+<li>Cartographier des zones terrestres.</li>
+<li>Effectuer des analyses hydrologiques.</li>
+<li>Rendre compte de l'avancement des travaux de construction.</li>
+<li>Classer et compter les arbres.</li>
+<li>...</li>
+</ul>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>Voir la <a href="https://docs.opendronemap.org/installation/">documentation d'Open Drone Map</a> qui est très claire.</p>
+<p>Dans notre cas, nous avons utilisé la version Docker comme recommandé dans la documentation.</p>
+<p>Dans la suite de ce document, nous montrerons les commandes avec Docker.</p>
+<h2 id="utilisation"><a class="header" href="#utilisation">Utilisation</a></h2>
+<blockquote>
+<p>Nous expliquons ici l'utilisation d'OpenDroneMap. Sachez cependant qu'elle est plus détaillée dans le <strong>README</strong> du <a href="https://github.com/OpenDroneMap/ODM#readme">dépôt d'OpenDroneMap</a>.</p>
+</blockquote>
+<p>Pour une structure de fichiers comme ceci :</p>
+<pre><code class="language-plaintext">my_datasets
+├── mission_1
+│   ├── images
+│   │   ├── img_1.jpg
+│   │   ├── img_2.jpg
+│   │   ├── ...
+│   │   └── img_n.jpg
+├── mission_2
+├── ...
+└── mission_n
+</code></pre>
+<blockquote>
+<p>⚠️ Les images doivent <strong>obligatoirement</strong> être dans un dossier <code>images</code> à la racine de la mission.</p>
+</blockquote>
+<p>Pour reconstruire la mission 1, il faut lancer la commande suivante (après avoir lancé de <em>docker daemon</em>):</p>
+<pre><code class="language-bash">docker run -ti --rm -v &lt;chemin_vers&gt;/my_datasets:/datasets opendronemap/odm --project-path /datasets mission_1
+</code></pre>
+<h2 id="gpu"><a class="header" href="#gpu">GPU</a></h2>
+<p>Afin d'accélérer le processus de reconstruction, il est possible d'utiliser le GPU de la machine, si elle en possède un.
+Pour cela, il faut ajouter l'option <code>--gpus all</code> à la commande et utiliser l'image Docker <code>opendronemap/odm:gpu</code>.</p>
+<pre><code class="language-bash">docker run -ti --rm -v &lt;chemin_vers&gt;/my_datasets:/datasets --gpus all opendronemap/odm:gpu --project-path /datasets mission_1
+                                                           ^^^^^^^^^^                 ^^^^
+</code></pre>
+<blockquote>
+<p>⚠️ D'après @Saijin_Naib, Community Support sur le <a href="https://community.opendronemap.org/">forum OpenDroneMap</a> et contributeur de <a href="https://github.com/OpenDroneMap/ODM">OpenDroneMap/ODM</a>, la <a href="https://community.opendronemap.org/t/post-processing-after-odm/16314/5?u=adrien-anton-ludwig">détection et l'extraction des points d'intérêts est bien plus robuste sur CPU</a>.</p>
+</blockquote>
+<h2 id="processus-de-reconstruction-recommandé"><a class="header" href="#processus-de-reconstruction-recommandé">Processus de reconstruction recommandé</a></h2>
+<p>Deux options s'offrent à nous :</p>
+<ol>
+<li>Reconstruire chaque mission séparément et fusionner les nuages de points.</li>
+<li>Reconstruire l'ensemble des missions en même temps.</li>
+</ol>
+<p>Avantages et inconvénients de chaque méthode :</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Méthode</th><th style="text-align: center">Avantages</th><th style="text-align: center">Inconvénients</th></tr></thead><tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center">- Plus facile à mettre en place. <br> - Plus facile à corriger en cas d'erreur. <br> - Nécessite moins de RAM.</td><td style="text-align: center">- Compliqué de recaler toutes les sections ensemble. <br> - Comment fusionner et retirer les erreurs ?</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center">- Meilleure robustesse (en théorie). <br> - Pas de recalage à faire. <br> - Reconstruit mieux les alentours car pas de mission spécifique mais un peu de chaque mission.</td><td style="text-align: center">- Plus difficile à corriger en cas d'erreur. <br> - Possibilité d'introduire des erreurs avec les imprécisions qui se multiplient sur le dataset général. <br> - En fonction du nombre d'images, peut nécessiter beaucoup de RAM.</td></tr>
+</tbody></table>
+</div>
+<p>Dans tous les cas, nous recommandons de commencer par reconstruire chaque mission séparément, même vous souhaitez reconstruire l'ensemble des missions par la suite.
+En effet, il est plus facile de corriger les erreurs sur une mission que sur l'ensemble des missions.</p>
+<blockquote>
+<p>Il n'y a pas de réponse universelle quant à la méthode à utiliser. Ces choix vont aussi dépendre du projet et de l'acquisition des images.</p>
+</blockquote>
+<h2 id="erreurs-rencontrées"><a class="header" href="#erreurs-rencontrées">Erreurs rencontrées</a></h2>
+<p>Nous avons rencontré 2 erreurs majeures lors de la reconstruction des missions.</p>
+<h3 id="coordonnées-gps-aberrantes"><a class="header" href="#coordonnées-gps-aberrantes">Coordonnées GPS aberrantes</a></h3>
+<p>Certaines images présentaient des coordonnées GPS aberrantes.
+Cela peut être dû à une mauvaise réception GPS au moment de la prise de vue.</p>
+<p>Voici un exemple de reconstruction avec des coordonnées GPS aberrantes par rapport à la même reconstruction sans ces images.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Avec les images aberrantes</th><th style="text-align: center">Sans les images aberrantes</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="with_gps_aberrant_images.jpg" alt="Avec les images aberrantes" /></td><td style="text-align: center"><img src="without_gps_aberrant_images.jpg" alt="Sans les images aberrantes" /></td></tr>
+</tbody></table>
+</div>
+<p>Pour trouver les images aberrantes, on peut utiliser <a href="https://www.qgis.org/fr/site/">QGIS</a>.
+Pour cela, il faut utiliser la fonction <code>Import GeoTagged Photos</code> et sélectionner le dossier contenant les images.</p>
+<p>Certaines aberrations sont visibles à l'œil nu.
+Par exemple, sur la figure ci-dessous, nous savons que toutes les images devraient être localisées dans la zone verte.
+On peut donc identifier les images aberrantes.</p>
+<p><img src="qgis_gps_aberrant.jpg" alt="QGIS_GPS_aberrant" /></p>
+<p>D'autres aberrations sont moins visibles, comme des images <strong>non localisées</strong> ou <strong>mal localisées</strong>.</p>
+<p>Pour les images mal localisées, il est possible de les mettre en évidence en utilisant la fonction <code>Zoom to Layer Extent</code> sur la couche <code>Photos</code>.</p>
+<p>Les images non localisées n'apparaissent pas sur la carte.
+On peut les trouver en sélectionnant toutes les images visibles sur la cartes et en inversant la sélection.</p>
+<blockquote>
+<p>⚠️ FIXME ⚠️
+Il faudrait encore explorer la possibilité de reconstruire sans utiliser les coordonnées GPS des images.</p>
+</blockquote>
+<h3 id="images-non-exploitables"><a class="header" href="#images-non-exploitables">Images non exploitables</a></h3>
+<p>Comme évoqué sur la page précédente, nous recommandons de supprimer les images qui ne sont pas exploitables.</p>
+<p>Voici un exemple d'images que nous avons oublié de supprimer et qui ont généré une erreur lors de la reconstruction.</p>
+<p><img src="palm_tree.jpg" alt="Palmier" /></p>
+<h2 id="paramètres-explorés"><a class="header" href="#paramètres-explorés">Paramètres explorés</a></h2>
+<p>Les paramètres à utiliser varient beaucoup d'une mission à l'autre.</p>
+<p>Nous allons nous intéresser aux paramètres que nous avons explorés, lors de notre projet.</p>
+<p>N'hésitez pas à explorer l'ensemble des paramètres dans <a href="https://docs.opendronemap.org/arguments/">la documentation d'ODM</a>.
+Nous recommandons également vivement le livre <a href="https://odmbook.com/">OpenDroneMap: The Missing Guide</a>, nous ayant aidé à comprendre beaucoup de points sur le fonctionnement d'OpenDroneMap.</p>
+<p>Nous remercions la <a href="https://community.opendronemap.org/">communauté d'OpenDroneMap</a> pour <a href="https://community.opendronemap.org/t/post-processing-after-odm/16314?u=adrien-anton-ludwig">leur aide sur le forum</a> qui nous a guidé dans nos choix.</p>
+<h3 id="mesh-size"><a class="header" href="#mesh-size"><code>mesh-size</code></a></h3>
+<p>OpenDroneMap offre la possibilité de limiter la taille du maillage généré, afin de réduire la taille du fichier final et de réduire le temps de reconstruction, en utilisant le paramètre <code>--mesh-size</code>.</p>
+<p>Par défaut, la valeur est de <code>200000</code>, ce qui signifie que le maillage ne doit pas dépasser 200 000 sommets. Cela ne prend pas en compte la taille de la scène ou la densité des points. Cela peut amener à des maillages très différents en fonction de la scène. Par exemple, un maillage de 200 000 sommets pour une scène de 100 m² n'aura pas la même densité qu'un maillage de 200 000 sommets pour une scène de 1000 m². Exemple en image :</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Une façade</th><th style="text-align: center">Bâtiment entier</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="mesh_wall.jpg" alt="1 façade" /></td><td style="text-align: center"><img src="mesh_whole_hdp.jpg" alt="Bâtiment entier" /></td></tr>
+</tbody></table>
+</div>
+<p>Nous pouvons constater que les deux maillages ont à peu près le même nombre de sommets et de faces mais une densité très différente.</p>
+<p>On peut supposer que la densité plus faible sur l'image ci-dessus, à droite, crée des imprécisions : cage d'escalier et angles supérieur droit dans cet exemple.</p>
+<p>Pour éviter que le faible nombre de sommets limite la reconstruction, nous avons donc utilisé le paramètre <code>--mesh-size</code> avec une valeur de <code>1000000</code>. Cependant, cela n'a pas eu l'effet escompté. Voici une comparaison :</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"><code>--mesh-size 200000</code></th><th style="text-align: center"><code>--mesh-size 1000000</code></th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="mesh_whole_hdp_200000.jpg" alt="mesh-size 200000" /></td><td style="text-align: center"><img src="mesh_whole_hdp_1000000.jpg" alt="mesh-size 1000000" /></td></tr>
+</tbody></table>
+</div>
+<p>Nous pouvons constater que la précision n'a pas augmenté dans la cage d'escaliers et sur l'angle du mur. Nous savons cependant que cette façade peut être très bien reconstruite car nous obtenons une bonne précision lorsque nous la traitons seule. Dans ce cas, nous pouvons alors supposer que c'est le nuage de points qui limite la reconstruction et non le maillage. Cela nous amène aux paramètres suivants.</p>
+<h3 id="feature-quality-and-min-num-features"><a class="header" href="#feature-quality-and-min-num-features"><code>feature-quality</code> and <code>min-num-features</code></a></h3>
+<p>Une des premières (et plus importantes) étapes de la reconstruction est la détection et l'extraction des points d'intérêts (<em>features</em>). C'est cette étape qui va permettre de mettre en correspondance les images entre elles et de reconstruire la scène.</p>
+<p>OpenDroneMap offre la possibilité de contrôler la qualité de ces points d'intérêts avec les paramètres <code>--feature-quality</code> et <code>--min-num-features</code>.</p>
+<p>Le paramètre <code>--feature-quality</code> permet de contrôler le redimensionnement des images. Il accepte les valeurs suivantes : <code>ultra</code>, <code>high</code>, <code>medium</code>, <code>low</code>, <code>lowest</code>. Par défaut, la valeur est <code>high</code>, cela correspond à un redimensionnement à 1/2. Pour obtenir de meilleurs résultats, nous avons utilisé la valeur <code>ultra</code>, ce qui revient à ne pas redimensionner les images. Cependant, cela augmente le temps de reconstruction.</p>
+<p>Le paramètre <code>--min-num-features</code> permet de contrôler le nombre de points d'intérêts à extraire pour chaque image. Par défaut, la valeur est <code>10000</code>. Augmenter cette valeur permet d'augmenter le nombre de points d'intérêts détectés. Cela est possible en abaissant progressivement les contraintes pour la qualité de ces points. Le résultat obtenu est en général de meilleure qualité. Cependant, cela augmente aussi le temps de reconstruction. Pour obtenir un indicateur de la valeur à utiliser, on peut regarder la partie <code>Features</code> dans le fichier <code>odm_report/report.pdf</code> généré à la fin de la reconstruction.</p>
+<h3 id="pc-quality"><a class="header" href="#pc-quality"><code>pc-quality</code></a></h3>
+<p>Une autre étape importante de la reconstruction est la génération du nuage de points. C'est cette étape qui va permettre de générer le maillage et le modèle 3D.</p>
+<p>OpenDroneMap offre la possibilité de contrôler la qualité de ce nuage de points avec le paramètre <code>--pc-quality</code> (pour &quot;Point cloud quality&quot;). Ce paramètre influence la résolution de la  carte de profondeur (<a href="https://en.wikipedia.org/wiki/Depth_map"><em>depthmap</em></a>) et donc la densité du nuage de points.</p>
+<p>Il accepte les valeurs suivantes : <code>ultra</code>, <code>high</code>, <code>medium</code>, <code>low</code>, <code>lowest</code>. Par défaut, la valeur est <code>medium</code>. Attention, une valeur trop haute peu introduire du bruit. Il faut également prendre en compte que chaque palier multiplie le temps de calcul par 4 environ.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../guide/reconstruction/photogrammetrie/photogrammetrie.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../recherches/recherches.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../guide/reconstruction/photogrammetrie/photogrammetrie.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../recherches/recherches.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,1712 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Cartographie 3D avec un drone - Documentation</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="introduction/presentation_projet/presentation_projet.html"><strong aria-hidden="true">1.</strong> Présentation du projet</a></li><li class="chapter-item expanded "><a href="introduction/mm/mm.html"><strong aria-hidden="true">2.</strong> Mitsio Motu</a></li><li class="chapter-item expanded affix "><li class="part-title">Guide</li><li class="chapter-item expanded "><a href="guide/autorisations/autorisations.html"><strong aria-hidden="true">3.</strong> Obtention des autorisations</a></li><li class="chapter-item expanded "><a href="guide/contraintes/contraintes.html"><strong aria-hidden="true">4.</strong> Identification des contraintes</a></li><li class="chapter-item expanded "><a href="guide/planification/planification.html"><strong aria-hidden="true">5.</strong> Planification de la mission</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guide/planification/mission_planner/mission_planner.html"><strong aria-hidden="true">5.1.</strong> Grille de survol avec Mission Planner</a></li><li class="chapter-item expanded "><a href="guide/planification/litchi_angles/litchi_angles.html"><strong aria-hidden="true">5.2.</strong> Grille pour les angles avec Litchi Fly</a></li><li class="chapter-item expanded "><a href="guide/planification/carto3d/carto3d.html"><strong aria-hidden="true">5.3.</strong> Conversion du format avec Carto3D</a></li><li class="chapter-item expanded "><a href="guide/planification/litchi/litchi.html"><strong aria-hidden="true">5.4.</strong> Importation sur Litchi Fly</a></li></ol></li><li class="chapter-item expanded "><a href="guide/vol/vol.html"><strong aria-hidden="true">6.</strong> Réalisation du vol</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guide/vol/preparation/preparation.html"><strong aria-hidden="true">6.1.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="guide/vol/realisation/realisation.html"><strong aria-hidden="true">6.2.</strong> Réalisation</a></li></ol></li><li class="chapter-item expanded "><a href="guide/reconstruction/reconstruction.html"><strong aria-hidden="true">7.</strong> Reconstruction 3D</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guide/reconstruction/photogrammetrie/photogrammetrie.html"><strong aria-hidden="true">7.1.</strong> Quelques notions de photogrammétrie</a></li><li class="chapter-item expanded "><a href="guide/reconstruction/open_drone_map/open_drone_map.html"><strong aria-hidden="true">7.2.</strong> Open Drone Map</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Recherches menées</li><li class="chapter-item expanded "><a href="recherches/recherches.html"><strong aria-hidden="true">8.</strong> Recherches</a></li><li class="chapter-item expanded "><a href="recherches/bibliographie/bibliographie.html"><strong aria-hidden="true">9.</strong> Bibliographie</a></li><li class="chapter-item expanded affix "><li class="part-title">Remerciements</li><li class="chapter-item expanded "><a href="remerciements/credits.html"><strong aria-hidden="true">10.</strong> Crédits</a></li><li class="chapter-item expanded "><a href="remerciements/contributeurs.html"><strong aria-hidden="true">11.</strong> Contributeurs</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mitsiomotu">Mitsio Motu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Cartographie 3D avec un drone - Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mitsio-motu-data/3D-Cartography-Drone" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="présentation-du-projet"><a class="header" href="#présentation-du-projet">Présentation du projet</a></h1>
+<ul>
+<li><a href="https://mitsio-motu-data.github.io/fipa/">Présentation des résultats</a> de la cartographie de l'Hôtel de la Paix.</li>
+</ul>
+<p>Ce site <strong>documente la méthodologie</strong> mise en place pour la <strong>cartographie 3D de bâtiments par drone</strong>.
+Il a été réalisé dans le cadre d'un projet de sauvegarde de patrimoine au sein de l'entreprise <strong><a href="introduction/presentation_projet/./mm.html">Mitsio Motu</a></strong>.</p>
+<p>Cette documentation regroupe :</p>
+<ul>
+<li>Toutes les questions que nous nous sommes posés lors de la mise en place de ce projet de reconstruction 3D ainsi que les réponses sourcées que nous y avons trouvées.</li>
+<li>La méthodologie que nous avons mise en place pour le projet.</li>
+</ul>
+<blockquote>
+<p>🤔 À qui s'adresse cette documentation ?</p>
+<p>Elle s'adresse autant aux employés de <strong>Mitsio Motu</strong> qu'à toute personne intéressée par la <strong>cartographie 3D de bâtiments</strong>.
+Bien que spécifique à notre projet, cette documentation est assez générale pour que chacun puisse en tirer des informations utiles.</p>
+</blockquote>
+<p>Les notions présentées dans cette documentation peuvent également être utilisées pour d'autres projets. Par exemple :</p>
+<ul>
+<li>Surveillance des cultures.</li>
+<li>Inspection de toitures.</li>
+<li>Recenser et compter des arbres.</li>
+<li>Rendre compte de l'avancement des travaux de construction.</li>
+<li>...</li>
+</ul>
+<h2 id="historique-du-projet"><a class="header" href="#historique-du-projet">Historique du projet</a></h2>
+<p>Ce projet a été mis en place en avril 2023 pour participer à la sauvegarde du patrimoine togolais. Cette année, l'Hôtel de la Paix, ancien hôtel phare de Lomé abandonné depuis 20 ans, menaçait d'être détruit. <strong><a href="https://www.mitsiomotu.com/">Mitsio Motu</a></strong> a alors décidé de cartographier le bâtiment.</p>
+<figure align=center>
+    <img src="introduction/presentation_projet/hdp_original_picture.jpg" width=650/>
+    <figcaption>Hôtel de la Paix (photo d'époque)</figcaption>
+</figure>
+<p>Deux méthodes ont été mises en place :</p>
+<ul>
+<li>Une cartographie classique réalisée par des étudiants en architecture.</li>
+<li>Une cartographie 3D par drone, que nous expliquons ici.</li>
+</ul>
+<p>Vous pouvez retrouver les résultats des deux méthodes sur <a href="https://mitsio-motu-data.github.io/fipa/">le site du projet</a>.</p>
+<figure align=center>
+    <img src="introduction/presentation_projet/hdp_3d_reconstruction.jpg" width=650/>
+    <figcaption>Hôtel de la Paix (reconstruction 3D)</figcaption>
+</figure>
+<div style="break-before: page; page-break-before: always;"></div><figure align="center">
+    <p>
+        <a href="https://www.mitsiomotu.com/" target="_blank" rel="noopener noreferrer">
+            <img src="introduction/mm/mm.png" | width=150/>
+        </a>
+    </p>
+</figure>
+<h1 id="mitsio-motu"><a class="header" href="#mitsio-motu">Mitsio Motu</a></h1>
+<ul>
+<li><a href="https://www.mitsiomotu.com/">Site de Mitsio Motu</a></li>
+</ul>
+<p>Cette documentation a été rédigée dans le cadre d'un projet de cartographie 3D au sein de l'entreprise <strong><a href="https://www.mitsiomotu.com/">Mitsio Motu</a></strong>. Mitsio Motu est une entreprise de conseil basée en Afrique de l'Ouest. Elle travaille avec des gouvernements, des institutions publiques et des entreprises privées pour établir des stratégies de développement en se basant sur la donnée.</p>
+<p>Mitsio Motu réalise régulièrement des collectes de données auprès des populations d'Afrique de l'Ouest. Par exemple, en 2022, ce sont 700 collecteurs qui ont parcouru le Togo pendant 7 mois pour recenser toutes les infrastructures du pays : hôpitaux, écoles, restaurants, points d'eau, ... La donnée collectée permet de proposer des plans de déploiement d'infrastructures (lampadaires par exemple) adaptés aux besoins de la population.</p>
+<figure align="center">
+    <img src="introduction/mm/mm_prise.jpeg" | width=650/>
+    <figcaption>Collecteur sur  le terrain</figcaption>
+</figure>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="autorisations"><a class="header" href="#autorisations">Autorisations</a></h1>
+<p>Le vol de drone est soumis à des réglementation nationales voire locales. Avant d'entamer concrètement toute mission, il est indispensable de se renseigner sur la législation.</p>
+<p>Il peut être nécessaire de faire des demandes d'autorisation de vols. Il est important de conserver précieusement les papiers relatifs au drone :</p>
+<ul>
+<li>Facture d'achat</li>
+<li>Modèle précis</li>
+<li>Immatriculation (si applicable)</li>
+<li>Papiers import/export par les douanes</li>
+<li>Historique des réparations par le constructeur</li>
+</ul>
+<figure align="center">
+    <img src="guide/autorisations/planning.jpg" | width=600/>
+    <figcaption>Répartition du temps conseillée entre les différentes étapes <a href="https://uav-guidelines.openaerialmap.org/pages/07-preparing-for-the-uav-mission/">(source)</a></figcaption>
+</figure>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="identification-des-contraintes"><a class="header" href="#identification-des-contraintes">Identification des contraintes</a></h1>
+<p>Avant toute mission, il est indispensable d'identifier les différentes contraites. Comme cette documentation est rédigée par et pour <a href="https://www.mitsiomotu.com/">Mitsio Motu</a>, les contraintes listées ici seront celles propres au matériel de l'entreprise. Pour toute évolution de matériel, il faut re-lister toutes les contraintes pour adapter le projet.</p>
+<p>Nous allons lister ici les contraintes suivant trois axes :</p>
+<ol>
+<li><strong>Les contraintes organisationnelles</strong> : budget, temps disponible,...</li>
+<li><strong>Les contraintes matérielles</strong> : matériel disponible, ses capacités et ses limites.</li>
+<li><strong>Les contraintes du terrain</strong>, liées à l'opération: géographie du lieu, météo, accessibilité,...</li>
+</ol>
+<h2 id="contraintes-organisationnelles"><a class="header" href="#contraintes-organisationnelles">Contraintes organisationnelles</a></h2>
+<p>Lorsque vous vous lancez dans ce projet, commencez par clarifier quelques points concernant l'organisation tels que :</p>
+<ul>
+<li>De combien de temps disposez-vous pour chaque étape ?</li>
+<li>Pouvez-vous accéder au site sans problème ?</li>
+<li>Possédez-vous déjà les autorisations légales pour le vol du ou des drone(s) ?</li>
+<li>Quel budget est disponible pour le projet ?</li>
+</ul>
+<h2 id="contraintes-matérielles"><a class="header" href="#contraintes-matérielles">Contraintes matérielles</a></h2>
+<h3 id="drone"><a class="header" href="#drone">Drone</a></h3>
+<p>Le drone de <a href="https://www.mitsiomotu.com/">Mitsio Motu</a> est le <a href="https://www.dji.com/mavic-air-2/specs">Mavic Air 2</a>. C'est un très bon drone amateur. Il embarque une caméra (photo et vidéo) et une balise GPS/GLONNASS.</p>
+<figure align="center">
+    <img src="guide/contraintes/drone_mavic.jpg" | width=500/>
+    <figcaption>Drone Mavic Air 2</figcaption>
+</figure>
+<p>Voici les contraintes à prendre en compte avec ce drone :</p>
+<ul>
+<li>3 batteries de 20 à 25 minutes d'autonomie</li>
+<li>Appareil photo 12MP (3000x4000 px) ou 48MP (6000x8000 px)</li>
+<li>Capteur RGB (pas multispectral)</li>
+<li>Prise d'images en JPG et DNG (format RAW de DJI)</li>
+<li>Pas de planification de vol prévue par le constructeur (contrainte contournée par l'<a href="guide/contraintes/../planification/planification.html">utilisation de Litchi Fly</a>)</li>
+<li>Papiers relatifs au drone et à son import au Togo égarés</li>
+<li>Stockage de 8Go embarqué sur le drone + une carde micro SD de 128Go</li>
+</ul>
+<h3 id="ordinateur"><a class="header" href="#ordinateur">Ordinateur</a></h3>
+<p>La phase de reconstruction d'un modèle 3D demande de la puissance de calcul. Le tableau ci-dessous est extrait de la <a href="https://docs.opendronemap.org/installation/#id4">documentation d'ODM</a> (logiciel que nous utilisons pour <a href="guide/contraintes/../reconstruction/reconstruction.html">la reconstruction</a>) et présente les recommendations de hardware en fonction du nombre d'images.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: right">Number of images</th><th style="text-align: right">RAM of RAM + Swap</th></tr></thead><tbody>
+<tr><td style="text-align: right">40</td><td style="text-align: right">4</td></tr>
+<tr><td style="text-align: right">250</td><td style="text-align: right">16</td></tr>
+<tr><td style="text-align: right">500</td><td style="text-align: right">32</td></tr>
+<tr><td style="text-align: right">1500</td><td style="text-align: right">64</td></tr>
+<tr><td style="text-align: right">2500</td><td style="text-align: right">128</td></tr>
+<tr><td style="text-align: right">3500</td><td style="text-align: right">192</td></tr>
+<tr><td style="text-align: right">5000</td><td style="text-align: right">256</td></tr>
+</tbody></table>
+</div>
+<p>Le projet de l'Hôtel de la Paix requiert par exemble environ 2500 images. Aucun ordinateur de l'entreprise n'a 128Go de RAM. Plusieurs solutions sont possibles pour contourner ce problème :</p>
+<ol>
+<li>Reconstruire le bâtiment par section et faire du recalage ensuite</li>
+<li>Allouer un très grand <a href="https://fr.wikipedia.org/wiki/Espace_d%27%C3%A9change">swap</a> et traiter la totalité en une seule fois</li>
+</ol>
+<p>Nous approfondirons ces points dans la section <a href="guide/contraintes/../reconstruction/reconstruction.html">Reconstruction</a>.</p>
+<h2 id="contraintes-du-terrain"><a class="header" href="#contraintes-du-terrain">Contraintes du terrain</a></h2>
+<h3 id="géographie-du-lieu"><a class="header" href="#géographie-du-lieu">Géographie du lieu</a></h3>
+<p>Avant de faire l'acquisition, il est très important de se rendre sur le lieu, surtout si les vols vont se faire de manière automatisée. Cela permet de se rendre compte de potentiels problèmes lors de l'acquisition. Si possible, il faut faire cette reconnaissance avec le drone pour prendre quelques mesures.</p>
+<p>Par exemple, lors du projet de l'Hôtel de la Paix, se rendre sur le terrain en avance a permis de :</p>
+<ul>
+<li>Prendre des mesures de hauteur des différents toits pour programmer ensuite les altitudes de vol du drone</li>
+<li>Repérer des zones problématiques où les vols devront être effectués manuellement</li>
+<li>Repérer les couloirs de vols qui évitent les palmiers 🌴</li>
+<li>Faire des tests de filtres polarisants avec la caméra du drone et la couleur du bâtiment</li>
+<li>Découper le bâtiment en sections à acquérir</li>
+</ul>
+<h3 id="infrastructures"><a class="header" href="#infrastructures">Infrastructures</a></h3>
+<p>Des questions utiles doivent être posées :</p>
+<ul>
+<li>Y a-t-il de l'électricité sur le lieu ? Pour le rechargement des batteries du drone le jour J.</li>
+<li>Y a-t-il un endroit pratique pour travailler sur ordinateur ? Pour modifier les plans de vol en direct si besoin.</li>
+<li>Le lieu est-il fréquenté ? Si oui, quelles sont les meilleures horaires pour éviter d'être dérangé ?</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="planification-de-la-mission"><a class="header" href="#planification-de-la-mission">Planification de la mission</a></h1>
+<p>Le drone <a href="https://www.dji.com/mavic-air-2/specs"><strong>Mavic Air 2</strong></a> de <a href="https://www.dji.com/">DJI</a> est normalement destiné à un usage personnel et non professionnel. Il n'inclut pas la possibilité de prévoir des vols autonomes et doit normalement être piloté à la main par l'opérateur. Cependant, il est possible de contourner cela grâce à l'utilisation de différents logiciels que nous allons présenter ici.</p>
+<p>Les étapes à suivre pour mettre en place le vol autonome sont les suivantes :</p>
+<ol>
+<li>Prévoir des points GPS à rallier grâce à <a href="guide/planification/mission_planner.html"><strong>Mission Planner</strong></a> ou <a href="guide/planification/litchi_angles.html"><strong>Litchi Fly</strong></a>.</li>
+<li>Convertir les points dans le format de <strong>Litchi Fly</strong> et éditer la mission (verticalité par exemple) grâce à <a href="guide/planification/carto3d.html"><strong>Carto3D</strong></a>.</li>
+<li>Vérifier les paramètres généraux de la mission sur <a href="guide/planification/litchi.html"><strong>Litchi Fly</strong></a>.</li>
+</ol>
+<p>Plus précisément, voici le diagramme complet représentant la file de traitement pour la préparation des missions. Cela permet également de clarifier la place et l'utilité de chaque logiciel dans la file de traitement.</p>
+<figure align="center">
+    <img src="guide/planification/chart.png" | width=650/>
+    <figcaption>Diagramme présentant toute les étapes de la planification de vol - Créé grâce à <a href="https://www.lucidchart.com/pages/">Lucid Chart</a></figcaption>
+</figure>
+<h2 id="quels-sont-les-vols-à-prévoir-"><a class="header" href="#quels-sont-les-vols-à-prévoir-">Quels sont les vols à prévoir ?</a></h2>
+<p>Pour cartographier un bâtiment de cette taille, il est presque indispensable de planifier les vols pour plusieurs raisons :</p>
+<ul>
+<li>C'est très fastidieux à la main et une bonne maîtrise de pilotage de drones est nécessaire.</li>
+<li>Les images doivent être prises d'une manière très précise (elles doivent avoir un certain pourcentage de recouvrement). Planifier le vol permet que les images soient bien prises. À la main, les erreurs sont trop faciles à faire. Les erreurs d'acquisition entravent grandement la qualité de la reconstruction (voire la rendent impossible). Cependant, nous verrons que dans certains cas, les vols ne peuvent s'effectuer qu'à la main.</li>
+<li>Un vol planifié sera souvent plus rapidement effectué sur le terrain qu'à la main. Cela permet donc d'économiser de la batterie.</li>
+</ul>
+<p>⚠️ Cependant, il n'est pas possible de planifier une seule très grande mission pour tout le bâtiment. Du moins, les logiciels que nous utilisons ne le permettent pas. Il faut découper le tout en plusieurs morceaux. Voyons donc maintenant comment sectionner cette mission pour la planifier. Les paramètres conseillés ne sont pas obligatoires. N'hésitez pas à les adapter si vous pensez que c'est nécessaire.</p>
+<p>Nous allons ici considérer qu'il s'agit de la cartographie d'un grand bâtiment, comme c'était le cas pour l'Hôtel de la Paix.
+C'est une configuration complexe (par sa grande taille et sa forme biscornue) qui permettra d'aborder de nombreux points.</p>
+<p>À vous ensuite d'adapter ces informations à votre projet ! 😉</p>
+<blockquote>
+<p>📚 Quelques termes et notions avant de commencer !</p>
+<ul>
+<li><strong>Vol horizontal</strong> : Vol dont le plan est parallèle au sol. Permet d'acquérir le sol par exemple.</li>
+<li><strong>Vol vertical</strong> : Vol dont le plan est perpendiculaire au sol. Permet d'acquérir les façades par exemple.</li>
+<li><strong>Caméra à</strong> :
+<ul>
+<li><strong>0°</strong> : Elle pointe vers le sol.</li>
+<li><strong>90°</strong> : Elle est perpendiculaire au sol. Elle pointe vers un mur par exemple.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="le-sol"><a class="header" href="#le-sol">Le sol</a></h3>
+<blockquote>
+<ul>
+<li>Vol horizontal</li>
+<li>Plat : caméra à 0° et grille simple</li>
+<li>Relief (ou bâtiment) : caméra à 45° et grille croisée</li>
+<li>Altitude en fonction de la précision voulue et de la taille du terrain (et donc longueur de la mission et nombre de photos).</li>
+<li>À planifier sur Mission Planner (voir la partie <a href="guide/planification/mission_planner.html">Grille de survol avec Mission Planner</a>)</li>
+</ul>
+</blockquote>
+<p>Pour acquérir du sol en particulier. En fonction de la précision voulue, le vol peut être assez bas mais peut monter jusqu'à l'altitude maximale du drone.</p>
+<p>La façon la plus simple d'opérer est de planifier une grille simple. Cependant si des bâtiments sont présents sur le terrain et que vous ne voulez pas perdre les façades, vous pouvez faire une acquisition en grille croisée avec la caméra orientée à 45%. Attention, celle-ci sera beaucoup plus longue et lourde en stockage et traitement.</p>
+<h3 id="le-toit"><a class="header" href="#le-toit">Le toit</a></h3>
+<blockquote>
+<ul>
+<li>Vol horizontal.</li>
+<li>Plat : caméra à 0° et grille simple</li>
+<li>Relief : caméra à 45° et grille croisée</li>
+<li>Altitude à +/- 15m du toit environ en fonction de la précision voulue.</li>
+<li>À planifier sur Mission Planner (voir la partie <a href="guide/planification/mission_planner.html">Grille de survol avec Mission Planner</a>).</li>
+</ul>
+</blockquote>
+<p>Dans la majorité des cas, un vol en grille simple avec la caméra à 0° suffira. Attention, l'altitude de vol donnée ici est relative au toit et non pas au sol. Il faudra trouver un moyen de connaître la hauteur maximale du bâtiment cartographié. Vous pouvez estimer sa hauteur grâce à son nombre d'étages ou bien faire un prévol avec le drone pour aller relever les altitudes de la toiture. Pour cela, placez la caméra du drone à 90° et faite le voler jusqu'à ce que le niveau que vous souhaitez mesurer soit au centre de l'image. L'altitude du drone, à ce moment, correspond à la hauteur du toit.</p>
+<figure align="center">
+    <img src="guide/planification/roof.jpg" | width=600/>
+    <figcaption>Exemple d'un bon rendu de la caméra pour mesurer la hauteur d'un bâtiment</figcaption>
+</figure>
+<p>Vous pouvez ensuite créer un plan avec les hauteurs de votre bâtiment comme celui-ci par exemple :</p>
+<figure align="center">
+    <img src="guide/planification/roof_altitudes.jpg" | width=600/>
+    <figcaption>Hauteurs du toit et des terrasses de l'Hôtel de la Paix</figcaption>
+</figure>
+<h3 id="les-façades"><a class="header" href="#les-façades">Les façades</a></h3>
+<blockquote>
+<ul>
+<li>Vol vertical.</li>
+<li>Caméra à 90°.</li>
+<li>Grille simple.</li>
+<li>Distance de +/- 15m du mur environ en fonction de la précision voulue et des obstacles.</li>
+<li>À planifier sur Mission Planner (voir la partie <a href="guide/planification/mission_planner.html">Grille de survol avec Mission Planner</a>).</li>
+</ul>
+</blockquote>
+<p>Pour chaque façade, il faudra faire une mission différente car la file de traitement prend (pour l'instant) seulement les missions sur une même ligne.</p>
+<h3 id="les-angles"><a class="header" href="#les-angles">Les angles</a></h3>
+<blockquote>
+<ul>
+<li>Vol vertical.</li>
+<li>Caméra à 90°.</li>
+<li>Grille simple.</li>
+<li>Distance de +/- 15m du mur environ en fonction de la précision voulue et des obstacles.</li>
+<li>À planifier sur Litchi Fly (voir la partie <a href="guide/planification/litchi_angles.html">Grille pour les angles avec Litchi Fly</a>) ou à faire en manuel.</li>
+</ul>
+</blockquote>
+<p>L'acquisition des angles est primordiale pour que le logiciel de reconstruction comprenne le lien entre les façades et puisse tout reconstruire lui même. Il faut que les photos de ces missions couvrent un peu de chaque façade.</p>
+<p>(voir la partie <a href="guide/planification/litchi_angles.html">Grille pour les angles avec Litchi Fly</a>)</p>
+<h3 id="zone-générale"><a class="header" href="#zone-générale">Zone générale</a></h3>
+<blockquote>
+<ul>
+<li>Vol horizontal.</li>
+<li>Plat : caméra à 0° et grille simple</li>
+<li>Relief (bâtiments) : caméra à 45° et grille croisée</li>
+<li>Altitude de +/- 40m environ en fonction de la précision voulue et de la taille du terrain (et donc longueur de la mission et nombre de photos).</li>
+<li>À planifier sur Mission Planner (voir la partie <a href="guide/planification/mission_planner.html">Grille de survol avec Mission Planner</a>).</li>
+</ul>
+</blockquote>
+<p>Bien que les caractéristiques soient très similaires avec l'acquisition du sol, ce sont deux choses très différentes. Par exemple, pour l'acquisition de l'Hôtel de la Paix, nous avons fait :</p>
+<ul>
+<li>Une <strong>acquisition générale</strong> de la zone à 40 et 50 m d'altitude en grille croisée (voir polygone bleu dans l'image ci-dessous) incluant le bâtiment principal et un peu de terrain. Cela permet d'obtenir de l'information générale sur le terrain et d'augmenter la qualité de la reconstruction. De plus, cela permet d'avoir des information (même si moyennement précises) sur tout le bâtiment et donc de s'assurer que le logiciel de reconstruction pourra faire le lien entre les différentes zones du bâtiment.</li>
+<li>Une <strong>acquisition de type sol</strong> sur la zone autour de la piscine. À plus basse altitude, elle permet de se focaliser sur une zone qui nous intéresse et d'avoir une meilleure résolution dans une zone spécifique. Certains petits bâtiments étaient présents dans cette zone. Nous avons fait l'erreur de faire malgré tout une acquisition en grille simple et non croisée. Il nous manque donc un peu des façades de ces bâtiments.</li>
+</ul>
+<figure align="center">
+    <img src="guide/planification/zone.jpg" | width=900/>
+    <figcaption>Bleu : Acquisition générale - Jaune : Acquisition de sol</figcaption>
+</figure>
+<h3 id="zones-délicates"><a class="header" href="#zones-délicates">Zones délicates</a></h3>
+<p>Certaines zones, trop étroites par exemple doivent être acquises de manière manuelle. À vous de juger les zones pour lesquelles c'est nécessaire. Attention, l'opérateur du drone doit bien respecter les recouvrements entre les images.</p>
+<h2 id="organisation-de-la-planification"><a class="header" href="#organisation-de-la-planification">Organisation de la planification</a></h2>
+<h3 id="suivi"><a class="header" href="#suivi">Suivi</a></h3>
+<p>Ainsi découpé, un seul bâtiment comporte rapidement plusieurs dizaines de missions planifiées différentes. Par exemple pour l'hôtel de la paix, nous avions découpé l'acquisition en 25 mission. De plus, comme nous utilisions 3 drones différents, nous avons planifié toutes les missions pour tous les drones ce qui faisait au total 75 missions.</p>
+<p>À ce stade, il est indispensable de prévoir un outil pour suivre l'état de la planification. Nous avions par exemple utilisé un <em>Google Sheet</em>.</p>
+<figure align="center">
+    <img src="guide/planification/google_sheet.jpg" | width=700/>
+    <figcaption>Fiche de suivi de l'état de la planification</figcaption>
+</figure>
+<h3 id="nomenclature"><a class="header" href="#nomenclature">Nomenclature</a></h3>
+<p>Il va également falloir manipuler de nombreux fichiers :</p>
+<ul>
+<li>Les fichiers <em>.waypoints</em> de Mission Planner</li>
+<li>Les fichiers <em>.csv</em> de Carto3D</li>
+<li>Les fichiers <em>.csv</em> de Litchi Fly</li>
+</ul>
+<p>Pour s'y retrouver et facilement comprendre à quoi correspond chaque fichier, il faut mettre en place une nomenclature. Voici par exemple ce que nous avions créé pour le projet Hôtel de la Paix  :</p>
+<figure align="center">
+    <img src="guide/planification/naming.jpg" | width=600/>
+    <figcaption>Nomenclature à l'hôtel de la paix</figcaption>
+</figure>
+<p>En plus de cette nomenclature, nous ajoutions :</p>
+<ul>
+<li>en <strong>préfixe</strong> le modèle du drone pour lequel la mission était destinée
+<ul>
+<li>Mavic Air 2 : <code>ma</code></li>
+<li>Mavic 2 Pro : <code>mp</code></li>
+<li>Phantom Pro v4 : <code>pp</code></li>
+</ul>
+</li>
+<li>en <strong>suffixe</strong> la distance à la surface de la mission (en m)</li>
+</ul>
+<p>Ainsi, une mission du Mavic Air 2 à 8m du pan de mur en rose clair dans l'angle haut droit de l'image s'appellerait  : <code>ma_edge_back_right_8</code>.</p>
+<blockquote>
+<p>✍️ C'est une pratique rendant le travail et la collaboration beaucoup plus faciles.
+Il est également indispensable de documenter la nomenclature choisie pour que le travail soit repris facilement par quelqu'un d'autre ou bien beaucoup plus tard.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="grille-de-survol-avec-mission-planner"><a class="header" href="#grille-de-survol-avec-mission-planner">Grille de survol avec Mission Planner</a></h1>
+<p><a href="https://ardupilot.org/planner/"><strong>Site de Mission Planner</strong></a></p>
+<blockquote>
+<p>Tutoriel écrit avec la version <strong>1.3.8479.20539</strong> de Mission Planner</p>
+</blockquote>
+<p>Réaliser un vol d'acquisition est long et fastidieux. De plus, les images de la zone acquise doivent être prises avec un recouvrement spécifique. Utiliser un logiciel qui planifie les missions permet de s'assurer que la prise d'images sera bonne et permet que l'opérateur drone réalise la mission plus facilement. Pour faire cela, nous utilisons <a href="https://ardupilot.org/planner/">Mission Planner</a>. C'est un logiciel gratuit et Open Source qui permet de prévoir des vols autonomes sous forme de grilles.</p>
+<p>Nous appellerons <strong>&quot;mission horizontale&quot;</strong> un vol sur un plan parallèle au sol (par exemple pour cartographier un parc) et <strong>&quot;mission verticale&quot;</strong> un vol sur un plan perpendiculaire au sol (par exemple pour cartographier une façade de bâtiment).</p>
+<blockquote>
+<p>🚨 Soyez prévenu, Mission Planner est un logiciel qui présente de nombreux bugs.
+Il est possible qu'avec de nouvelles mises à jour, certains soient résolus et que d'autres apparaissent.
+Nous allons essayer de vous guider au mieux dans le logiciel.</p>
+</blockquote>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>Commencez par installer Mission Planner en suivant les instructions de <a href="https://ardupilot.org/planner/docs/mission-planner-installation.html">la documentation</a>.</p>
+<h2 id="ouverture-de-mission-planner-et-home"><a class="header" href="#ouverture-de-mission-planner-et-home">Ouverture de Mission Planner et <em>Home</em></a></h2>
+<p>En ouvrant Mission Planner, vous arriverez sur un écran similaire. Rendez-vous dans la section <strong>PLAN</strong>, accessible par le bouton encadré en bleu.</p>
+<figure align="center">
+    <img src="guide/planification/mission_planner/home.jpg" | width=650/>
+    <figcaption>Écran d'accueil de Mission Planner</figcaption>
+</figure>
+<p>Placez le point de départ et d'arrivée (<em>Home</em>) :</p>
+<ul>
+<li>Soit à la main : <code>Clic droit</code> &gt; <code>Set home here</code></li>
+<li>Soit avec les coordonnées GPS : en bas du panneau de droite (voir photo ci-dessous)</li>
+</ul>
+<p>L'idéal est de placer ce point vers la zone de la mission mais sa position n'a pas de véritable importance car il ne sera en fait pas utilisé dans nos missions.
+Le placer permet cependant de travailler plus facilement avec Mission Planner qui veut qu'un point <em>Home</em> soit défini.</p>
+<figure align="center">
+    <img src="guide/planification/mission_planner/set_home.jpg" | width=650/>
+    <figcaption>Définition d'un point <i>Home</i></figcaption>
+</figure>
+<h2 id="mission-horizontale"><a class="header" href="#mission-horizontale">Mission horizontale</a></h2>
+<p>Créez un polygon représentant la zone que le drone doit couvrir. <code>Clic droit</code> &gt; <code>Polygon</code> &gt; <code>Draw a Polygon</code> (ou <code>Load Polygon</code> pour importer un fichier).</p>
+<figure align="center">
+    <img src="guide/planification/mission_planner/draw_polygon.jpg" | width=650/>
+    <figcaption>Création d'un polygone</figcaption>
+</figure>
+<p>Voici à quoi devrait ressembler votre interface une fois le polygone dessiné :</p>
+<figure align="center">
+    <img src="guide/planification/mission_planner/polygon.jpg" | width=650/>
+    <figcaption>Polygone</figcaption>
+</figure>
+<p>Il faut ensuite générer le parcours. Pour cela, utilisez la fonction de quadrillage (ou <code>Survey (Grid)</code>). <code>Clic droit</code> &gt; <code>Auto WP</code> &gt; <code>Survey (Grid)</code></p>
+<figure align="center">
+    <img src="guide/planification/mission_planner/survey_grid.jpg" | width=650/>
+    <figcaption>Chemin vers <i>Survey grid</i></figcaption>
+</figure>
+<p>Une nouvelle fenêtre apparaît. Elle va permettre de paramétrer le quadrillage pour la grille de survol.</p>
+<ol>
+<li>
+<p>Commencez par activer les options avancées. Dans le panneau de droite : <code>Simple</code> &gt; <code>Display</code> &gt; <code>Advanced Options</code></p>
+</li>
+<li>
+<p>Vérifiez si le modèle du drone (et donc les paramètres de sa caméra) est connu de Mission Planner. Si c'est le cas sélectionnez le modèle du drone. Si ce n'est pas le cas nous déterminerons les paramètres de la caméra dans les étapes suivantes, <strong>la première fois uniquement</strong>.</p>
+<p>Dans le panneau de droite : <code>Simple</code> &gt; <code>Simple Options</code> &gt; <code>Camera</code></p>
+</li>
+<li>
+<p>Rendez-vous dans le menu des paramètres de la caméra.
+Dans le panneau de droite : <code>Camera Config</code></p>
+</li>
+</ol>
+<figure align="center">
+    <img src="guide/planification/mission_planner/start_survey_grid.jpg" | width=650/>
+</figure>
+<p>Les étapes 1 et 2 sont nécessaires seulement si le modèle du drone n'est pas connu de Mission Planner et <strong>la première fois uniquement</strong>.</p>
+<ol>
+<li>
+<p>Importez une image capturée par le drone. Cela va permettre à Mission Planner de déterminer automatiquement les paramètres <em>focal length</em>, <em>image width (pxl)</em> et <em>image height (pxl)</em>.
+⚠️ Les deux paramètres restants (taille du <em>sensor</em>) ne peuvent pas être déterminés par Mission Planner (bien que les champs soient remplis, ce sont les paramètre de la caméra qui était enregistrée par défaut.
+Il ne sont pas mis à jour).
+Il faudra vous renseigner sur la nature de votre capteur pour remplir ces champs vous même.</p>
+<p>Dans le panneau de droite : <code>Camera Config</code> &gt; <code>Camera Options</code> &gt; <code>Load Sample Photo</code></p>
+<p>Ci-dessous, le tableau regroupant tous les paramètres des caméras des drones déjà utilisés chez Mitsio Motu.
+Merci de mettre à jour ce tableau à chaque nouveau modèle utilisé.</p>
+</li>
+</ol>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"></th><th style="text-align: center">Mavic Air 2</th><th style="text-align: center">Mavic Pro 2</th><th style="text-align: center">Phantom 4</th></tr></thead><tbody>
+<tr><td style="text-align: center"><strong>Focal length</strong></td><td style="text-align: center">4.5</td><td style="text-align: center">10.3</td><td style="text-align: center">8.8</td></tr>
+<tr><td style="text-align: center"><strong>Image width (px)</strong></td><td style="text-align: center">4000</td><td style="text-align: center">5472</td><td style="text-align: center">5472</td></tr>
+<tr><td style="text-align: center"><strong>Image height (px)</strong></td><td style="text-align: center">3000</td><td style="text-align: center">3648</td><td style="text-align: center">3648</td></tr>
+<tr><td style="text-align: center"><strong>Sensor width( mm)</strong></td><td style="text-align: center">6.4</td><td style="text-align: center">13.31</td><td style="text-align: center">13.31</td></tr>
+<tr><td style="text-align: center"><strong>Sensor height (mm)</strong></td><td style="text-align: center">4.8</td><td style="text-align: center">8.88</td><td style="text-align: center">8.88</td></tr>
+<tr><td style="text-align: center"><strong>Proportion</strong></td><td style="text-align: center">4/3</td><td style="text-align: center">3/1</td><td style="text-align: center">3/1</td></tr>
+</tbody></table>
+</div>
+<ol start="2">
+<li>
+<p>Vérifiez que les paramètres sont cohérents puis sauvegardez les.
+Mission Planner va vous demander de renseigner le modèle du drone (autrement dit, son nom).
+Cela permettra à Mission Planner de l'enregistrer et de vous le proposer dans les drones connus lors de votre prochaine planification.</p>
+<p>Dans le panneau de droite : <code>Camera Config</code> &gt; <code>Camera Options</code> &gt; <code>Save</code></p>
+</li>
+<li>
+<p>Sélectionnez le mode de capture d'images <code>DO_DIGICAM_CONTROL</code>.
+Ce mode permet de préciser combien de temps le drone doit s'arrêter au moment de prendre la photo (afin de s'assurer que l'image soit nette).</p>
+<p>Dans le panneau de droite : <code>Camera Config</code> &gt; <code>Trigger Method</code> &gt; <code>DO_DIGICAM_CONTROL</code></p>
+</li>
+</ol>
+<figure align="center">
+    <img src="guide/planification/mission_planner/cam_config.jpg" | width=650/>
+</figure>
+<p>Vous pouvez maintenant renseigner l'ensemble de vos paramètres de vol dans le menu <code>Grid Options</code>.
+Il faut notamment faire attention à :</p>
+<ul>
+<li><code>Camera Options</code> &gt; <code>Overlap</code> et <code>Sidelap</code>, les recouvrements de vos images dans le sens de vol et sur les côtés.<sup class="footnote-reference"><a href="#recouv">1</a></sup></li>
+<li><code>Camera Options</code> &gt; <code>Cross Grid</code>, qui peut être très utile dans l'acquisition de zones générales avec des bâtiments.<sup class="footnote-reference"><a href="#cross-grid">2</a></sup></li>
+<li><code>Copter Options</code> &gt; <code>Delay at WP (sec)</code>, le temps d'arrêt à chaque point.
+Il n'est pas nécessaire d'y régler le temps, nous le paramétrerons dans la section <a href="guide/planification/mission_planner/carto3d.html">Conversion du format avec Carto3D</a>.</li>
+</ul>
+<p>Enfin, retournez dans le menu <code>Simple</code> pour activer 3 options :</p>
+<ol>
+<li><code>Simple Options</code> &gt; <code>Camera top facing forward</code> :
+Quand elle est activée, cela signifie que la caméra pointe bien vers l'avant du drone.
+C'est nécessaire pour le calcul de la positions des <em>waypoints</em>.</li>
+<li><code>Simple Options</code> &gt; <code>Use speed for this mission</code> :
+Vous pouvez d'ailleurs mettre à jour la vitesse de la mission ici.</li>
+<li><code>Display</code> &gt; <code>Internals</code></li>
+</ol>
+<p>Vérifiez que les points semblent cohérents.
+Une fois satisfait, cliquez sur <code>Accept</code>.</p>
+<figure align="center">
+    <img src="guide/planification/mission_planner/mission_finished.jpg" | width=650/>
+</figure>
+<p>La fenêtre <code>Survey (Grid)</code> se ferme et tous les points apparaissent dans le plan de vol.</p>
+<h2 id="mission-verticale"><a class="header" href="#mission-verticale">Mission verticale</a></h2>
+<p>Cette section présente comment préparer une acquisition verticale, pour une façade par exemple.</p>
+<p>Tout d'abord, sur Mission Planner, créez un polygon assez fin et parallèle au mur que vous voulez acquérir, comme illustré sur l'image ci-dessous.</p>
+<figure align="center">
+    <img src="guide/planification/mission_planner/vertical_polygon.png" | width=650/>
+    <figcaption>Polygone pour l'acquisition de façade</figcaption>
+</figure>
+<p>À même titre que pour un vol horizontal, générez une grille automatiquement avec <code>Survey Grid</code>.
+Il faudra que la grille générée ne fasse qu'une seule ligne dans le polygone dessiné, le plus parallèle possible au bâtiment.
+Pour cela, vous pouvez vous aider du paramètre <code>Grid Options</code> &gt; <code>Sidelap [%]</code> (et surtout pas <code>Overlap [%]</code>).
+La grille générée doit ressembler au résultat ce-dessous :</p>
+<figure align="center">
+    <img src="guide/planification/mission_planner/vertical_grid.png" | width=650/>
+    <figcaption>Chemin vers <i>Survey grid</i></figcaption>
+</figure>
+<p>Vérifiez que les points semblent cohérents.
+Une fois satisfait, cliquez sur <code>Accept</code>.</p>
+<h2 id="enregistrement"><a class="header" href="#enregistrement">Enregistrement</a></h2>
+<p>Maintenant que vous avez généré votre grille, horizontale ou verticale, il ne vous reste plus qu'à la sauvegarder !</p>
+<ol>
+<li>Activez l'option <code>Verify Height</code> pour que Mission Planner vérifie les altitudes renseignées s'il a des données disponibles pour la région en question.</li>
+<li>Exportez les points.
+Ils sont enregistrés au format <code>.waypoints</code> que vous pouvez ouvrir avec un éditeur de texte.</li>
+</ol>
+<figure align="center">
+    <img src="guide/planification/mission_planner/mission_height.jpg" | width=650/>
+</figure>
+<blockquote>
+<p>👏 Et voilà pour la section Mission Planner !
+Il ne reste maintenant plus qu'à convertir et personnaliser la mission
+avec <a href="guide/planification/mission_planner/carto3d.html">Conversion du format avec Carto3D</a> et enfin à l'importer dans Litchi avec <a href="guide/planification/mission_planner/litchi.html">Importation sur Litchi Fly</a>.</p>
+</blockquote>
+<hr />
+<div class="footnote-definition" id="recouv"><sup class="footnote-definition-label">1</sup>
+<p>Pour le projet de l'Hôtel de la Paix, le recouvrement était de 80% pour l'<em>overlap</em> et le <em>sidelap</em>.</p>
+</div>
+<div class="footnote-definition" id="cross-grid"><sup class="footnote-definition-label">2</sup>
+<p>Une <em>cross-grid</em> est nécessaire pour l'acquisition complète d'un terrain avec bâtiments par exemple.
+Pour pouvoir observer les façades, il faut orienter la caméra non pas perpendiculairement au sol mais à 45° par rapport au sol environ.
+Avec la caméra perpendiculaire, il manquera les façades de bâtiments dans la reconstruction.
+Pour pouvoir obtenir des photos de toutes les zones, il est dans ce cas indispensable de faire une acquisition en cross-grid.
+Sinon, certaines zones ne pourront pas être reconstituées.</p>
+</div>
+<div class="table-wrapper"><table><thead><tr><th>Grille simple</th><th>Grille croisée ou <em>cross grid</em></th></tr></thead><tbody>
+<tr><td><img src="guide/planification/mission_planner/simple_grid.png" alt="Simple grid" /></td><td><img src="guide/planification/mission_planner/cross_grid.png" alt="Cross grid" /></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="grille-pour-les-angles-avec-litchi-fly"><a class="header" href="#grille-pour-les-angles-avec-litchi-fly">Grille pour les angles avec Litchi Fly</a></h1>
+<ul>
+<li><a href="https://flylitchi.com/"><strong>Site de Litchi Fly</strong></a></li>
+<li><a href="https://flylitchi.com/help#missionhub"><strong>Guide pour l'utilisateur</strong></a></li>
+</ul>
+<blockquote>
+<p>Dans certaines configurations, il faut utiliser Litchi Fly pour générer la grille de vol.
+Ceci est le cas pour les angles par exemple.
+En effet, il s'agit de vol vertical mais pas sur un seul axe comme pour les murs.
+Nous ne pouvons donc pas utiliser Mission Planner pour cela.
+De plus, Litchi Fly comprend des options qui vont nous aider dans cette situation.
+Cependant, ces vols peuvent aussi être faits à la main assez facilement.
+Il faut dans ce cas faire très attention au recouvrement.
+Nous vous conseillons de planifier les missions d'angles pour vous laisser le choix sur le terrain de la méthode à utiliser.</p>
+</blockquote>
+<p>💡 Pour rappel, acquérir les angles est important pour pouvoir faire le lien entre les différentes façades lors de la reconstruction.</p>
+<h2 id="mission-hub"><a class="header" href="#mission-hub">Mission Hub</a></h2>
+<p>Une fois sur le site de Litchi Fly, rendez-vous sur <a href="https://flylitchi.com/hub">Mission Hub</a>.</p>
+<figure align="center">
+    <img src="guide/planification/litchi_angles/welcome.jpg" | width=600/>
+    <figcaption>Accueil du site Litchi Fly</figcaption>
+</figure>
+<p>Une fois dans le <strong>Mission Hub</strong>, sélectionnez <code>MISSIONS &gt; New</code>.
+Placez vous là où vous voulez réaliser votre mission.
+Nous choisissons de réaliser la mission pour l'angle représenté par la ligne bleue :</p>
+<figure align="center">
+    <img src="guide/planification/litchi_angles/this_angle.jpg" | width=600/>
+    <figcaption>Angle pour lequel nous allons réaliser une mission</figcaption>
+</figure>
+<p>Commencez par placer un <code>POI</code> (<em>Point of interest</em> ou Point d'intérêt) en faisant un clic droit au niveau de votre angle.
+Litchi FLy ouvre alors un petit encadré pour modifier la position et l'altitude de ce POI.
+Son altitude n'a pas d'importance ici.</p>
+<figure align="center">
+    <img src="guide/planification/litchi_angles/poi.jpg" | width=600/>
+    <figcaption>Positionnement de notre point d'intérêt</figcaption>
+</figure>
+<p>Placez ensuite plusieurs <em>waypoints</em> (clic gauche) comme illustré ci-dessous.
+Faites attention à ce que ces points soient assez rapprochés.
+Ici aucun calcul n'est fait pour vérifier que les images auront assez de recouvrement entre elles.
+Il vaut mieux qu'elle en aient trop que pas assez.</p>
+<figure align="center">
+    <img src="guide/planification/litchi_angles/points.jpg" | width=600/>
+    <figcaption>Positionnement des waypoints</figcaption>
+</figure>
+<p>Nous souhaitons que la caméra soit pointée en direction de l'angle, quelle que soit la position du drone dans cette mission.
+Pour cela, il faut se rendre dans <code>SETTINGS</code> &gt; <code>Heading Mode</code> et activer l'option <code>Custom (WD)</code> si ce n'était pas déjà le cas.
+Le <em>heading</em> pointera alors vers le POI le plus proche.</p>
+<blockquote>
+<p>Il ne vous reste plus qu'à exporter la mission en format CSV et rendre verticale cette mission grâce à <a href="guide/planification/litchi_angles/carto3d.html">Conversion du format avec Carto3D</a> en suivant la même logique qu'une mission verticale venant de Mission Planner.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="conversion-du-format-avec-carto3d"><a class="header" href="#conversion-du-format-avec-carto3d">Conversion du format avec Carto3D</a></h1>
+<p><a href="https://github.com/mitsio-motu-data/Carto3D"><strong>Dépôt Github du projet</strong></a></p>
+<figure align="center">
+    <img src="guide/planification/carto3d/carto3d.png" | width=600/>
+</figure>
+<p>Cette étape a plusieurs intérêts :</p>
+<ul>
+<li>Ouvrir une mission au format de Mission Planner (<strong>.waypoints</strong>) ou de Litchi (<strong>.csv</strong>).</li>
+<li><em>[Optionnel]</em> Conversion au format de Litchi si une mission Mission Planner est ouverte.</li>
+<li><em>[Optionnel]</em> Convertir la mission en un vol vertical pour l'acquisition d'une façade.</li>
+<li><em>[Optionnel]</em> Mettre à jour l'altitude et la vitesse du vol.</li>
+<li>Définir une liste d'actions à chaque <em>waypoint</em> :
+<ul>
+<li>Attendre 0.5 seconde.</li>
+<li>Prendre une photo.</li>
+<li>Attendre 0.5 seconde.</li>
+</ul>
+</li>
+</ul>
+<p>L'installation et l'utilisation de <strong>Carto3D</strong> sont détaillées sur le <a href="https://github.com/mitsio-motu-data/Carto3D"><strong>Dépôt Github du projet</strong></a> (accessible uniquement aux membres de l'organisation Mitsio Motu).</p>
+<h2 id="distance-entre-les-lignes-pour-une-mission-verticale"><a class="header" href="#distance-entre-les-lignes-pour-une-mission-verticale">Distance entre les lignes pour une mission verticale</a></h2>
+<p>Dans le cas d'une mission verticale, il faut faire attention à la distance entre les lignes (<em>flight lines</em>) pour conserver le recouvrement que l'on souhaite.
+La distance entre les <em>waypoints</em> est déjà bonne car ils ont été générés avec <em>Mission Planner</em> en connaissant les contraintes de caméra et de recouvrement.
+Cependant, il faut renseigner à <strong>Carto3D</strong> la bonne distance entre les lignes pour conserver un <em>Sidelap</em> correct.</p>
+<figure align="center">
+    <img src="guide/planification/carto3d/flight_lines.jpg" | width=600/>
+    <figcaption>Schéma issu de Carto3D illustrant les <i>flight lines</i></figcaption>
+</figure>
+<p>Ci-dessous, un tableau présentant la distance entre les lignes de vol pour avoir un recouvrement <em>Sidelap</em> de <strong>80%</strong> en fonction de la distance à la surface et du drone utilisé :</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Distance à la surface (m)</th><th style="text-align: center">Mavic Air 2 (m)</th><th style="text-align: center">Mavic Pro 2 (m)</th><th style="text-align: center">Phantom 4 (m)</th></tr></thead><tbody>
+<tr><td style="text-align: center">8</td><td style="text-align: center">2.28</td><td style="text-align: center">2.07</td><td style="text-align: center">2.42</td></tr>
+<tr><td style="text-align: center">9</td><td style="text-align: center">2.56</td><td style="text-align: center">2.33</td><td style="text-align: center">2.72</td></tr>
+<tr><td style="text-align: center">10</td><td style="text-align: center">2.84</td><td style="text-align: center">2.58</td><td style="text-align: center">3.02</td></tr>
+<tr><td style="text-align: center">11</td><td style="text-align: center">3.13</td><td style="text-align: center">2.84</td><td style="text-align: center">3.33</td></tr>
+<tr><td style="text-align: center">12</td><td style="text-align: center">3.41</td><td style="text-align: center">3.10</td><td style="text-align: center">3.63</td></tr>
+<tr><td style="text-align: center">13</td><td style="text-align: center">3.7</td><td style="text-align: center">3.36</td><td style="text-align: center">3.93</td></tr>
+<tr><td style="text-align: center">14</td><td style="text-align: center">3.98</td><td style="text-align: center">3.62</td><td style="text-align: center">4.23</td></tr>
+<tr><td style="text-align: center">15</td><td style="text-align: center">4.27</td><td style="text-align: center">3.88</td><td style="text-align: center">4.54</td></tr>
+<tr><td style="text-align: center">16</td><td style="text-align: center">4.55</td><td style="text-align: center">4.14</td><td style="text-align: center">4.84</td></tr>
+<tr><td style="text-align: center">17</td><td style="text-align: center">4.84</td><td style="text-align: center">4.39</td><td style="text-align: center">5.14</td></tr>
+<tr><td style="text-align: center">18</td><td style="text-align: center">5.12</td><td style="text-align: center">4.65</td><td style="text-align: center">5.44</td></tr>
+<tr><td style="text-align: center">19</td><td style="text-align: center">5.4</td><td style="text-align: center">4.91</td><td style="text-align: center">5.75</td></tr>
+<tr><td style="text-align: center">20</td><td style="text-align: center">5.69</td><td style="text-align: center">5.17</td><td style="text-align: center">6.05</td></tr>
+</tbody></table>
+</div>
+<p>Si jamais vous vous trouvez dans une situation qui n'est pas représentée dans ce tableau, vous pouvez trouver l'information grâce à Mission Planner :</p>
+<ol>
+<li>Dessinez un polygone et créez une nouvelle <code>Survey Grid</code>.</li>
+<li>Sélectionnez la caméra pour votre modèle de drone.</li>
+<li>Réglez l'altitude à la distance à la surface que vous souhaitez.</li>
+<li>Rendez-vous dans <code>Camera Options</code> et réglez le recouvrement que vous souhaitez (<code>Overlap</code> pour la distance entre les points et <code>Sidelap</code> pour la distance entre les lignes).</li>
+<li>Lisez et reportez dans ce tableau la valeur de distance entre les lignes.
+Vous avez votre information.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="importation-sur-litchi-fly"><a class="header" href="#importation-sur-litchi-fly">Importation sur Litchi Fly</a></h1>
+<ul>
+<li><a href="https://flylitchi.com/"><strong>Site de Litchi Fly</strong></a></li>
+<li><a href="https://flylitchi.com/help#missionhub"><strong>Guide pour l'utilisateur</strong></a></li>
+</ul>
+<blockquote>
+<p>💪 La planification touche à sa fin, plus que quelques étapes, courage !</p>
+</blockquote>
+<h2 id="mission-hub-1"><a class="header" href="#mission-hub-1">Mission Hub</a></h2>
+<p>Une fois sur le site de Litchi Fly, rendez-vous sur <a href="https://flylitchi.com/hub">Mission Hub</a>.</p>
+<figure align="center">
+    <img src="guide/planification/litchi/../litchi_angles/welcome.jpg" | width=600/>
+    <figcaption>Accueil du site Litchi Fly</figcaption>
+</figure>
+<p>Une fois dans le <strong>Mission Hub</strong>, sélectionnez <code>MISSIONS &gt; New</code>.
+Importons maintenant la mission avec <code>MISSIONS &gt; Import</code>.
+Sélectionnez le <em>.csv</em> de la mission.</p>
+<p>Vous pouvez cliquer sur quelques points de la mission pour vérifier que tout vous semble correct (altitude et vitesse par exemple) et vérifier que les trois actions (attendre, prendre un photo, attendre) ont bien été paramétrées.</p>
+<p>Il reste à voir les paramètres généraux de la mission dans <code>SETTINGS</code>.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Paramètre</th><th>Explication</th><th>Pour un vol horizontal</th><th>Pour un vol vertical</th></tr></thead><tbody>
+<tr><td style="text-align: center">Units</td><td>Unités de mesure</td><td></td><td></td></tr>
+<tr><td style="text-align: center">Heading Mode</td><td><ul><li><b>TNW</b> : Heading qui pointe en direction du prochain waypoint.</li><li><b>ID</b> : Heading lors du départ conservé.</li><li><b>UC</b> : Contrôle du heading pendant la mission avec le joystick gauche.</li><li><b>WD</b> : Utilisation du heading défini aux waypoints dans Litchi.</li></ul> <a href="https://flylitchi.com/help#waypoints-p3">Doc Litchi</a></td><td>Auto (TNW)</td><td><ul><li>Façade : Initial(ID)</li><li>Angle : Custom(WD)</li></ul></td></tr>
+<tr><td style="text-align: center">Finish Action</td><td><strong>RTH</strong> signifie <em>Return To Home</em>, <em>HOME</em> étant le point de départ, qui se défini automatiquement au lancement du drone. Les autres options ont un nom explicite. Le drone montera en haute altitude avant d'effectuer un <strong>RTH</strong> pour ne rien heuter. <br><br> Les noms des autres options sont explicites.</td><td>RTH</td><td>RTH</td></tr>
+<tr><td style="text-align: center">Path Mode</td><td>Permet d'arrondir les angles du chemin de la mission. Utilisé pour les vols esthétiques.</td><td>Straight Lines</td><td>Straight Lines</td></tr>
+<tr><td style="text-align: center">Cruising speed</td><td>Titre explicite.</td><td>11km/s</td><td>11km/s</td></tr>
+<tr><td style="text-align: center">Max Flight speed</td><td>Titre explicite.</td><td>15km/s</td><td>15km/s</td></tr>
+<tr><td style="text-align: center">Photo Capture Interval</td><td>Cela permet de prendre une photo toutes les <em>x</em> secondes ou tous les <em>y</em> mètres. Peut être désactivé en renseignant <em>0</em>. Nous n'en avons pas besoin car les photos sont déjà prises à nos <em>waypoints</em>.</td><td>0 (Disabled)</td><td>0 (Disabled)</td></tr>
+<tr><td style="text-align: center">Default Curve Size</td><td>Permet de paramétrer la courbe si <em>Path Mode</em> est <em>Curved Turns</em></td><td></td><td></td></tr>
+<tr><td style="text-align: center">Default Gimbal Pitch Mode</td><td></td><td>None</td><td>None</td></tr>
+<tr><td style="text-align: center">Show Discover Missions</td><td></td><td>No</td><td>No</td></tr>
+<tr><td style="text-align: center">Use Online Elevation</td><td>Pour chaque <em>waypoint</em>, un paramètre <code>Above Ground</code> peut être activé. Quand il est activé, Litchi a besoin de données d'élévation du sol pour que l'altitude du drone à chaque waypoint soit relative au sol sous ce waypoint. Il est possible d'importer des données d'élévation ou d'utiliser les données de Litchi en cochant cette option. En ne cochant ni <code>Above Ground</code> ni <code>Use Online Elevation</code>, l'altitude du vol sera relative au point de départ, parfait pour les zones assez plates. <a href="https://flylitchi.com/help#missionhub">Doc Litchi</a></td><td>No</td><td>No</td></tr>
+</tbody></table>
+</div>
+<p>Une fois tout cela fait, plus qu'à sauvegarder ! Pour cela, rendez vous dans <code>MISSIONS &gt; Save...</code> et nommez votre mission. Rappelez vous de bien utiliser la nomenclature définie, comme expliqué dans la section <a href="guide/planification/litchi/planification.html">Planification de la mission</a>. Vos modifications ne sont pas enregistrées en temps réel. Alors si vous modifiez la mission, pensez bien à la sauvegarder avec la même procédure. En conservant le même nom de mission, les modifications seront enregistrées sans créer de nouvelle mission.</p>
+<h2 id="application-mobile"><a class="header" href="#application-mobile">Application Mobile</a></h2>
+<p><a href="https://play.google.com/store/apps/details?id=com.aryuthere.visionplus&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">Lien sur Google Play</a></p>
+<p><a href="https://apps.apple.com/app/id1059218666?mt=8&amp;uo=4">Lien sur l'App Store</a></p>
+<blockquote>
+<p>Tutoriel écrit avec la version mobile 4.26.2-g Android de Litchi Fly.
+⚠️ Attention, l'application ne peut être installée que sur 3 appareils simultanément.</p>
+</blockquote>
+<p>Les missions sont automatiquement synchronisées et sont tout de suite accessibles depuis l'application mobile.
+Pour y accéder, commencez par télécharger l'application et l'ouvrir.</p>
+<p>Il faut commencer par changer de mode de pilotage.
+Quand l'application s'ouvre, elle est par défaut en <strong>FPV</strong> (First Person Viewer).
+Nous souhaitons passer en mode <strong>Waypoint</strong>.
+Pour cela, cliquez dans l'icône <strong>FPV</strong> en haut à gauche de l'écran.</p>
+<figure align="center">
+    <img src="guide/planification/litchi/open_litchi.jpg" | width=600/>
+    <img src="guide/planification/litchi/wp.jpg" | width=600/>
+</figure>
+<p>Vous pouvez voir et charger vos missions depuis l'icône de dossier.</p>
+<figure align="center">
+    <img src="guide/planification/litchi/browse.jpg" | width=600/>
+</figure>
+<p>🏁 Et voilà, c'est parti pour la réalisation du vol !</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="réalisation-du-vol"><a class="header" href="#réalisation-du-vol">Réalisation du vol</a></h1>
+<p>La réalisation du vol demande de prendre en main le drone et les applications qui seront utilisées.
+De plus, certains problèmes peuvent survenir.
+Cette section vous aidera à vous familiariser avec le matériel et à résoudre les problèmes listés si vous les rencontrez.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="préparation"><a class="header" href="#préparation">Préparation</a></h1>
+<p><a href="https://dl.djicwdn.com/downloads/Mavic_Air_2/Mavic_Air_2_User_Manual_v1.6_enIII.pdf">📑 Manuel d'utilisation du Mavic Air 2</a></p>
+<h2 id="préparation-du-drone"><a class="header" href="#préparation-du-drone">Préparation du drone</a></h2>
+<p>Pour ne pas perdre de temps sur le terrain, il est important de faire quelques préparatifs.</p>
+<ol>
+<li>
+<p>Prenez connaissance du <a href="https://dl.djicdn.com/downloads/Mavic_Air_2/Mavic_Air_2_User_Manual_v1.6_enIII.pdf">Manuel d'utilisation du Mavic Air 2</a>.</p>
+</li>
+<li>
+<p>Commencez par installer l'application <strong>Litchi Fly</strong> si ce n'est pas déjà fait (⚠️ l'application peut être installée sur trois appareils simultanément au maximum) :</p>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=com.aryuthere.visionplus&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">Lien sur Google Play</a></li>
+<li><a href="https://apps.apple.com/app/id1059218666?mt=8&amp;uo=4">Lien sur l'App Store</a></li>
+</ul>
+</li>
+<li>
+<p>Installez l'application <strong>DJI</strong> qui correspond à votre modèle de drone (nécessaire pour les mises à jour du drone et la désactivation des <em>No Flight Zone</em> dont nous parlerons plus tard).
+⚠️ Sur Android, l'application n'est pas disponible sur le <em>Play Store</em>.
+Il faut télécharger et installer un <em>apk</em> directement depuis le site de DJI.
+Beaucoup de fausses applications sont disponibles sur les stores.
+Apple ou Android, nous vous conseillons de télécharger les applications depuis le site de DJI :</p>
+<ul>
+<li><a href="https://www.dji.com/downloads/djiapp/dji-fly">DJI Fly</a> : Mavic Air 2</li>
+<li><a href="https://www.dji.com/downloads/djiapp/dji-go-4">DJI Go 4</a> : Mavic Pro 1, Phantom 4</li>
+</ul>
+</li>
+<li>
+<p>Branchez votre téléphone à la télécommande et autorisez tous les transferts de données.
+À un stade, votre téléphone vous proposera de toujours utiliser <code>DJI Fly</code> ou <code>Litchi FLy</code>.
+Comme il faudra souvent basculer entre les deux, faites en sorte de ne pas activer cette option pour pouvoir choisir à chaque connexion.
+Allumez le drone et la télécommande en faisant, sur chacun, un clic rapide et un clic long sur le bouton <em>power</em>.
+Rendez-vous maintenant dans l'application <code>DJI Fly</code>.</p>
+</li>
+</ol>
+<figure align="center">
+    <img src="guide/vol/preparation/choice.jpg" | height="450" />
+    <figcaption>Ne surtout pas cocher "Se souvenir de mon choix"</figcaption>
+</figure>
+<ol start="5">
+<li>Vous aurez peut-être des calibrations à faire, suivez les instructions de l'application.
+Ensuite, rendez-vous dans le menu pour vérifier si des mises à jours firmware sont disponibles en faisant :
+<code>... &gt; À propos &gt; Firmware de l'appareil &gt; Rechercher des mises à jour</code></li>
+</ol>
+<figure align="center">
+    <img src="guide/vol/preparation/menu.jpg" | width="500" />
+    <img src="guide/vol/preparation/find_maj.jpg" | width="500" />
+    <img src="guide/vol/preparation/maj1.jpg" | width="500" />
+    <img src="guide/vol/preparation/maj2.jpg" | width="500" />
+    <figcaption>Étape pour les mises à jours firmware</figcaption>
+</figure>
+<ol start="6">
+<li>
+<p>Fermez l'application <code>DJI Fly</code> puis ouvrez <code>Litchi Fly</code>.
+(Il faut bien fermer totalement l'application et non pas la mettre seulement en fond).
+Vérifiez que votre drone se connecte bien.
+Si c'est le cas, vous être prêt pour les prochaines étapes !</p>
+</li>
+<li>
+<p>Chargez toutes les batteries et la manette avant tout vol !
+Même si le drone n'a pas été utilisé depuis le dernier chargement, les batteries se déchargent lorsqu'elles sont stockées.</p>
+</li>
+</ol>
+<h2 id="le-matériel-pour-les-vols"><a class="header" href="#le-matériel-pour-les-vols">Le matériel pour les vols</a></h2>
+<p>Peu de matériel est à prévoir en plus du drone (le matériel du drone est dans sa sacoche) :</p>
+<ul>
+<li>🔋 Batteries chargées.</li>
+<li>🎮 Télécommande chargée.</li>
+<li>📱 Téléphone(s) chargé(s).</li>
+<li>🕶️ Lunettes de soleil pour les opérateurs (surveiller le drone dans le ciel peut être compliqué avec le soleil).</li>
+<li>🕶️ Lunettes de soleil pour le drone, ou plutôt, les filtres UV de la caméra.
+Cela évite que les images soient sur exposées et donc inutilisables.</li>
+<li>Tapis de décollage et atterrissage si on est dans une zone poussiéreuse (sable, terre, ...).
+Cela évite que le sol se soulève et endommage le drone.
+Un tapis de voiture fait très bien l'affaire.</li>
+<li>💻 Ordinateur chargé pour ré-ajuster les missions Litchi sur place.</li>
+</ul>
+<h2 id="vol-dessai"><a class="header" href="#vol-dessai">Vol d'essai</a></h2>
+<p>Avant d'opérer le vol final, il faut que vous soyez familier avec le drone et les applications qui permettent de le contrôler.
+Trouvez un terrain assez dégagé pour faire vos essais.
+Une fois que vous connaissez le lieu de l'essai, planifiez quelques missions que vous pourrez essayer sur place.
+Cela permettra de vérifier que vous avez bien compris les étapes de planification de vol et de faire un premier test avec le logiciel de reconstruction.
+Vous pourrez ainsi avoir une meilleure vision de la file générale des opérations.
+De plus, vous pourrez éventuellement détecter des problèmes dans la prise d'image de la mission et rectifier cela pour la véritable acquisition.</p>
+<blockquote>
+<p>📆 Idéalement, celui-ci a lieu au début du projet, avant la planification des vols automatiques pour la mission finale.</p>
+</blockquote>
+<p>Essayez les différents filtres UV pour la caméra afin de vous familiariser avec leur mise en place et effet.
+Prenez des photos avec chaque filtre installé.</p>
+<h3 id="vol-manuel"><a class="header" href="#vol-manuel">Vol manuel</a></h3>
+<p>Commencez par faire un petit tour en vol manuel avec le drone.
+Bien que les missions soient automatisées, il faut souvent intervenir à la main.
+Pour cela, commencez par faire décoller le drone en appuyant sur l'icône correspondant dans <code>DJI Fly</code> ou <code>Litchi Fly</code>.
+Le drone va s'élever à 1,2m d'altitude et vous pourrez alors le contrôler.
+Le point de décollage est enregistré comme point de <em>Home</em> par le drone.
+Il reviendra ici lorsque vous lui direz d'atterrir en mode <em>RTH (Return To Home)</em>.</p>
+<figure align="center">
+    <img src="guide/vol/preparation/takeoff.jpg" | width=600 />
+    <figcaption>Icône de décollage du drone (DJI Fly). La même icône est utilisée sur Litchi Fly</figcaption>
+</figure>
+<p>Plusieurs configurations de commandes peuvent être utilisées pour les joysticks.
+Ils peuvent être changés dans <code>DJI Fly</code>.
+Trois modes pré-configurés existent (cf. p32 <a href="https://dl.djicwdn.com/downloads/Mavic_Air_2/Mavic_Air_2_User_Manual_v1.6_enIII.pdf">Manuel d'utilisation du Mavic Air 2</a>).
+Voici le mode utilisé pour le drone <a href="https://www.dji.com/mavic-air-2/specs">Mavic Air 2</a> de <a href="https://www.mitsiomotu.com/">Mitsio Motu</a> :</p>
+<figure align="center">
+    <img src="guide/vol/preparation/commands.jpg" | width=600 />
+    <figcaption>Commandes des joysticks (Mode 2)</figcaption>
+</figure>
+<p>À l'arrière de la télécommandes, des boutons sont disponibles pour gérer la partie caméra, photos et vidéos :</p>
+<figure align="center">
+    <img src="guide/vol/preparation/other_commands.jpg" | width=600 />
+    <figcaption>Inclinaison caméra, prise de photos et vidéos</figcaption>
+</figure>
+<p>Amusez-vous, c'est l'occasion de prendre de jolies photos ! 📸</p>
+<h3 id="vols-automatiques"><a class="header" href="#vols-automatiques">Vols automatiques</a></h3>
+<p>C'est le moment de tester les vols que vous avez préparés pour cette session d'essai.</p>
+<figure align="center">
+    <img src="guide/vol/preparation/anac_hor.jpg" | width=600 />
+    <img src="guide/vol/preparation/anac_vert.jpg" | width=600 />
+    <figcaption>Exemples de mission de test en terrain dégagé</figcaption>
+</figure>
+<p>Rendez vous dans la section <code>Waypoint</code> dans l'application et chargez votre mission.<sup class="footnote-reference"><a href="#rappel">1</a></sup>
+Réglez ensuite le degré de la caméra à celui souhaité pour la mission grâce à la roulette en haut à gauche de la manette.
+Vous pouvez voir à quel degré exactement la caméra est inclinée, comme illustré dans l'image ci-dessous :</p>
+<figure align="center">
+    <img src="guide/vol/preparation/degree.jpg" | width=600 />
+    <figcaption>Réglage de l'inclinaison de la caméra</figcaption>
+</figure>
+<p>Vérifiez que le format de capture des photos.
+Le drone <a href="https://www.dji.com/mavic-air-2/specs">Mavic Air 2</a>
+peut enregistrer les images en <a href="https://fr.wikipedia.org/wiki/JPEG">JPEG</a>
+uniquement ou en <a href="https://fr.wikipedia.org/wiki/JPEG">JPEG</a> +
+<a href="https://fr.wikipedia.org/wiki/RAW_(format_d%27image)">RAW</a>.
+Le format RAW est très adapté pour retoucher les images mais est beaucoup plus lourd que le format JPEG.
+Si l'on ne souhaite pas retoucher les images, il n'est pas nécessaire de les enregistrer dans ce format.
+Pour la reconstruction 3D ce format n'est pas forcément nécessaire.</p>
+<figure align="center">
+    <img src="guide/vol/preparation/format.jpg" | width=600 />
+    <figcaption>Réglage du format d'enregistrement des photos</figcaption>
+</figure>
+<p>Assurez vous que les images sont bien enregistrées sur la mémoire externe et non interne du drone (avec 8Go, elle sera vite saturée, encore plus si vous enregistrez les fichiers RAW).
+Pour cela, rendez-vous dans les paramètres : <code>... &gt; Caméra &gt; Emplacement de stockage</code>.</p>
+<figure align="center">
+    <img src="guide/vol/preparation/disk.jpg" | width=600 />
+    <figcaption>Choix de l'emplacement de stockage</figcaption>
+</figure>
+<p>Lancez ensuite simplement le vol en cliquant sur <code>Play</code>.</p>
+<figure align="center">
+    <img src="guide/vol/preparation/start_lf.jpg" | width=600 />
+    <figcaption>Démarrage d'une mission Litchi Fly</figcaption>
+</figure>
+<p>C'est parti !
+Plus qu'à laisser le drone faire son travail.
+Vérifiez tout de même qu'il effectue bien ce qui est prévu et que ça correspond à ce que vous souhaitiez.
+Vous perdez alors tout le contrôle du drone par les joysticks.
+Cependant, vous pouvez empêcher le drone de foncer dans un mur en cliquant sur les boutons <code>pause ⏸️</code> ou <code>stop ⏹️</code> :</p>
+<ul>
+<li>
+<p><code>pause ⏸️</code> :
+Les joysticks n'ont toujours pas d'effet.
+Le drone ne peut pas être déplacé.
+Vous pouvez cependant rectifier le <em>heading</em> du drone en faisant glisser votre doigt sur l'image sur votre téléphone.
+Cependant, cette solution n'est pas très précise.
+La mission continue depuis ce point quand vous appuyez sur <code>play ▶️️</code>.</p>
+<p>Ce bouton est très utile dès que vous avez un doute sur une potentielle collision du drone.
+Dès que vous avez un doute, utilisez le.
+Vous aurez alors le temps de vérifier si le drone peut continuer ou non.</p>
+</li>
+<li>
+<p><code>stop ⏹️</code> :
+La mission est arrêtée.
+Vous reprenez tout le contrôle du drone.
+Quand vous êtes sûr que vous allez rencontrer un obstacle, il faut appuyer sur ce bouton.
+Vous pouvez alors contourner manuellement l'obstacle.
+Ensuite, relancez la mission au <em>waypoint</em> le plus proche et sécuritaire, après l'obstacle.
+Comme Litchi n'indique pas à quel <em>waypoint</em> de la mission se trouve le drone, ce sera à vous d'estimer à quel <em>waypoint</em> reprendre la mission.</p>
+</li>
+</ul>
+<h2 id="reconnaissance-sur-le-terrain"><a class="header" href="#reconnaissance-sur-le-terrain">Reconnaissance sur le terrain</a></h2>
+<p>La reconnaissance sur le terrain est elle aussi importante.
+Elle permet d'identifier certains problèmes potentiels et de mieux comprendre l'organisation de l'environnement.
+Par exemple, à l'Hôtel de la Paix, nous avons constaté qu'il y avait de nombreux palmiers proches des façades.
+En plus d'être problématiques pour la prise d'images et la reconstruction, cela augmente les risques de collision.</p>
+<blockquote>
+<p>📆 Idéalement, la reconnaissance a lieu avant (ou au début) de la planification des missions automatiques.</p>
+</blockquote>
+<p>C'est également l'occasion de faire des relevés de hauteur de bâtiment si nécessaire.
+La méthode à suivre est renseignée dans la partie <a href="guide/vol/preparation/../planification/planification.html#le-toit">Planification de la mission, section <strong>Le toit</strong></a>.</p>
+<p>Si l'occasion se présente, il peut être intéressant de prévoir un premier survol très grossier de la zone.
+Vous pouvez pour cela prévoir une mission en grille croisée, caméra à 45° en altitude assez haute (&gt;40m).</p>
+<hr />
+<div class="footnote-definition" id="rappel"><sup class="footnote-definition-label">1</sup>
+<p>Voir la partie <a href="guide/vol/preparation/../planification/litchi.html#application-mobile">Importation sur Litchi Fly, section <strong>Application mobile</strong></a> pour voir comment faire.</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="réalisation"><a class="header" href="#réalisation">Réalisation</a></h1>
+<blockquote>
+<p>Il est indispensable d'avoir pris connaissance de la partie <a href="guide/vol/realisation/preparation.html">Préparation</a> avant de lire cette section et d'opérer le vol final.
+Cette dernière présente de nombreux points à connaître sur les applications et le pilotage du drone.
+Toutes ces étapes de préparation doivent être suivies le jour J.</p>
+</blockquote>
+<p>L'acquisition des images est une étape concrète et importante.
+Alors c'est parti ! 💪</p>
+<p>Pour le jour J, assurez vous que toutes vos batteries sont chargées à bloc.
+La liste du matériel à emporter est la même que présentée dans <a href="guide/vol/realisation/preparation.html#le-mat%C3%A9riel-pour-les-vols">Préparation, section <strong>Le matériel pour les vols</strong></a>.
+Vous pouvez éventuellement y ajouter une liste imprimée de tous les vols à effectuer pour suivre l'avancement de la journée.</p>
+<figure align="center">
+    <img src="guide/vol/realisation/suivi.jpg" | width="600" />
+    <figcaption>Fiche de suivi pour les vols à l'Hôtel de la Paix</figcaption>
+</figure>
+<p>Nous avons déjà parlé dans la partie <a href="guide/vol/realisation/preparation.html">Préparation</a> de tout ce qui est relatif au pilotage du drone et au lancement des missions.
+Nous présenterons ici des problématiques spécifiques que vous pourrez rencontrer le jour J.</p>
+<h2 id="no-flight-zone"><a class="header" href="#no-flight-zone">No flight zone</a></h2>
+<p>Si vous vous trouvez dans une zone considérée comme une <em>No flight zone</em> (vers un aéroport par exemple), le drone ne décollera pas.
+Vous pouvez cependant forcer le décollage.</p>
+<p>Pour cela, rendez-vous dans l'application <code>DJI Fly</code> (ou autre application DJI/constructeur correspondant à votre modèle de drone) :</p>
+<ul>
+<li><code>DJI Fly</code> :
+<ul>
+<li>Faites décoller le drone. Il va s'élever à 1,2m.</li>
+<li>Alors, l'application vous dira qu'il ne peut pas décoller (oui, oui, alors que le drone a déjà décollé).</li>
+<li>Acceptez toutes les conditions pour vous porter garant en cas d'incident.
+Une vérification d'identité peut-être demandée. Suivez les instructions si c'est le cas.</li>
+</ul>
+</li>
+<li><code>DJI Go 4</code> :
+<ul>
+<li>Appuyez sur le bouton de décollage du drone.</li>
+<li>Il va refuser de décoller en vous expliquant la raison dans un pop-up.</li>
+<li>Tout en bas du pop-up, vous pouvez cocher deux cases pour vous porter garant également en cas d'incident.</li>
+<li>Validez tout en bas du pop-up.</li>
+<li>⚠️ Dans la version Android 4.3.54 de <code>DJI Go 4</code>, un bug fait qu'on ne peut pas dérouler le pop-up et donc jamais accéder au bouton <code>valider</code>.
+Nous n'avons pas trouvé d'autre solution que de passer sur un autre téléphone avec un écran plus large.
+Sur l'un des téléphones, une erreur se produit également en validant.
+Nous avons à nouveau dû changer de téléphone pour réussir cette étape.</li>
+</ul>
+</li>
+</ul>
+<p>Fermez alors l'application <code>DJI</code> et ouvrez <code>Litchi Fly</code>.
+Vous devez pouvoir décoller.</p>
+<blockquote>
+<p>➡️ Cette étape doit être répétée à chaque démarrage du drone.</p>
+</blockquote>
+<h2 id="murs--surfaces-verticales"><a class="header" href="#murs--surfaces-verticales">Murs &amp; surfaces verticales</a></h2>
+<p>Si vous faites un vol vertical, il est probable que vous ayez réglé le <em>heading</em> du drone en <em>Initial</em>.
+Dans ce cas, assurez-vous que la position de départ au sol du drone est bien perpendiculaire à la façade acquise et avec la caméra en direction de ce mur.
+N'oubliez pas de régler la caméra à 90° avant de décoller.</p>
+<p>Vous pouvez ré-ajuster le heading au cour de la mission en cliquant sur <code>pause ⏸️</code>, comme expliqué dans <a href="guide/vol/realisation/preparation.html#vols-automatiques">la section <strong>Vols automatiques</strong> de Préparation</a>.</p>
+<p>Lorsque vous arrivez vers le haut du bâtiment, il est possible qu'une grande partie de l'image soit composée de ciel.
+Ceci ne nous intéresse pas.
+Dans ce cas, mettez la mission en <code>pause ⏸️</code> et inclinez un peu la caméra vers le bas.
+Reprenez la mission quand vous êtes satisfait.
+Vous pouvez également le faire sur les lignes de vol suivantes.</p>
+<h2 id="obstacles-et-capteurs"><a class="header" href="#obstacles-et-capteurs">Obstacles et capteurs</a></h2>
+<p>Le drone possède des capteurs pour détecter les obstacles.
+Sur le <a href="https://www.dji.com/mavic-air-2/specs">Mavic Air 2</a>, ils sont situés à l'avant et à l'arrière seulement.
+Si le drone détecte un objet trop proche de lui, même s'il est en mission, il s'arrêtera.
+Dans ce cas, suivez la procédure du bouton <code>stop ⏹️</code>, comme expliqué dans <a href="guide/vol/realisation/preparation.html#vols-automatiques">la section <strong>Vols automatiques</strong> de Préparation</a>.</p>
+<p>⚠️ Le <a href="https://www.dji.com/mavic-air-2/specs">Mavic Air 2</a> n'a cependant <strong>pas de capteurs sur les côtés</strong>.
+Il faudra être très vigilant lors des vols latéraux (utilisés pour les vols verticaux par exemple).
+Si vous avec le moindre doute, appuyez sur le bouton <code>pause ⏸️</code>, rapprochez vous pour mieux évaluer la situation et prendre votre décision.</p>
+<h2 id="gestion-de-la-batterie"><a class="header" href="#gestion-de-la-batterie">Gestion de la batterie</a></h2>
+<p>Une fois connecté au drone avec <code>Litchi Fly</code>, vous pourrez suivre l'état de la batterie de votre drone grâce à la barre d'état en haut de l'écran.
+Quand il atteindra <strong>20%</strong> de batterie restante, il vous demandera l'autorisation de rentrer afin que la batterie soit changée.
+Vous pouvez accepter ou continuer la mission (parfois, il est si proche qu'il n'est pas nécessaire qu'il rentre tout de suite).
+⚠️ Attention cependant, veillez à le faire tout de même rentrer avant qu'il atteigne <strong>10%</strong> sinon il fera un atterrissage forcé là où il se trouve.
+Cela peut être très problématique si vous vous trouvez au dessus d'un toit ou un arbre par exemple.
+Si jamais cela arrivait, sachez que vous pouvez tout de même le décaler droite/gauche et avant/arrière avec les joysticks mais nous n'avez pas de contrôle haut/bas.
+Il faut donc être attentif et réactif si cela arrive.</p>
+<p>Dans tous les cas, une fois que votre drone est revenu, changez sa batterie.</p>
+<p>La mission a été interrompue.
+Quand vous relancez la mission, vous avez le choix du <em>waypoint</em> où commencer.
+Malheureusement, <code>Litchi Fly</code> au cours d'une mission n'indique pas le <em>waypoint</em> où il se situe.
+Ce sera donc à vous d'estimer là où vous en étiez.</p>
+<h2 id="erreurs-litchi--invalid-3d-path"><a class="header" href="#erreurs-litchi--invalid-3d-path">Erreurs Litchi : &quot;Invalid 3D path&quot;</a></h2>
+<p>En lançant la mission, il est possible que vous rencontriez une erreur similaire à <code>Invalid 3D path between waypoints 30 and 31</code>.
+Il semblerait que cette erreur se produise quand deux <em>waypoints</em> sont trop proches, dans cet exemple, les points n°30 et 31.</p>
+<p>Dans ce cas, rendez-vous sur <code>Litchi Fly</code> (sur PC ou directement sur l'application téléphone).
+Supprimez le premier des points listé (ici le point n°30).
+Sauvegardez et synchronisez bien les appareils si vous avez édité la mission sur l'ordinateur.
+Relancez la mission et recommencez l'opération si nécessaire jusqu'à ce que la mission fonctionne.</p>
+<blockquote>
+<p>💡 <strong>Tip</strong> : Si cela se produit sur une mission verticale, l'erreur va apparaître à chaque ligne de vol.
+Au lieu de supprimer un point et relancer la mission à chaque fois, vous pouvez identifier les <em>waypoints</em> problématiques sur toutes les lignes, tous les supprimer et sauvegarder/synchroniser une fois qu'ils sont tous faits.</p>
+</blockquote>
+<h2 id="mission-mal-placée"><a class="header" href="#mission-mal-placée">Mission mal placée</a></h2>
+<p>Planifier ses missions sur des images satellites de mauvaise qualité fait qu'il est impossible d'avoir une bonne précision dans le placement de la mission.
+Il est très probable que vous vous rendiez compte sur le terrain que votre mission n'est pas placée exactement là où vous le voudriez.</p>
+<p>Pour résoudre cela, rendez-vous sur <code>Litchi Fly</code> sur ordinateur (cette modification n'est à l'heure actuelle pas possible sur téléphone).
+Déplacez tous les points de la mission dans le sens souhaité.
+Sauvegardez et synchronisez bien le téléphone.
+Lancez la mission, voyez si c'est mieux ou s'il faut encore l'éditer.
+Dans ce cas, recommencez jusqu'à ce que la position soit satisfaisante.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reconstruction"><a class="header" href="#reconstruction">Reconstruction</a></h1>
+<p>Pour la reconstruction des images en 3D, nous utilisons <a href="https://opendronemap.org/">Open Drone Map (ODM)</a>, un logiciel Open Source et gratuit.
+Seul l'installeur Windows est payant si l'on ne veut pas faire l'installation nous même.
+Jusqu'ici, nous avons utilisé ODM sur Linux.
+Le dépôt GitHub est disponible <a href="https://github.com/OpenDroneMap/ODM">ici</a>.</p>
+<p>Avant de reconstruire, nous recommandons de passer rapidement sur l'ensemble des images afin de supprimer celles  qui ne sont pas exploitables.
+Cela permet d'éviter des erreurs lors de la reconstruction et de gagner du temps.
+Cela comprend les images:</p>
+<ul>
+<li>qui sont floues,</li>
+<li>qui sont trop sombres,</li>
+<li>qui sont trop claires,</li>
+<li>qui font un gros plan sur un palmier ! 🌴</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quelques-notions-de-photogrammétrie"><a class="header" href="#quelques-notions-de-photogrammétrie">Quelques notions de photogrammétrie</a></h1>
+<blockquote>
+<p>Cette section permet simplement d'introduire la notion de <a href="https://fr.wikipedia.org/wiki/Photogramm%C3%A9trie">photogrammétrie</a>. Le lecteur est encouragé à faire des recherches sur ce sujet par lui même. Beaucoup de ressources, plus complètes, existent à ce sujet.</p>
+</blockquote>
+<p>D'après une définition d'<a href="https://www.ign.fr/institut/kiosque/la-photogrammetrie#:~:text=La%20photogramm%C3%A9trie%20est%20une%20technique,vues%20photographiques%20de%20cet%20objet.">IGN France</a>, <code>&quot;La photogrammétrie est une technique de mesure qui consiste à déterminer la forme, les dimensions et la situation d’un objet dans l’espace à partir de plusieurs prises de vues photographiques de cet objet.&quot;</code>.</p>
+<p>Le fonctionnement repose sur la <a href="https://fr.wikipedia.org/wiki/St%C3%A9r%C3%A9oscopie">stéréoscopie</a>, principe qui reprend la vision humaine : obtenir une images en 3 dimensions à partir de deux images en 2 dimensions.
+Pour l'humain, c'est le cerveau qui traite les deux images que nous voyons, une par oeil, pour en obtenir une en 3D.
+La stéreoscopie est une méthode ancienne, apparue bien avant l'informatique et même avant la photographie. 
+Le même principe est utilisé au cinéma avec des projections de films en 3D.</p>
+<figure align="center">
+    <img src="guide/reconstruction/photogrammetrie/holmes-stereoscope.jpg" | width=500/>
+    <figcaption>Stéreoscope de Holmes</figcaption>
+</figure>
+<p>Aujourd'hui, il est possible avec un ordinateur de simuler les mêmes calculs que fait notre cerveau pour que lui aussi puisse obtenir des images 3D à partir d'images 2D. C'est grâce à cela que nous pourrons réaliser une reconstruction 3D à partir d'images 2D. Nous allons présenter les étapes principales d'une reconstruction 3D.</p>
+<blockquote>
+<p>📖 Nous vous conseillons vivement d'aller lire des sources plus complètes sur le sujet. Voici quelques exemples :</p>
+<ul>
+<li>L'article <a href="https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d">Introduction To Feature Detection And Matching</a>
+est une bonne base pour comprendre les étapes de la détection au matching.</li>
+<li>Le livre d'Open Drone Map <a href="https://odmbook.com/">A Comprehensive Guide To Use OpenDroneMap</a>
+explique toute la file de reconstruction, de manière simple et claire.</li>
+</ul>
+</blockquote>
+<h2 id="détection-de-points-dintérêt-ou-features"><a class="header" href="#détection-de-points-dintérêt-ou-features">Détection de points d'intérêt ou <em>features</em></a></h2>
+<p>Pour commencer, il est nécessaire de détecter dans chaque image ce que l'on appelle des points d'intérêt ou <em>features</em> en anglais. Mais qu'est-ce que c'est ?</p>
+<p>Ce sont des points dans l'image dont l'information environnante est suffisament spécifique pour qu'ils soient reconnus dans différentes images. Plus concrètement, il va s'agir par exemple du :</p>
+<ul>
+<li>coin d'un meuble,</li>
+<li>pic d'une montagne,</li>
+<li>angles d'un bâtiments,</li>
+<li>bord d'un oeil,</li>
+<li>...</li>
+</ul>
+<p>Différents algorithmes existent pour la détection de points d'intérêt, chacun ayant ses particularités. <a href="https://opendronemap.org/">Open Drone Map</a>, que nous utiliserons pour la reconstruction, utilise <a href="https://en.wikipedia.org/wiki/Scale-invariant_feature_transform">SIFT</a> par exemple.</p>
+<figure align="center">
+    <img src="guide/reconstruction/photogrammetrie/cars.png" | width=600/>
+    <figcaption>Détection de points d'intérêt - Algorithme d'<a href="https://en.wikipedia.org/wiki/Harris_corner_detector">Harris</a></figcaption>
+</figure>
+<p>On peut voir dans cette images que les points détectés sont en effet placés là ou ils pourront être reconnus :</p>
+<ul>
+<li>angles de pare brise,</li>
+<li>angles des camions,</li>
+<li>rétroviseurs,</li>
+<li>...</li>
+</ul>
+<h2 id="description-des-points"><a class="header" href="#description-des-points">Description des points</a></h2>
+<p>Pour pouvoir identifier chaque point, nous avons besoin d'utiliser un descripteur. Ce dernier va, comme son nom l'indique, décrire le point. En langage humain, une descriptions pourrait ressembler à : &quot;Le point est un angle marron, entouré d'un peu de rouge et de points verts&quot;. L'ordinateur va plutôt utiliser des nombres pour caractériser toutes les informations du point, lui créant ainsi une identité.</p>
+<h2 id="association-des-points-entre-eux-ou-matching"><a class="header" href="#association-des-points-entre-eux-ou-matching">Association des points entre eux ou <em>matching</em></a></h2>
+<p>L'information de profondeur s'obtient en ayant un même point sur plusieurs images dont le point de vue est différent. Pour faire cela, il faut trouver pour chaque point, toutes les images sur lesquelles il est présent. Grâce à la phase de description, nous allons pouvoir vérifier la ressemblance de tous les points de chaque image avec les points des autres images.</p>
+<p>L'image ci-dessous illustre un résultat de matching entre deux images.</p>
+<figure align="center">
+    <img src="guide/reconstruction/photogrammetrie/matching.jpg" | width=600/>
+    <figcaption>Résultat de matching - Image issue de cet <a href="https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d">article</a></figcaption>
+</figure>
+<h2 id="meshing"><a class="header" href="#meshing">Meshing</a></h2>
+<p>Une fois l'association des points d'intérêt faite, un nuage de points 3D peut être généré. Ensuite, un algorithme de meshing est appliqué pour obtenir une surface. Ce dernier va générer des triangles entres les points du modèle 3D, qui constitueront la surface. Le nombre de triangles peut être paramétré. Plus il y en a, meilleure la résolution sera (et réciproquement).</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Nuage de points</th><th style="text-align: center">Mesh</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="guide/reconstruction/photogrammetrie/bunny_pc.jpg" alt="Bunny point cloud" /></td><td style="text-align: center"><img src="guide/reconstruction/photogrammetrie/bunny_meshed.jpg" alt="Bunny mesh" /></td></tr>
+</tbody></table>
+</div>
+<h2 id="texturing"><a class="header" href="#texturing">Texturing</a></h2>
+<p>Cette étape permet d'appliquer de la couleur au modèle afin de le rendre plus réaliste. Comme dit dans <a href="https://odmbook.com/">A Comprehensive Guide To Use OpenDroneMap</a>, à cette étape nous n'avons qu'une <code>&quot;soupe de polygones&quot;</code>.</p>
+<p>Pour donner de la couleur et texture à notre modèle, on crée un patchwork à partir des images utilisées pour la reconstruction. Puis, on vient &quot;plaquer&quot; ce dernier sur le mesh.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Texture</th><th style="text-align: center">Mesh texturé</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="guide/reconstruction/photogrammetrie/bunny_texture.jpg" alt="Bunny texture" /></td><td style="text-align: center"><img src="guide/reconstruction/photogrammetrie/bunny_textured.jpg" alt="Bunny textured" /></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="open-drone-map"><a class="header" href="#open-drone-map">Open Drone Map</a></h1>
+<ul>
+<li><a href="https://opendronemap.org/"><strong>Site d'OpenDroneMap</strong></a></li>
+<li><a href="https://docs.opendronemap.org/"><strong>Documentation d'OpenDroneMap</strong></a></li>
+<li><a href="https://community.opendronemap.org/"><strong>Dépôt d'OpenDroneMap</strong></a></li>
+<li><a href="https://github.com/OpenDroneMap/ODM"><strong>Forum d'OpenDroneMap</strong></a></li>
+</ul>
+<p>OpenDroneMap est une palette d'outils de photogrammétrie open source permettant de transformer des images aériennes (généralement prises par un drone) en cartes et en modèles 3D. Le logiciel est hébergé et distribué gratuitement sur GitHub.</p>
+<p>Il est intéressant de faire la différence entre ODM et WebODM:</p>
+<ul>
+<li>
+<p><a href="https://github.com/OpenDroneMap/ODM">ODM</a> est le projet initial d'OpenDroneMap. C'est lui qui s'occupe de tout le travail de traitement et d'analyse des images jusqu'à la génération du modèle 3D. C'est un outil en lignes de commandes.</p>
+</li>
+<li>
+<p><a href="https://github.com/OpenDroneMap/WebODM">WebODM</a> est une interface web permettant d'utiliser ODM plus facilement, à travers une interface graphique.</p>
+</li>
+</ul>
+<p>Nous utilisons ici OpenDroneMap afin de générer le modèle 3D de l'Hôtel de la Paix. L'utiliser en lignes de commandes nous permet de paramétrer les différentes options plus facilement. Elles sont cependant presque toutes disponibles également avec WebODM.</p>
+<p>OpenDroneMap peut être utilisé dans différents buts :</p>
+<ul>
+<li>Surveillance des cultures.</li>
+<li>Cartographier des zones terrestres.</li>
+<li>Effectuer des analyses hydrologiques.</li>
+<li>Rendre compte de l'avancement des travaux de construction.</li>
+<li>Classer et compter les arbres.</li>
+<li>...</li>
+</ul>
+<h2 id="installation-1"><a class="header" href="#installation-1">Installation</a></h2>
+<p>Voir la <a href="https://docs.opendronemap.org/installation/">documentation d'Open Drone Map</a> qui est très claire.</p>
+<p>Dans notre cas, nous avons utilisé la version Docker comme recommandé dans la documentation.</p>
+<p>Dans la suite de ce document, nous montrerons les commandes avec Docker.</p>
+<h2 id="utilisation"><a class="header" href="#utilisation">Utilisation</a></h2>
+<blockquote>
+<p>Nous expliquons ici l'utilisation d'OpenDroneMap. Sachez cependant qu'elle est plus détaillée dans le <strong>README</strong> du <a href="https://github.com/OpenDroneMap/ODM#readme">dépôt d'OpenDroneMap</a>.</p>
+</blockquote>
+<p>Pour une structure de fichiers comme ceci :</p>
+<pre><code class="language-plaintext">my_datasets
+├── mission_1
+│   ├── images
+│   │   ├── img_1.jpg
+│   │   ├── img_2.jpg
+│   │   ├── ...
+│   │   └── img_n.jpg
+├── mission_2
+├── ...
+└── mission_n
+</code></pre>
+<blockquote>
+<p>⚠️ Les images doivent <strong>obligatoirement</strong> être dans un dossier <code>images</code> à la racine de la mission.</p>
+</blockquote>
+<p>Pour reconstruire la mission 1, il faut lancer la commande suivante (après avoir lancé de <em>docker daemon</em>):</p>
+<pre><code class="language-bash">docker run -ti --rm -v &lt;chemin_vers&gt;/my_datasets:/datasets opendronemap/odm --project-path /datasets mission_1
+</code></pre>
+<h2 id="gpu"><a class="header" href="#gpu">GPU</a></h2>
+<p>Afin d'accélérer le processus de reconstruction, il est possible d'utiliser le GPU de la machine, si elle en possède un.
+Pour cela, il faut ajouter l'option <code>--gpus all</code> à la commande et utiliser l'image Docker <code>opendronemap/odm:gpu</code>.</p>
+<pre><code class="language-bash">docker run -ti --rm -v &lt;chemin_vers&gt;/my_datasets:/datasets --gpus all opendronemap/odm:gpu --project-path /datasets mission_1
+                                                           ^^^^^^^^^^                 ^^^^
+</code></pre>
+<blockquote>
+<p>⚠️ D'après @Saijin_Naib, Community Support sur le <a href="https://community.opendronemap.org/">forum OpenDroneMap</a> et contributeur de <a href="https://github.com/OpenDroneMap/ODM">OpenDroneMap/ODM</a>, la <a href="https://community.opendronemap.org/t/post-processing-after-odm/16314/5?u=adrien-anton-ludwig">détection et l'extraction des points d'intérêts est bien plus robuste sur CPU</a>.</p>
+</blockquote>
+<h2 id="processus-de-reconstruction-recommandé"><a class="header" href="#processus-de-reconstruction-recommandé">Processus de reconstruction recommandé</a></h2>
+<p>Deux options s'offrent à nous :</p>
+<ol>
+<li>Reconstruire chaque mission séparément et fusionner les nuages de points.</li>
+<li>Reconstruire l'ensemble des missions en même temps.</li>
+</ol>
+<p>Avantages et inconvénients de chaque méthode :</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Méthode</th><th style="text-align: center">Avantages</th><th style="text-align: center">Inconvénients</th></tr></thead><tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center">- Plus facile à mettre en place. <br> - Plus facile à corriger en cas d'erreur. <br> - Nécessite moins de RAM.</td><td style="text-align: center">- Compliqué de recaler toutes les sections ensemble. <br> - Comment fusionner et retirer les erreurs ?</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center">- Meilleure robustesse (en théorie). <br> - Pas de recalage à faire. <br> - Reconstruit mieux les alentours car pas de mission spécifique mais un peu de chaque mission.</td><td style="text-align: center">- Plus difficile à corriger en cas d'erreur. <br> - Possibilité d'introduire des erreurs avec les imprécisions qui se multiplient sur le dataset général. <br> - En fonction du nombre d'images, peut nécessiter beaucoup de RAM.</td></tr>
+</tbody></table>
+</div>
+<p>Dans tous les cas, nous recommandons de commencer par reconstruire chaque mission séparément, même vous souhaitez reconstruire l'ensemble des missions par la suite.
+En effet, il est plus facile de corriger les erreurs sur une mission que sur l'ensemble des missions.</p>
+<blockquote>
+<p>Il n'y a pas de réponse universelle quant à la méthode à utiliser. Ces choix vont aussi dépendre du projet et de l'acquisition des images.</p>
+</blockquote>
+<h2 id="erreurs-rencontrées"><a class="header" href="#erreurs-rencontrées">Erreurs rencontrées</a></h2>
+<p>Nous avons rencontré 2 erreurs majeures lors de la reconstruction des missions.</p>
+<h3 id="coordonnées-gps-aberrantes"><a class="header" href="#coordonnées-gps-aberrantes">Coordonnées GPS aberrantes</a></h3>
+<p>Certaines images présentaient des coordonnées GPS aberrantes.
+Cela peut être dû à une mauvaise réception GPS au moment de la prise de vue.</p>
+<p>Voici un exemple de reconstruction avec des coordonnées GPS aberrantes par rapport à la même reconstruction sans ces images.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Avec les images aberrantes</th><th style="text-align: center">Sans les images aberrantes</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="guide/reconstruction/open_drone_map/with_gps_aberrant_images.jpg" alt="Avec les images aberrantes" /></td><td style="text-align: center"><img src="guide/reconstruction/open_drone_map/without_gps_aberrant_images.jpg" alt="Sans les images aberrantes" /></td></tr>
+</tbody></table>
+</div>
+<p>Pour trouver les images aberrantes, on peut utiliser <a href="https://www.qgis.org/fr/site/">QGIS</a>.
+Pour cela, il faut utiliser la fonction <code>Import GeoTagged Photos</code> et sélectionner le dossier contenant les images.</p>
+<p>Certaines aberrations sont visibles à l'œil nu.
+Par exemple, sur la figure ci-dessous, nous savons que toutes les images devraient être localisées dans la zone verte.
+On peut donc identifier les images aberrantes.</p>
+<p><img src="guide/reconstruction/open_drone_map/qgis_gps_aberrant.jpg" alt="QGIS_GPS_aberrant" /></p>
+<p>D'autres aberrations sont moins visibles, comme des images <strong>non localisées</strong> ou <strong>mal localisées</strong>.</p>
+<p>Pour les images mal localisées, il est possible de les mettre en évidence en utilisant la fonction <code>Zoom to Layer Extent</code> sur la couche <code>Photos</code>.</p>
+<p>Les images non localisées n'apparaissent pas sur la carte.
+On peut les trouver en sélectionnant toutes les images visibles sur la cartes et en inversant la sélection.</p>
+<blockquote>
+<p>⚠️ FIXME ⚠️
+Il faudrait encore explorer la possibilité de reconstruire sans utiliser les coordonnées GPS des images.</p>
+</blockquote>
+<h3 id="images-non-exploitables"><a class="header" href="#images-non-exploitables">Images non exploitables</a></h3>
+<p>Comme évoqué sur la page précédente, nous recommandons de supprimer les images qui ne sont pas exploitables.</p>
+<p>Voici un exemple d'images que nous avons oublié de supprimer et qui ont généré une erreur lors de la reconstruction.</p>
+<p><img src="guide/reconstruction/open_drone_map/palm_tree.jpg" alt="Palmier" /></p>
+<h2 id="paramètres-explorés"><a class="header" href="#paramètres-explorés">Paramètres explorés</a></h2>
+<p>Les paramètres à utiliser varient beaucoup d'une mission à l'autre.</p>
+<p>Nous allons nous intéresser aux paramètres que nous avons explorés, lors de notre projet.</p>
+<p>N'hésitez pas à explorer l'ensemble des paramètres dans <a href="https://docs.opendronemap.org/arguments/">la documentation d'ODM</a>.
+Nous recommandons également vivement le livre <a href="https://odmbook.com/">OpenDroneMap: The Missing Guide</a>, nous ayant aidé à comprendre beaucoup de points sur le fonctionnement d'OpenDroneMap.</p>
+<p>Nous remercions la <a href="https://community.opendronemap.org/">communauté d'OpenDroneMap</a> pour <a href="https://community.opendronemap.org/t/post-processing-after-odm/16314?u=adrien-anton-ludwig">leur aide sur le forum</a> qui nous a guidé dans nos choix.</p>
+<h3 id="mesh-size"><a class="header" href="#mesh-size"><code>mesh-size</code></a></h3>
+<p>OpenDroneMap offre la possibilité de limiter la taille du maillage généré, afin de réduire la taille du fichier final et de réduire le temps de reconstruction, en utilisant le paramètre <code>--mesh-size</code>.</p>
+<p>Par défaut, la valeur est de <code>200000</code>, ce qui signifie que le maillage ne doit pas dépasser 200 000 sommets. Cela ne prend pas en compte la taille de la scène ou la densité des points. Cela peut amener à des maillages très différents en fonction de la scène. Par exemple, un maillage de 200 000 sommets pour une scène de 100 m² n'aura pas la même densité qu'un maillage de 200 000 sommets pour une scène de 1000 m². Exemple en image :</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Une façade</th><th style="text-align: center">Bâtiment entier</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="guide/reconstruction/open_drone_map/mesh_wall.jpg" alt="1 façade" /></td><td style="text-align: center"><img src="guide/reconstruction/open_drone_map/mesh_whole_hdp.jpg" alt="Bâtiment entier" /></td></tr>
+</tbody></table>
+</div>
+<p>Nous pouvons constater que les deux maillages ont à peu près le même nombre de sommets et de faces mais une densité très différente.</p>
+<p>On peut supposer que la densité plus faible sur l'image ci-dessus, à droite, crée des imprécisions : cage d'escalier et angles supérieur droit dans cet exemple.</p>
+<p>Pour éviter que le faible nombre de sommets limite la reconstruction, nous avons donc utilisé le paramètre <code>--mesh-size</code> avec une valeur de <code>1000000</code>. Cependant, cela n'a pas eu l'effet escompté. Voici une comparaison :</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"><code>--mesh-size 200000</code></th><th style="text-align: center"><code>--mesh-size 1000000</code></th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="guide/reconstruction/open_drone_map/mesh_whole_hdp_200000.jpg" alt="mesh-size 200000" /></td><td style="text-align: center"><img src="guide/reconstruction/open_drone_map/mesh_whole_hdp_1000000.jpg" alt="mesh-size 1000000" /></td></tr>
+</tbody></table>
+</div>
+<p>Nous pouvons constater que la précision n'a pas augmenté dans la cage d'escaliers et sur l'angle du mur. Nous savons cependant que cette façade peut être très bien reconstruite car nous obtenons une bonne précision lorsque nous la traitons seule. Dans ce cas, nous pouvons alors supposer que c'est le nuage de points qui limite la reconstruction et non le maillage. Cela nous amène aux paramètres suivants.</p>
+<h3 id="feature-quality-and-min-num-features"><a class="header" href="#feature-quality-and-min-num-features"><code>feature-quality</code> and <code>min-num-features</code></a></h3>
+<p>Une des premières (et plus importantes) étapes de la reconstruction est la détection et l'extraction des points d'intérêts (<em>features</em>). C'est cette étape qui va permettre de mettre en correspondance les images entre elles et de reconstruire la scène.</p>
+<p>OpenDroneMap offre la possibilité de contrôler la qualité de ces points d'intérêts avec les paramètres <code>--feature-quality</code> et <code>--min-num-features</code>.</p>
+<p>Le paramètre <code>--feature-quality</code> permet de contrôler le redimensionnement des images. Il accepte les valeurs suivantes : <code>ultra</code>, <code>high</code>, <code>medium</code>, <code>low</code>, <code>lowest</code>. Par défaut, la valeur est <code>high</code>, cela correspond à un redimensionnement à 1/2. Pour obtenir de meilleurs résultats, nous avons utilisé la valeur <code>ultra</code>, ce qui revient à ne pas redimensionner les images. Cependant, cela augmente le temps de reconstruction.</p>
+<p>Le paramètre <code>--min-num-features</code> permet de contrôler le nombre de points d'intérêts à extraire pour chaque image. Par défaut, la valeur est <code>10000</code>. Augmenter cette valeur permet d'augmenter le nombre de points d'intérêts détectés. Cela est possible en abaissant progressivement les contraintes pour la qualité de ces points. Le résultat obtenu est en général de meilleure qualité. Cependant, cela augmente aussi le temps de reconstruction. Pour obtenir un indicateur de la valeur à utiliser, on peut regarder la partie <code>Features</code> dans le fichier <code>odm_report/report.pdf</code> généré à la fin de la reconstruction.</p>
+<h3 id="pc-quality"><a class="header" href="#pc-quality"><code>pc-quality</code></a></h3>
+<p>Une autre étape importante de la reconstruction est la génération du nuage de points. C'est cette étape qui va permettre de générer le maillage et le modèle 3D.</p>
+<p>OpenDroneMap offre la possibilité de contrôler la qualité de ce nuage de points avec le paramètre <code>--pc-quality</code> (pour &quot;Point cloud quality&quot;). Ce paramètre influence la résolution de la  carte de profondeur (<a href="https://en.wikipedia.org/wiki/Depth_map"><em>depthmap</em></a>) et donc la densité du nuage de points.</p>
+<p>Il accepte les valeurs suivantes : <code>ultra</code>, <code>high</code>, <code>medium</code>, <code>low</code>, <code>lowest</code>. Par défaut, la valeur est <code>medium</code>. Attention, une valeur trop haute peu introduire du bruit. Il faut également prendre en compte que chaque palier multiplie le temps de calcul par 4 environ.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="recherches-menées"><a class="header" href="#recherches-menées">Recherches menées</a></h1>
+<blockquote>
+<p>Cette section regroupe les questions que nous nous sommes posées et les réponses que nous y avons trouvées au cour de la mise en place du projet.
+Une grande partie du contenu a déjà été abordée dans la partie <strong>Guide</strong>.</p>
+</blockquote>
+<h2 id="matériel-à-disposition"><a class="header" href="#matériel-à-disposition">Matériel à disposition</a></h2>
+<p>Avant de se lancer dans quoi que ce soit, nous avons besoin de faire un inventaire du matériel et des logiciels à disposition pour ce projet.</p>
+<blockquote>
+<p>✅ Ce que nous avons :</p>
+<ul>
+<li><a href="https://www.dji.com/mavic-air-2/specs"><strong>Drone DJI Mavic Air 2</strong></a>
+<ul>
+<li>Drone</li>
+<li>3 batteries &amp; chargeur</li>
+<li>Hélices</li>
+<li>Manette + chargeur</li>
+<li>Housse de transport</li>
+</ul>
+</li>
+<li><strong>Matériel informatique</strong>
+<ul>
+<li>Ordinateurs avec 16Go de RAM et GPUs</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="planning-du-projet"><a class="header" href="#planning-du-projet">Planning du projet</a></h2>
+<p>Il est important de prévoir un planning général et tenable du projet.
+L'image ci-dessous illustre la répartition dans le temps des différentes étapes.
+Celui-ci s'est avéré très réaliste par rapport au déroulement de notre projet.
+Etant donné que c'était notre premier projet utilisant un drone, nous avons commencé par une partie &quot;Recherches&quot;, non mentionnée sur ce planning.
+Cette partie nous a pris environ le même temps que la partie &quot;Processing&quot;.</p>
+<p>Ce diagramme est issu d'un site de planification de vol d’UAV (Unmanned Aerial Vehicle) très intéressant à lire : <a href="https://uav-guidelines.openaerialmap.org/pages/07-preparing-for-the-uav-mission/">UAV Mapping Guidelines</a>. On peut voir que la manipulation du drone ne représente qu'une minorité de la mission.</p>
+<figure align="center">
+    <img src="recherches/../guide/autorisations/planning.jpg" | width=600/>
+    <figcaption>Planning de mission</figcaption>
+</figure>
+<h2 id="gps"><a class="header" href="#gps">GPS</a></h2>
+<p>Le drone <strong>DJI Mavic Air 2</strong> a un système de localisation <strong>GPS+GLONASS</strong> (GPS est américain, GLONASS est russe) d'après ses <a href="https://www.dji.com/mavic-air-2/specs">caractéristiques</a>.
+Si suffisamment de satellites sont disponibles pour établir la localisation du drone lors de la prise de vue, les coordonnées GPS sont enregistrées dans les métadonnées de chaque image.
+Les informations sont enregistrées en altitude, latitude et longitude.
+Pour les visualiser, vous pouvez utiliser la commande suivante :</p>
+<pre><code class="language-bash">exiftool image.jpg
+</code></pre>
+<p>Vous pourrez alors lire toutes les métadonnées de l'image et trouver les lignes qui se réfèrent aux coordonnées GPS :</p>
+<figure align="center">
+    <img src="recherches/gps.png" | width=600/>
+    <figcaption>Métadonnées d'altitude, latitude et longitude</figcaption>
+</figure>
+<p>Nous avons trouvé deux raisons pour lesquelles les données GPS sont importantes à acquérir, et le plus précisément possible :</p>
+<ul>
+<li>Rendre plus robuste la reconstruction 3D, qui s'appuie sur celles-ci pour éviter les erreurs de correspondance entre les images.</li>
+<li>Localiser la reconstruction 3D dans le monde réel.</li>
+</ul>
+<h2 id="qualité-des-images"><a class="header" href="#qualité-des-images">Qualité des images</a></h2>
+<p>La qualité des images a son importance.
+La netteté est indispensable pour le bon fonctionnement de la détection des points d'intérêt et donc pour une bonne reconstruction.
+Détecter des points d'intérêt sur des images floues est très difficile.</p>
+<p>Le drone <strong>DJI Mavic Air 2</strong> a plusieurs modes de capture d'images :</p>
+<ul>
+<li>Vidéo (jusqu'à 3840×2160 px)</li>
+<li>Photo 12 mégapixel (4000x3000 px)</li>
+<li>Photo 48 mégapixel (8000x6000 px)</li>
+</ul>
+<p>La vidéo est très lourde à stocker, traiter et de moins bonne résolution que les photos.
+Nous choisissons donc une acquisition par photos.</p>
+<p>Les photos en 48 Mpx sont prises avec le même capteur que les photos en 12 Mpx.
+Elles sont cependant beaucoup plus lourdes à stocker et traiter.
+Ce choix peut être envisagé si la qualité de rendu est bien meilleure.
+Cependant, l'utilisation du même capteur provoque souvent l'apparition de bruit dans les zones un peu sombres (ombres par exemple).
+(<a href="https://www.gsmarena.com/quad_bayer_sensors_explained-news-37459.php">Explications de l'utilisation d'un même capteur pour résolutions sortantes différentes</a>).</p>
+<p>La vidéo <a href="https://www.youtube.com/watch?v=7-p04vKLEWI&amp;ab_channel=Paladrone">Mavic Air 2 - photogrammétrie 12 vs 48 Mpx</a> effectue une comparaison entre les deux modes de prise de photo.
+Ci-dessous un tableau extrait de la vidéo comparant différents points entre les prises 12 et 48 Mpx. </p>
+<figure align="center">
+    <img src="recherches/12_48.png" | width=700/>
+    <figcaption>Comparaison de l'utilisation de photos en 12 et 48 Mpx sur une même mission</figcaption>
+</figure>
+<p>Les 2 rendus 3D issus des missions de cette vidéo sont très similaires.
+Les photos en 48 Mpx rendent parfois plus de détails mais ont également introduit du bruit sur certaines zones, ce que nous voulons éviter.
+Pour toutes ces raisons, nous choisissons de capturer les images en 12 Mpx.</p>
+<p>Il y a également la possibilité de capturer les images au format RAW en même temps que JPG.
+Le tableau ci-dessous présente le nombre d'images que nous pouvons prendre avec 8Go de stockage (mémoire interne du drone) avec ou sans le format RAW.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"></th><th style="text-align: center">JPEG 12MP</th><th style="text-align: center">JPEG 12MP + RAW</th></tr></thead><tbody>
+<tr><td style="text-align: center">8Go stockage</td><td style="text-align: center">1599 photos</td><td style="text-align: center">278 photos</td></tr>
+</tbody></table>
+</div>
+<h2 id="recouvrement"><a class="header" href="#recouvrement">Recouvrement</a></h2>
+<p>L'algorithme de reconstruction 3D utilise les différences de perspectives entre les points communs de deux images.
+C'est pourquoi, il est indispensable que des images successives aient une zone en commun.
+On parle de recouvrement.
+L'image ci dessous illustre à quoi correspond un pourcentage de recouvremet ou <em>overlap</em>.</p>
+<figure align="center">
+    <img src="recherches/overlap.png" | width=600/>
+    <figcaption>Pourcentages d'<i>overlap</i></figcaption>
+</figure>
+<p>Nous nous sommes demandé quel serait le recouvrement optimal à choisir entre nos images.
+D'après nos recherche, il est recommandé pour faire une bonne acquisition d'avoir au moins 70%
+(idéalement 80%) de recouvrement horizontal et 60% (idéalement 70%) de recouvrement vertical.
+Ces valeurs varient selon les sources mais correspondent aux ordres de grandeurs recommandés par
+<a href="https://docs.opendronemap.org/tutorials/#flight-height">Open Drone Map</a> et
+<a href="https://support.pix4d.com/hc/en-us/articles/203756125-How-to-verify-that-there-is-enough-overlap-between-the-images-PIX4Dmapper">Pix4D</a>.</p>
+<p>Voici une image afin d'illustrer les termes recouvrement horizontal (<em>forward overlap</em>) et vertical (<em>side overlap</em> ou <em>sidelap</em>) :</p>
+<figure align="center">
+    <img src="recherches/two_overlaps.png" | width=600/>
+    <figcaption>Recouvrement horizontal (<i>forward overlap</i>) et vertical (<i>sidelap</i>)</figcaption>
+</figure>
+<blockquote>
+<p>⚠️ Attention, les valeurs de cette illustration ne correspondent pas aux recommandations dans notre cas.</p>
+</blockquote>
+<h2 id="génération-des-missions"><a class="header" href="#génération-des-missions">Génération des missions</a></h2>
+<p>Afin d'acquérir ces images avec un recouvrement donné de manière précise, il est possible, et recommandé, de générer un parcours de vol.
+Ce parcours correspond à une liste de points (coordonnées GPS et altitude) pour lesquels
+le drone capturera une image selon des paramètres (orientation de la boussole, angle de la caméra, résolution, ...).
+Cependant, l'application officielle <a href="https://www.dji.com/global/downloads/djiapp/dji-fly">DJI Fly</a> ne supporte pas les vol planifiés.
+Nous devront trouver une autre application compatible avec notre drone qui inclut cette fonctionnalité.
+Différentes solutions existent, avec des avantages, inconvénients et, bien sûr, prix différents.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Outil</th><th style="text-align: center">Prix</th><th style="text-align: center">Open Source</th><th style="text-align: center">Avantages / Inconvénients</th><th style="text-align: center">Fonctionne avec le gestionnaire de vol</th></tr></thead><tbody>
+<tr><td style="text-align: center"><a href="https://afbayonac.github.io/grid-photogrammetry/">Grid Photogrammetry</a></td><td style="text-align: center">0€</td><td style="text-align: center"></td><td style="text-align: center">Très intuitif et en ligne mais manque de fonctionnalités (<em>cross grid</em> par exemple)</td><td style="text-align: center">Litchi</td></tr>
+<tr><td style="text-align: center"><a href="https://ancient.land/">Ancient Land</a></td><td style="text-align: center">0€</td><td style="text-align: center"></td><td style="text-align: center">Très intuitif et en ligne mais manque de fonctionnalités (<em>cross grid</em> et ajout de drone inconnu par exemple)</td><td style="text-align: center">Litchi</td></tr>
+<tr><td style="text-align: center"><a href="https://plugins.qgis.org/plugins/drone_path/">Plugin QGIS drone_path</a></td><td style="text-align: center">0€</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center">Litchi</td></tr>
+<tr><td style="text-align: center"><a href="https://ardupilot.org/planner/">MissionPlanner</a></td><td style="text-align: center">0€</td><td style="text-align: center">✅</td><td style="text-align: center">Toutes les fonctionnalités que nous cherchons sont disponibles. Le logiciel n'est pas trop long à prendre en main. Plusieurs bugs sont cependant à relever.</td><td style="text-align: center">Mission Planner</td></tr>
+<tr><td style="text-align: center"><a href="https://www.dronelink.com/">Dronelink</a></td><td style="text-align: center">39€ /mois /utilisateur pour la version pro avec plus d'un utilisateur (<a href="https://app.dronelink.com/pricing">détails</a>).</td><td style="text-align: center">❌</td><td style="text-align: center"><a href="https://support.dronelink.com/hc/en-us/articles/4411563374099">Mapping des façades</a> compris, gestionnaire de vol compris.</td><td style="text-align: center">Dronelink</td></tr>
+<tr><td style="text-align: center"><a href="https://www.dronedeploy.com/">DroneDeploy</a></td><td style="text-align: center">329€ /mois pour une version personnelle (<a href="https://www.dronedeploy.com/pricing.html">détails</a>).</td><td style="text-align: center">❌</td><td style="text-align: center">Gestionnaire de vol et reconstruction compris dedans.</td><td style="text-align: center">DroneDeploy</td></tr>
+</tbody></table>
+</div><figure align="center">
+    <img src="recherches/grid.png" | width=600/>
+    <figcaption>Grille générée avec Grid Photogrammetry</figcaption>
+</figure>
+<p><a href="https://flylitchi.com/">Litchi Fly</a>, dont le nom est cité à plusieurs reprises dans le tableau, est un gestionnaire de vol compatible avec les drone <strong>DJI</strong>.
+Il ne permet pas la planification de missions mais il est possible d'en importer.
+Il génère les bonnes instructions qu'il envoie au drone pour réaliser la mission planifiée.
+L'application inclut également d'autres fonctionnalités telles que les panoramas, le suivi d'objet,...
+Contrairement à l’application officielle DJI Fly, cette application permet de  <a href="https://flylitchi.com/help#waypoints-p3">suivre un itinéraire prédéfini</a>.
+C'est ce qui nous intéresse ici.
+L'application coûte <a href="https://play.google.com/store/apps/details?id=com.aryuthere.visionplus&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">24,37€ sur Android</a> et est utilisable à vie.</p>
+<blockquote>
+<p>La solution la plus pratique pour notre situation semble être de générer l'itinéraire dans <a href="https://ardupilot.org/planner/">Mission Planner</a>. Nous utiliserons ensuite <a href="https://github.com/YarostheLaunchpadder/MissionPlanner-to-Litchi">Mission Planner to Litchi</a> pour convertir le format d'export <code>.waypoints</code> de Mission Planner au format d'import CSV de <a href="https://flylitchi.com/">Litchi</a>.
+Voici deux vidéos intéressantes :</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Vdxp_iXCcys&amp;ab_channel=OldGuyOnACouch">Exemple rapide d'utilisation de Mission Planner et Mission Planner to Litchi</a></li>
+<li><a href="https://www.youtube.com/watch?v=dmjK2tUpf8c&amp;ab_channel=VisualJoy">Exemple complet utilisant Mission Planner, Mission Planner to Litchi, Litchi et WebODM</a>.</li>
+</ul>
+</blockquote>
+<h2 id="prétraitement-des-images"><a class="header" href="#prétraitement-des-images">Prétraitement des images</a></h2>
+<p>Normalement le traitement d'images avant le processing ne sera pas utile.
+Il pourrait arriver qu'il soit nécessaire si jamais les images sont trop claires/sombres pour la détection de points d'intérêt.
+Si jamais nous avons besoin de traiter des images, il faudrait les avoir au format RAW.</p>
+<h2 id="reconstruction-3d"><a class="header" href="#reconstruction-3d">Reconstruction 3D</a></h2>
+<p>Pour la reconstruction 3D, nous utilisons <a href="https://opendronemap.org/">Open Drone Map</a>, un logiciel gratuit et <a href="https://fr.wikipedia.org/wiki/Open_source">open source</a>.
+Vous pouvez vous même voir des projets d'exemple et naviguer dans les reconstructions 3D via <a href="https://demo.webodm.org/dashboard/">ce lien</a>
+et en cliquant successivement sur les boutons comme indiqué que l'image :</p>
+<figure align="center">
+    <img src="recherches/webodm.png" | width=600/>
+    <figcaption>Ouverture de projet sur WebODM</figcaption>
+</figure>
+<p>Amusez-vous ensuite à tester les différentes options et outils du menu de gauche une fois le modèle 3D ouvert.</p>
+<p>Il y a deux moyens d'utiliser OpenDroneMap :</p>
+<ul>
+<li>Avec une interface graphique (similaire à celle de l'exemple) ➡️ <a href="https://github.com/OpenDroneMap/WebODM">Repo GitHub de WebODM</a></li>
+<li>En lignes de commande ➡️ <a href="https://github.com/OpenDroneMap/ODM">Repo GitHub d'ODM</a></li>
+</ul>
+<p>Dans les deux cas, il est nécessaire de faire quelques lignes en ligne de commande pour mettre en place l'environnement.
+Il existe sinon un <a href="https://opendronemap.org/webodm/download/#installer">installeur &quot;clés en main&quot;</a>.</p>
+<p>Nous avons testé les deux méthodes qui fonctionnent très bien.
+Nous avons cependant plus d'informations sur le déroulé du traitement en ligne de commande.</p>
+<p>Il est possible d'activer l'utilisation du GPU pour un traitement plus rapide.</p>
+<h2 id="matériel-nécessaire"><a class="header" href="#matériel-nécessaire">Matériel nécessaire</a></h2>
+<p>Ces recherches nous ont permis de lister le matériel dont nous avons besoin :</p>
+<blockquote>
+<p>🔴 Ce dont nous avons besoin pour mener le projet à bien :</p>
+<ul>
+<li><strong>Carte Micro SD</strong>
+<ul>
+<li>Le drone embarque seulement 8go de stockage interne.
+La carte micro SD peut aller jusqu'à 256Go.
+Capacité de stockage à déterminer plus précisément après le premier essai réel.
+128 voir 64 Go sont suffisants dans notre cas.
+Peut être réparti en plusieurs cartes micro SD de 32Go mais implique plus de précautions lors des vols.</li>
+</ul>
+</li>
+<li><strong>Application de vol <a href="https://flylitchi.com/">Litchi Fly</a></strong>
+<ul>
+<li>Application de vol avec beaucoup de fonctionnalités avancées.</li>
+<li>Contrairement à l'application officielle <strong>DJI Fly</strong>, cette application permet de suivre une liste de positions GPS pour la prise de photos/vidéos.
+Cela permet de suivre automatiquement un parcours précis, comme une grille pour s'assurer de couvrir la zone d'intérêt.</li>
+<li>24,90$ US pour Android (Utilisation à vie)</li>
+</ul>
+</li>
+<li><strong>Test en conditions similaires</strong>
+<ul>
+<li>Pouvoir essayer le tout de bout en bout sur un projet de plus petite ampleur
+(par exemple, autour d'une maison avec un peu d'espace autour).
+Cela nous permettra de nous familiariser avec le drone mais surtout de répondre à des question auxquelles nous ne pouvons pas répondre en restant au bureau.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="test-de-vol"><a class="header" href="#test-de-vol">Test de vol</a></h2>
+<p>Nous avons eu l'occasion de faire un vol test sur un terrain vierge.
+Cela nous a permis de répondre à plusieurs questions :</p>
+<ul>
+<li>Est-ce que le point <strong>HOME</strong> est défini automatiquement au lieu de décollage du drone ?
+<ul>
+<li>Oui.</li>
+</ul>
+</li>
+<li>Est-ce que le départ et retour <strong>RTH</strong> (Return To Home) fonctionnent bien ?
+<ul>
+<li>Oui.</li>
+</ul>
+</li>
+<li>Vitesse de vol.
+<ul>
+<li>Réponse dépendant de la mission.</li>
+</ul>
+</li>
+<li>Altitude de vol.
+<ul>
+<li>Réponse dépendant de la mission.</li>
+<li>Retour <strong>RTH</strong> monte à 100m dans certains cas mais pas systématiquement.</li>
+</ul>
+</li>
+<li>L'intervalle de prise de photo est-il correct ?
+<ul>
+<li>Prise à chaque <em>waypoint</em> qui fonctionne.</li>
+<li>Prise à chaque mètre fonctionne également (paramètre <code>Litchi Fly</code>).
+Il faudra désactiver cette option dont nous n'avons pas besoin.</li>
+</ul>
+</li>
+<li>Vers où est orientée la caméra ?
+<ul>
+<li>Elle est orientée vers l'avant du drone.</li>
+</ul>
+</li>
+<li>Quel est le degré d'inclinaison de la caméra ?
+<ul>
+<li>Le degré lorsque la mission débute est conservé.
+Il faut donc régler l'inclinaison avant le début de la mission.</li>
+</ul>
+</li>
+<li>Est-ce que le temps de vol annoncé par <code>Litchi Fly</code> est correct ?
+<ul>
+<li>Non pas du tout. Le temps pout s'arrêter et redémarrer n'est pas pris en compte.
+<code>Litchi Fly</code> calcule probablement en considérant que chaque déplacement est effectué à la vitesse de croisière renseignée.</li>
+</ul>
+</li>
+<li>La gestion de la batterie est-elle bien effectuée ?
+<ul>
+<li>Oui, à 20%, le drone demande à revenir. On peut prolonger l'utilisation.
+À 10%, le drone se pose là où il se trouve.</li>
+</ul>
+</li>
+<li>Le paramètre <code>Initial direction</code> de <code>Litchi FLy</code> a-t-il bien fonctionné ?
+<ul>
+<li>Oui.</li>
+</ul>
+</li>
+<li>Essai des filtres UV.</li>
+</ul>
+<h2 id="estimation-de-la-hauteur"><a class="header" href="#estimation-de-la-hauteur">Estimation de la hauteur</a></h2>
+<p>Pour prévoir les vols, nous avons besoin de connaître la hauteur du bâtiment.</p>
+<figure align="center">
+    <img src="recherches/hotel.jpg" | width=600/>
+    <figcaption>Arrière de l'Hôtel de la Paix</figcaption>
+</figure>
+<p>Sur cette image, on peut voir 6 étages de balcons et 2 étages en dessous.
+Il ne faut pas non plus oublier l'épaisseur du toit et les décorations encadrées en bleu.
+Il semblerait que la taille moyenne d'un bâtiment de 7 étages soit de 23m, soit 3,3m par étage.
+(Environ 2,5m par étage, plus l'épaisseur entre les étages).
+Dans notre cas, nous pouvons alors essayer d'estimer la taille de l'hôtel :</p>
+<ul>
+<li>8 étages soit 27m</li>
+<li>L'épaisseur du toit semble faire presque la hauteur d'un étage, on rajoute 5m les décorations encadrées en bleu. Cela nous donne 8,5m à ajouter.</li>
+</ul>
+<p>Nous estimons donc la taille du bâtiment à 30,5 et 35,5m à l'entrée.</p>
+<blockquote>
+<p>Nous n'étions pas si loin, un vol de reconnaissance nous a fait savoir que le toit s'élève à 27m et les décorations à 32m.</p>
+</blockquote>
+<p>Nous nous demandons ensuite à quelle hauteur réaliser le vol du drone par rapport au toit.
+D'après cet <a href="https://enterprise-insights.dji.com/blog/roof-inspection-workflow">article</a>, la hauteur idéale pour voler au dessus d'un toit serait de:</p>
+<ul>
+<li>7,5/15m pour un bâtiment résidentiel</li>
+<li>15/30m pour un bâtiment commercial</li>
+</ul>
+<p>Si nous partons sur la hauteur d'un bâtiment résidentiel, on obtient une hauteur de vol de : <code>30,5 + 10 = 40,5m</code> et <code>45,5m</code> à l'entrée.</p>
+<h2 id="planification-relative-au-point-de-départ"><a class="header" href="#planification-relative-au-point-de-départ">Planification relative au point de départ</a></h2>
+<p>Dans notre cas, les images dont nous bénéficions pour planifier la mission étaient de mauvaise qualité.
+De plus, de nombreux obstacles étaient présents sur le terrain.
+Nous aurions aimé planifier une mission relativement à un point de départ et non avec des positions GPS définies à l'avance.</p>
+<p>Nous devons approfondir nos recherches à ce sujet.</p>
+<blockquote>
+<p>Après quelques recherches, il semblerait que ce soit impossible de planifier une mission relative à un point de départ, quel que soit le logiciel utilisé.</p>
+</blockquote>
+<h2 id="reconstruction-1"><a class="header" href="#reconstruction-1">Reconstruction</a></h2>
+<p>Voici un tableau comparant le temps de traitement pour des sous-sections d'une même mission en fonction du nombre d'images et de l'ordinateur utilisé.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Nombre d'images</th><th style="text-align: center">WebODM / ODM</th><th style="text-align: center">GPU</th><th style="text-align: center">Temps de traitement</th><th style="text-align: center">PC</th></tr></thead><tbody>
+<tr><td style="text-align: center">30</td><td style="text-align: center">WebODM</td><td style="text-align: center">Non</td><td style="text-align: center">9 mins 31 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC1">1</a></sup></td></tr>
+<tr><td style="text-align: center">20</td><td style="text-align: center">ODM</td><td style="text-align: center">Non</td><td style="text-align: center">7 mins 55 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC1">1</a></sup></td></tr>
+<tr><td style="text-align: center">20</td><td style="text-align: center">ODM</td><td style="text-align: center">Oui</td><td style="text-align: center">5 mins 52 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC1">1</a></sup></td></tr>
+<tr><td style="text-align: center">50</td><td style="text-align: center">ODM</td><td style="text-align: center">Oui</td><td style="text-align: center">11 mins 58 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC1">1</a></sup></td></tr>
+<tr><td style="text-align: center">52</td><td style="text-align: center">ODM</td><td style="text-align: center">Non</td><td style="text-align: center">12 mins 00 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC2">2</a></sup></td></tr>
+<tr><td style="text-align: center">52</td><td style="text-align: center">ODM</td><td style="text-align: center">Oui</td><td style="text-align: center">8 mins 50 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC2">2</a></sup></td></tr>
+<tr><td style="text-align: center">100</td><td style="text-align: center">ODM</td><td style="text-align: center">Oui</td><td style="text-align: center">20 mins 52 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC1">1</a></sup></td></tr>
+<tr><td style="text-align: center">237</td><td style="text-align: center">ODM</td><td style="text-align: center">Non</td><td style="text-align: center">55 mins 40 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC2">2</a></sup></td></tr>
+</tbody></table>
+</div>
+<div class="footnote-definition" id="PC1"><sup class="footnote-definition-label">1</sup>
+<p>Intel i7-10870H CPU @ 2.20GHz + GPU Geforce GTX 1650 Ti Max-Q + 16Go Ram + 8Go Swap</p>
+</div>
+<div class="footnote-definition" id="PC2"><sup class="footnote-definition-label">2</sup>
+<p>Intel i7-11800H CPU @ 2.30GHz + GPU GeForce RTX 3050 Laptop + 16Go Ram + 8Go Swap</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bibliographie"><a class="header" href="#bibliographie">Bibliographie</a></h1>
+<blockquote>
+<p>Cette section regroupe tous les liens vers les documentations que nous avons trouvées intéressantes.</p>
+</blockquote>
+<h2 id="logiciels-et-matériel"><a class="header" href="#logiciels-et-matériel">Logiciels et matériel</a></h2>
+<ul>
+<li><a href="https://www.dji.com/mavic-air-2/specs">Specs du drone Mavic Air 2</a></li>
+<li><a href="https://opendronemap.org/">Site d'Open Drone Map</a></li>
+<li><a href="https://flylitchi.com/">Site de Litchi Fly</a></li>
+<li><a href="https://ardupilot.org/planner/docs/mission-planner-overview.html">Documentation Mission Planner</a></li>
+</ul>
+<h2 id="planification-de-vol"><a class="header" href="#planification-de-vol">Planification de vol</a></h2>
+<h3 id="préparation--réalisation-des-cartes--méthodes"><a class="header" href="#préparation--réalisation-des-cartes--méthodes">Préparation / réalisation des cartes / méthodes</a></h3>
+<ul>
+<li>Article internet sur la préparation de mission : <a href="https://uav-guidelines.openaerialmap.org/pages/07-preparing-for-the-uav-mission/">Preparing for the UAV Mission</a></li>
+<li>Astuces d'Open Drone Map pour les vols : <a href="https://docs.opendronemap.org/flying/">Open Drone Map - Flying tips</a></li>
+<li><a href="https://help.dronedeploy.com/hc/en-us/articles/1500004964282-Making-Successful-Maps">Réaliser des cartes de qualité</a></li>
+<li><a href="https://www.hammermissions.com/post/quality-drone-maps-and-3d-models">Augmenter la qualité de ses plans de vol pour une meilleure reconstruction</a></li>
+<li><a href="https://civiltracker.xyz/how-to-make-great-drone-maps/">Comment réaliser de bonne cartes de vol</a></li>
+</ul>
+<h3 id="logiciels"><a class="header" href="#logiciels">Logiciels</a></h3>
+<ul>
+<li><a href="https://geonadir.com/what-is-the-best-desktop-drone-mapping-software/">Comparatif de différents logiciel</a></li>
+<li>Générateur de grille : <a href="https://afbayonac.github.io/grid-photogrammetry/">Grid-photogrammetry</a></li>
+<li>Générateur de grille : <a href="https://ancient.land/">Ancien land</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=8NN9ETHamwY&amp;ab_channel=JamesDeRose">Vidéo de démo</a></li>
+</ul>
+</li>
+<li>Générateur de grille : <a href="https://plugins.qgis.org/plugins/drone_path/">Plugin QGIS drone_path</a></li>
+<li><a href="https://www.dronelink.com/">Dronelink</a>
+<ul>
+<li><a href="https://app.dronelink.com/pricing">Prix</a></li>
+<li><a href="https://support.dronelink.com/hc/en-us/articles/4405635351315">Grid mapping</a></li>
+<li><a href="https://support.dronelink.com/hc/en-us/articles/4411563374099">Facade mapping</a></li>
+<li><a href="https://support.dronelink.com/hc/en-us/articles/360025829933-What-are-the-system-requirements-Supported-drones-and-devices-">Mavic Air 2 supporté</a></li>
+<li><a href="https://webodm.net/dronelink">Démo Dronelink + WebODM</a></li>
+</ul>
+</li>
+<li><a href="https://www.dronedeploy.com/">DroneDeploy</a>
+<ul>
+<li><a href="https://www.dronedeploy.com/pricing.html">Prix</a></li>
+</ul>
+</li>
+</ul>
+<p>Démonstrations vidéo :</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Vdxp_iXCcys&amp;ab_channel=Taranis">Vidéo démo Mission Planner To Litchi</a></li>
+<li><a href="https://www.youtube.com/watch?v=mn8U-YJe1xY&amp;ab_channel=WindsweptRobert">Vidéo mission avec Litchi</a></li>
+</ul>
+<h2 id="reconstruction-3d-1"><a class="header" href="#reconstruction-3d-1">Reconstruction 3D</a></h2>
+<ul>
+<li><a href="https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d">Introduction To Feature Detection And Matching</a></li>
+<li><a href="https://odmbook.com/">A Comprehensive Guide To Use OpenDroneMap</a></li>
+<li><a href="https://github.com/OpenDroneMap/WebODM/issues/340">Peu de bénéfice à calibrer les images d'après WebODM</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="crédits"><a class="header" href="#crédits">Crédits</a></h1>
+<p>Ce projet n'aurait pas été possible sans les librairies et logiciels <a href="https://opensource.com/resources/what-open-source#:~:text=The%20term%20open%20source%20refers,approach%20to%20creating%20computer%20programs.">Open Source</a> que nous avons utilisés. Merci à tous les contributeurs pour leur travail :</p>
+<ul>
+<li>🗺️ <a href="https://ardupilot.org/planner/">Mission Planner</a>, pour la planification des missions.</li>
+<li>🪛 <a href="https://github.com/,YarostheLaunchpadder/MissionPlanner-to-Litchi">Mission Planner To Litchi</a>, pour la conversion du format de MissionPlanner à celui de Litchi.</li>
+<li>🧰 <a href="https://opendronemap.org/">Open Drone Map</a> et sa <a href="https://community.opendronemap.org/">communauté</a>, pour la reconstruction.</li>
+<li>📚 <a href="https://github.com/rust-lang/mdBook">MdBook</a>, pour l'écriture de cette documentation.</li>
+<li>🌍 <a href="https://www.qgis.org/fr/site/">QGIS</a>, pour visualiser les aberration GPS.</li>
+<li>📸 <a href="https://flameshot.org/">Flameshot</a>, pour les nombreuses captures d'écran dans cette documentation.</li>
+<li>🔎 <a href="https://www.meshlab.net/">Meshlab</a>, pour la visualisation des fichiers 3D.</li>
+<li>🖌️ <a href="https://inkscape.org/fr/">Inkscape</a> et <a href="https://www.gimp.org/">GIMP</a>, pour l'édition d'images.</li>
+<li>🎥 <a href="https://www.blender.org/">Blender</a>, pour la réalisation de la vidéo de rendu final.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contributeurs"><a class="header" href="#contributeurs">Contributeurs</a></h1>
+<p>📚 Le travail de recherche, de réalisation du projet et de documentation a été réalisé par <a href="https://github.com/apluquet">Adèle PLUQUET</a> et <a href="https://linktr.ee/adrien.anton_ludwig">Adrien ANTON LUDWIG</a>.</p>
+<p>🏛️ L'entreprise ayant permis la mise en place de ce projet est <a href="https://www.mitsiomotu.com/">Mitsio Motu</a>, entreprise de conseil spécialisée dans la collecte et l'analyse des données en Afrique.</p>
+<p>🤝 Ce projet a été rendu possible grâce à un partenariat avec <a href="https://flyinglabs.org/">Flying Labs</a>, et plus particulièrement <a href="https://flyinglabs.org/togo/">Flying Labs Togo</a> qui ont obtenu les autorisations de vol, prêté plusieurs drones et accompagné sur toutes les missions terrain.</p>
+<p>🔗 Le <a href="https://mitsio-motu-data.github.io/fipa/">site internet</a> présentant le résultat obtenu pour l'Hôtel de la Paix a été réalisé par <a href="https://github.com/bkgn">Boris KAGAN</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Recherches - Cartographie 3D avec un drone - Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../introduction/presentation_projet/presentation_projet.html"><strong aria-hidden="true">1.</strong> Présentation du projet</a></li><li class="chapter-item expanded "><a href="../introduction/mm/mm.html"><strong aria-hidden="true">2.</strong> Mitsio Motu</a></li><li class="chapter-item expanded affix "><li class="part-title">Guide</li><li class="chapter-item expanded "><a href="../guide/autorisations/autorisations.html"><strong aria-hidden="true">3.</strong> Obtention des autorisations</a></li><li class="chapter-item expanded "><a href="../guide/contraintes/contraintes.html"><strong aria-hidden="true">4.</strong> Identification des contraintes</a></li><li class="chapter-item expanded "><a href="../guide/planification/planification.html"><strong aria-hidden="true">5.</strong> Planification de la mission</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../guide/planification/mission_planner/mission_planner.html"><strong aria-hidden="true">5.1.</strong> Grille de survol avec Mission Planner</a></li><li class="chapter-item expanded "><a href="../guide/planification/litchi_angles/litchi_angles.html"><strong aria-hidden="true">5.2.</strong> Grille pour les angles avec Litchi Fly</a></li><li class="chapter-item expanded "><a href="../guide/planification/carto3d/carto3d.html"><strong aria-hidden="true">5.3.</strong> Conversion du format avec Carto3D</a></li><li class="chapter-item expanded "><a href="../guide/planification/litchi/litchi.html"><strong aria-hidden="true">5.4.</strong> Importation sur Litchi Fly</a></li></ol></li><li class="chapter-item expanded "><a href="../guide/vol/vol.html"><strong aria-hidden="true">6.</strong> Réalisation du vol</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../guide/vol/preparation/preparation.html"><strong aria-hidden="true">6.1.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../guide/vol/realisation/realisation.html"><strong aria-hidden="true">6.2.</strong> Réalisation</a></li></ol></li><li class="chapter-item expanded "><a href="../guide/reconstruction/reconstruction.html"><strong aria-hidden="true">7.</strong> Reconstruction 3D</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../guide/reconstruction/photogrammetrie/photogrammetrie.html"><strong aria-hidden="true">7.1.</strong> Quelques notions de photogrammétrie</a></li><li class="chapter-item expanded "><a href="../guide/reconstruction/open_drone_map/open_drone_map.html"><strong aria-hidden="true">7.2.</strong> Open Drone Map</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Recherches menées</li><li class="chapter-item expanded "><a href="../recherches/recherches.html" class="active"><strong aria-hidden="true">8.</strong> Recherches</a></li><li class="chapter-item expanded "><a href="../recherches/bibliographie/bibliographie.html"><strong aria-hidden="true">9.</strong> Bibliographie</a></li><li class="chapter-item expanded affix "><li class="part-title">Remerciements</li><li class="chapter-item expanded "><a href="../remerciements/credits.html"><strong aria-hidden="true">10.</strong> Crédits</a></li><li class="chapter-item expanded "><a href="../remerciements/contributeurs.html"><strong aria-hidden="true">11.</strong> Contributeurs</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mitsiomotu">Mitsio Motu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Cartographie 3D avec un drone - Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mitsio-motu-data/3D-Cartography-Drone" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="recherches-menées"><a class="header" href="#recherches-menées">Recherches menées</a></h1>
+<blockquote>
+<p>Cette section regroupe les questions que nous nous sommes posées et les réponses que nous y avons trouvées au cour de la mise en place du projet.
+Une grande partie du contenu a déjà été abordée dans la partie <strong>Guide</strong>.</p>
+</blockquote>
+<h2 id="matériel-à-disposition"><a class="header" href="#matériel-à-disposition">Matériel à disposition</a></h2>
+<p>Avant de se lancer dans quoi que ce soit, nous avons besoin de faire un inventaire du matériel et des logiciels à disposition pour ce projet.</p>
+<blockquote>
+<p>✅ Ce que nous avons :</p>
+<ul>
+<li><a href="https://www.dji.com/mavic-air-2/specs"><strong>Drone DJI Mavic Air 2</strong></a>
+<ul>
+<li>Drone</li>
+<li>3 batteries &amp; chargeur</li>
+<li>Hélices</li>
+<li>Manette + chargeur</li>
+<li>Housse de transport</li>
+</ul>
+</li>
+<li><strong>Matériel informatique</strong>
+<ul>
+<li>Ordinateurs avec 16Go de RAM et GPUs</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="planning-du-projet"><a class="header" href="#planning-du-projet">Planning du projet</a></h2>
+<p>Il est important de prévoir un planning général et tenable du projet.
+L'image ci-dessous illustre la répartition dans le temps des différentes étapes.
+Celui-ci s'est avéré très réaliste par rapport au déroulement de notre projet.
+Etant donné que c'était notre premier projet utilisant un drone, nous avons commencé par une partie &quot;Recherches&quot;, non mentionnée sur ce planning.
+Cette partie nous a pris environ le même temps que la partie &quot;Processing&quot;.</p>
+<p>Ce diagramme est issu d'un site de planification de vol d’UAV (Unmanned Aerial Vehicle) très intéressant à lire : <a href="https://uav-guidelines.openaerialmap.org/pages/07-preparing-for-the-uav-mission/">UAV Mapping Guidelines</a>. On peut voir que la manipulation du drone ne représente qu'une minorité de la mission.</p>
+<figure align="center">
+    <img src="../guide/autorisations/planning.jpg" | width=600/>
+    <figcaption>Planning de mission</figcaption>
+</figure>
+<h2 id="gps"><a class="header" href="#gps">GPS</a></h2>
+<p>Le drone <strong>DJI Mavic Air 2</strong> a un système de localisation <strong>GPS+GLONASS</strong> (GPS est américain, GLONASS est russe) d'après ses <a href="https://www.dji.com/mavic-air-2/specs">caractéristiques</a>.
+Si suffisamment de satellites sont disponibles pour établir la localisation du drone lors de la prise de vue, les coordonnées GPS sont enregistrées dans les métadonnées de chaque image.
+Les informations sont enregistrées en altitude, latitude et longitude.
+Pour les visualiser, vous pouvez utiliser la commande suivante :</p>
+<pre><code class="language-bash">exiftool image.jpg
+</code></pre>
+<p>Vous pourrez alors lire toutes les métadonnées de l'image et trouver les lignes qui se réfèrent aux coordonnées GPS :</p>
+<figure align="center">
+    <img src="gps.png" | width=600/>
+    <figcaption>Métadonnées d'altitude, latitude et longitude</figcaption>
+</figure>
+<p>Nous avons trouvé deux raisons pour lesquelles les données GPS sont importantes à acquérir, et le plus précisément possible :</p>
+<ul>
+<li>Rendre plus robuste la reconstruction 3D, qui s'appuie sur celles-ci pour éviter les erreurs de correspondance entre les images.</li>
+<li>Localiser la reconstruction 3D dans le monde réel.</li>
+</ul>
+<h2 id="qualité-des-images"><a class="header" href="#qualité-des-images">Qualité des images</a></h2>
+<p>La qualité des images a son importance.
+La netteté est indispensable pour le bon fonctionnement de la détection des points d'intérêt et donc pour une bonne reconstruction.
+Détecter des points d'intérêt sur des images floues est très difficile.</p>
+<p>Le drone <strong>DJI Mavic Air 2</strong> a plusieurs modes de capture d'images :</p>
+<ul>
+<li>Vidéo (jusqu'à 3840×2160 px)</li>
+<li>Photo 12 mégapixel (4000x3000 px)</li>
+<li>Photo 48 mégapixel (8000x6000 px)</li>
+</ul>
+<p>La vidéo est très lourde à stocker, traiter et de moins bonne résolution que les photos.
+Nous choisissons donc une acquisition par photos.</p>
+<p>Les photos en 48 Mpx sont prises avec le même capteur que les photos en 12 Mpx.
+Elles sont cependant beaucoup plus lourdes à stocker et traiter.
+Ce choix peut être envisagé si la qualité de rendu est bien meilleure.
+Cependant, l'utilisation du même capteur provoque souvent l'apparition de bruit dans les zones un peu sombres (ombres par exemple).
+(<a href="https://www.gsmarena.com/quad_bayer_sensors_explained-news-37459.php">Explications de l'utilisation d'un même capteur pour résolutions sortantes différentes</a>).</p>
+<p>La vidéo <a href="https://www.youtube.com/watch?v=7-p04vKLEWI&amp;ab_channel=Paladrone">Mavic Air 2 - photogrammétrie 12 vs 48 Mpx</a> effectue une comparaison entre les deux modes de prise de photo.
+Ci-dessous un tableau extrait de la vidéo comparant différents points entre les prises 12 et 48 Mpx. </p>
+<figure align="center">
+    <img src="12_48.png" | width=700/>
+    <figcaption>Comparaison de l'utilisation de photos en 12 et 48 Mpx sur une même mission</figcaption>
+</figure>
+<p>Les 2 rendus 3D issus des missions de cette vidéo sont très similaires.
+Les photos en 48 Mpx rendent parfois plus de détails mais ont également introduit du bruit sur certaines zones, ce que nous voulons éviter.
+Pour toutes ces raisons, nous choisissons de capturer les images en 12 Mpx.</p>
+<p>Il y a également la possibilité de capturer les images au format RAW en même temps que JPG.
+Le tableau ci-dessous présente le nombre d'images que nous pouvons prendre avec 8Go de stockage (mémoire interne du drone) avec ou sans le format RAW.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"></th><th style="text-align: center">JPEG 12MP</th><th style="text-align: center">JPEG 12MP + RAW</th></tr></thead><tbody>
+<tr><td style="text-align: center">8Go stockage</td><td style="text-align: center">1599 photos</td><td style="text-align: center">278 photos</td></tr>
+</tbody></table>
+</div>
+<h2 id="recouvrement"><a class="header" href="#recouvrement">Recouvrement</a></h2>
+<p>L'algorithme de reconstruction 3D utilise les différences de perspectives entre les points communs de deux images.
+C'est pourquoi, il est indispensable que des images successives aient une zone en commun.
+On parle de recouvrement.
+L'image ci dessous illustre à quoi correspond un pourcentage de recouvremet ou <em>overlap</em>.</p>
+<figure align="center">
+    <img src="overlap.png" | width=600/>
+    <figcaption>Pourcentages d'<i>overlap</i></figcaption>
+</figure>
+<p>Nous nous sommes demandé quel serait le recouvrement optimal à choisir entre nos images.
+D'après nos recherche, il est recommandé pour faire une bonne acquisition d'avoir au moins 70%
+(idéalement 80%) de recouvrement horizontal et 60% (idéalement 70%) de recouvrement vertical.
+Ces valeurs varient selon les sources mais correspondent aux ordres de grandeurs recommandés par
+<a href="https://docs.opendronemap.org/tutorials/#flight-height">Open Drone Map</a> et
+<a href="https://support.pix4d.com/hc/en-us/articles/203756125-How-to-verify-that-there-is-enough-overlap-between-the-images-PIX4Dmapper">Pix4D</a>.</p>
+<p>Voici une image afin d'illustrer les termes recouvrement horizontal (<em>forward overlap</em>) et vertical (<em>side overlap</em> ou <em>sidelap</em>) :</p>
+<figure align="center">
+    <img src="two_overlaps.png" | width=600/>
+    <figcaption>Recouvrement horizontal (<i>forward overlap</i>) et vertical (<i>sidelap</i>)</figcaption>
+</figure>
+<blockquote>
+<p>⚠️ Attention, les valeurs de cette illustration ne correspondent pas aux recommandations dans notre cas.</p>
+</blockquote>
+<h2 id="génération-des-missions"><a class="header" href="#génération-des-missions">Génération des missions</a></h2>
+<p>Afin d'acquérir ces images avec un recouvrement donné de manière précise, il est possible, et recommandé, de générer un parcours de vol.
+Ce parcours correspond à une liste de points (coordonnées GPS et altitude) pour lesquels
+le drone capturera une image selon des paramètres (orientation de la boussole, angle de la caméra, résolution, ...).
+Cependant, l'application officielle <a href="https://www.dji.com/global/downloads/djiapp/dji-fly">DJI Fly</a> ne supporte pas les vol planifiés.
+Nous devront trouver une autre application compatible avec notre drone qui inclut cette fonctionnalité.
+Différentes solutions existent, avec des avantages, inconvénients et, bien sûr, prix différents.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Outil</th><th style="text-align: center">Prix</th><th style="text-align: center">Open Source</th><th style="text-align: center">Avantages / Inconvénients</th><th style="text-align: center">Fonctionne avec le gestionnaire de vol</th></tr></thead><tbody>
+<tr><td style="text-align: center"><a href="https://afbayonac.github.io/grid-photogrammetry/">Grid Photogrammetry</a></td><td style="text-align: center">0€</td><td style="text-align: center"></td><td style="text-align: center">Très intuitif et en ligne mais manque de fonctionnalités (<em>cross grid</em> par exemple)</td><td style="text-align: center">Litchi</td></tr>
+<tr><td style="text-align: center"><a href="https://ancient.land/">Ancient Land</a></td><td style="text-align: center">0€</td><td style="text-align: center"></td><td style="text-align: center">Très intuitif et en ligne mais manque de fonctionnalités (<em>cross grid</em> et ajout de drone inconnu par exemple)</td><td style="text-align: center">Litchi</td></tr>
+<tr><td style="text-align: center"><a href="https://plugins.qgis.org/plugins/drone_path/">Plugin QGIS drone_path</a></td><td style="text-align: center">0€</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center">Litchi</td></tr>
+<tr><td style="text-align: center"><a href="https://ardupilot.org/planner/">MissionPlanner</a></td><td style="text-align: center">0€</td><td style="text-align: center">✅</td><td style="text-align: center">Toutes les fonctionnalités que nous cherchons sont disponibles. Le logiciel n'est pas trop long à prendre en main. Plusieurs bugs sont cependant à relever.</td><td style="text-align: center">Mission Planner</td></tr>
+<tr><td style="text-align: center"><a href="https://www.dronelink.com/">Dronelink</a></td><td style="text-align: center">39€ /mois /utilisateur pour la version pro avec plus d'un utilisateur (<a href="https://app.dronelink.com/pricing">détails</a>).</td><td style="text-align: center">❌</td><td style="text-align: center"><a href="https://support.dronelink.com/hc/en-us/articles/4411563374099">Mapping des façades</a> compris, gestionnaire de vol compris.</td><td style="text-align: center">Dronelink</td></tr>
+<tr><td style="text-align: center"><a href="https://www.dronedeploy.com/">DroneDeploy</a></td><td style="text-align: center">329€ /mois pour une version personnelle (<a href="https://www.dronedeploy.com/pricing.html">détails</a>).</td><td style="text-align: center">❌</td><td style="text-align: center">Gestionnaire de vol et reconstruction compris dedans.</td><td style="text-align: center">DroneDeploy</td></tr>
+</tbody></table>
+</div><figure align="center">
+    <img src="grid.png" | width=600/>
+    <figcaption>Grille générée avec Grid Photogrammetry</figcaption>
+</figure>
+<p><a href="https://flylitchi.com/">Litchi Fly</a>, dont le nom est cité à plusieurs reprises dans le tableau, est un gestionnaire de vol compatible avec les drone <strong>DJI</strong>.
+Il ne permet pas la planification de missions mais il est possible d'en importer.
+Il génère les bonnes instructions qu'il envoie au drone pour réaliser la mission planifiée.
+L'application inclut également d'autres fonctionnalités telles que les panoramas, le suivi d'objet,...
+Contrairement à l’application officielle DJI Fly, cette application permet de  <a href="https://flylitchi.com/help#waypoints-p3">suivre un itinéraire prédéfini</a>.
+C'est ce qui nous intéresse ici.
+L'application coûte <a href="https://play.google.com/store/apps/details?id=com.aryuthere.visionplus&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">24,37€ sur Android</a> et est utilisable à vie.</p>
+<blockquote>
+<p>La solution la plus pratique pour notre situation semble être de générer l'itinéraire dans <a href="https://ardupilot.org/planner/">Mission Planner</a>. Nous utiliserons ensuite <a href="https://github.com/YarostheLaunchpadder/MissionPlanner-to-Litchi">Mission Planner to Litchi</a> pour convertir le format d'export <code>.waypoints</code> de Mission Planner au format d'import CSV de <a href="https://flylitchi.com/">Litchi</a>.
+Voici deux vidéos intéressantes :</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Vdxp_iXCcys&amp;ab_channel=OldGuyOnACouch">Exemple rapide d'utilisation de Mission Planner et Mission Planner to Litchi</a></li>
+<li><a href="https://www.youtube.com/watch?v=dmjK2tUpf8c&amp;ab_channel=VisualJoy">Exemple complet utilisant Mission Planner, Mission Planner to Litchi, Litchi et WebODM</a>.</li>
+</ul>
+</blockquote>
+<h2 id="prétraitement-des-images"><a class="header" href="#prétraitement-des-images">Prétraitement des images</a></h2>
+<p>Normalement le traitement d'images avant le processing ne sera pas utile.
+Il pourrait arriver qu'il soit nécessaire si jamais les images sont trop claires/sombres pour la détection de points d'intérêt.
+Si jamais nous avons besoin de traiter des images, il faudrait les avoir au format RAW.</p>
+<h2 id="reconstruction-3d"><a class="header" href="#reconstruction-3d">Reconstruction 3D</a></h2>
+<p>Pour la reconstruction 3D, nous utilisons <a href="https://opendronemap.org/">Open Drone Map</a>, un logiciel gratuit et <a href="https://fr.wikipedia.org/wiki/Open_source">open source</a>.
+Vous pouvez vous même voir des projets d'exemple et naviguer dans les reconstructions 3D via <a href="https://demo.webodm.org/dashboard/">ce lien</a>
+et en cliquant successivement sur les boutons comme indiqué que l'image :</p>
+<figure align="center">
+    <img src="webodm.png" | width=600/>
+    <figcaption>Ouverture de projet sur WebODM</figcaption>
+</figure>
+<p>Amusez-vous ensuite à tester les différentes options et outils du menu de gauche une fois le modèle 3D ouvert.</p>
+<p>Il y a deux moyens d'utiliser OpenDroneMap :</p>
+<ul>
+<li>Avec une interface graphique (similaire à celle de l'exemple) ➡️ <a href="https://github.com/OpenDroneMap/WebODM">Repo GitHub de WebODM</a></li>
+<li>En lignes de commande ➡️ <a href="https://github.com/OpenDroneMap/ODM">Repo GitHub d'ODM</a></li>
+</ul>
+<p>Dans les deux cas, il est nécessaire de faire quelques lignes en ligne de commande pour mettre en place l'environnement.
+Il existe sinon un <a href="https://opendronemap.org/webodm/download/#installer">installeur &quot;clés en main&quot;</a>.</p>
+<p>Nous avons testé les deux méthodes qui fonctionnent très bien.
+Nous avons cependant plus d'informations sur le déroulé du traitement en ligne de commande.</p>
+<p>Il est possible d'activer l'utilisation du GPU pour un traitement plus rapide.</p>
+<h2 id="matériel-nécessaire"><a class="header" href="#matériel-nécessaire">Matériel nécessaire</a></h2>
+<p>Ces recherches nous ont permis de lister le matériel dont nous avons besoin :</p>
+<blockquote>
+<p>🔴 Ce dont nous avons besoin pour mener le projet à bien :</p>
+<ul>
+<li><strong>Carte Micro SD</strong>
+<ul>
+<li>Le drone embarque seulement 8go de stockage interne.
+La carte micro SD peut aller jusqu'à 256Go.
+Capacité de stockage à déterminer plus précisément après le premier essai réel.
+128 voir 64 Go sont suffisants dans notre cas.
+Peut être réparti en plusieurs cartes micro SD de 32Go mais implique plus de précautions lors des vols.</li>
+</ul>
+</li>
+<li><strong>Application de vol <a href="https://flylitchi.com/">Litchi Fly</a></strong>
+<ul>
+<li>Application de vol avec beaucoup de fonctionnalités avancées.</li>
+<li>Contrairement à l'application officielle <strong>DJI Fly</strong>, cette application permet de suivre une liste de positions GPS pour la prise de photos/vidéos.
+Cela permet de suivre automatiquement un parcours précis, comme une grille pour s'assurer de couvrir la zone d'intérêt.</li>
+<li>24,90$ US pour Android (Utilisation à vie)</li>
+</ul>
+</li>
+<li><strong>Test en conditions similaires</strong>
+<ul>
+<li>Pouvoir essayer le tout de bout en bout sur un projet de plus petite ampleur
+(par exemple, autour d'une maison avec un peu d'espace autour).
+Cela nous permettra de nous familiariser avec le drone mais surtout de répondre à des question auxquelles nous ne pouvons pas répondre en restant au bureau.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="test-de-vol"><a class="header" href="#test-de-vol">Test de vol</a></h2>
+<p>Nous avons eu l'occasion de faire un vol test sur un terrain vierge.
+Cela nous a permis de répondre à plusieurs questions :</p>
+<ul>
+<li>Est-ce que le point <strong>HOME</strong> est défini automatiquement au lieu de décollage du drone ?
+<ul>
+<li>Oui.</li>
+</ul>
+</li>
+<li>Est-ce que le départ et retour <strong>RTH</strong> (Return To Home) fonctionnent bien ?
+<ul>
+<li>Oui.</li>
+</ul>
+</li>
+<li>Vitesse de vol.
+<ul>
+<li>Réponse dépendant de la mission.</li>
+</ul>
+</li>
+<li>Altitude de vol.
+<ul>
+<li>Réponse dépendant de la mission.</li>
+<li>Retour <strong>RTH</strong> monte à 100m dans certains cas mais pas systématiquement.</li>
+</ul>
+</li>
+<li>L'intervalle de prise de photo est-il correct ?
+<ul>
+<li>Prise à chaque <em>waypoint</em> qui fonctionne.</li>
+<li>Prise à chaque mètre fonctionne également (paramètre <code>Litchi Fly</code>).
+Il faudra désactiver cette option dont nous n'avons pas besoin.</li>
+</ul>
+</li>
+<li>Vers où est orientée la caméra ?
+<ul>
+<li>Elle est orientée vers l'avant du drone.</li>
+</ul>
+</li>
+<li>Quel est le degré d'inclinaison de la caméra ?
+<ul>
+<li>Le degré lorsque la mission débute est conservé.
+Il faut donc régler l'inclinaison avant le début de la mission.</li>
+</ul>
+</li>
+<li>Est-ce que le temps de vol annoncé par <code>Litchi Fly</code> est correct ?
+<ul>
+<li>Non pas du tout. Le temps pout s'arrêter et redémarrer n'est pas pris en compte.
+<code>Litchi Fly</code> calcule probablement en considérant que chaque déplacement est effectué à la vitesse de croisière renseignée.</li>
+</ul>
+</li>
+<li>La gestion de la batterie est-elle bien effectuée ?
+<ul>
+<li>Oui, à 20%, le drone demande à revenir. On peut prolonger l'utilisation.
+À 10%, le drone se pose là où il se trouve.</li>
+</ul>
+</li>
+<li>Le paramètre <code>Initial direction</code> de <code>Litchi FLy</code> a-t-il bien fonctionné ?
+<ul>
+<li>Oui.</li>
+</ul>
+</li>
+<li>Essai des filtres UV.</li>
+</ul>
+<h2 id="estimation-de-la-hauteur"><a class="header" href="#estimation-de-la-hauteur">Estimation de la hauteur</a></h2>
+<p>Pour prévoir les vols, nous avons besoin de connaître la hauteur du bâtiment.</p>
+<figure align="center">
+    <img src="hotel.jpg" | width=600/>
+    <figcaption>Arrière de l'Hôtel de la Paix</figcaption>
+</figure>
+<p>Sur cette image, on peut voir 6 étages de balcons et 2 étages en dessous.
+Il ne faut pas non plus oublier l'épaisseur du toit et les décorations encadrées en bleu.
+Il semblerait que la taille moyenne d'un bâtiment de 7 étages soit de 23m, soit 3,3m par étage.
+(Environ 2,5m par étage, plus l'épaisseur entre les étages).
+Dans notre cas, nous pouvons alors essayer d'estimer la taille de l'hôtel :</p>
+<ul>
+<li>8 étages soit 27m</li>
+<li>L'épaisseur du toit semble faire presque la hauteur d'un étage, on rajoute 5m les décorations encadrées en bleu. Cela nous donne 8,5m à ajouter.</li>
+</ul>
+<p>Nous estimons donc la taille du bâtiment à 30,5 et 35,5m à l'entrée.</p>
+<blockquote>
+<p>Nous n'étions pas si loin, un vol de reconnaissance nous a fait savoir que le toit s'élève à 27m et les décorations à 32m.</p>
+</blockquote>
+<p>Nous nous demandons ensuite à quelle hauteur réaliser le vol du drone par rapport au toit.
+D'après cet <a href="https://enterprise-insights.dji.com/blog/roof-inspection-workflow">article</a>, la hauteur idéale pour voler au dessus d'un toit serait de:</p>
+<ul>
+<li>7,5/15m pour un bâtiment résidentiel</li>
+<li>15/30m pour un bâtiment commercial</li>
+</ul>
+<p>Si nous partons sur la hauteur d'un bâtiment résidentiel, on obtient une hauteur de vol de : <code>30,5 + 10 = 40,5m</code> et <code>45,5m</code> à l'entrée.</p>
+<h2 id="planification-relative-au-point-de-départ"><a class="header" href="#planification-relative-au-point-de-départ">Planification relative au point de départ</a></h2>
+<p>Dans notre cas, les images dont nous bénéficions pour planifier la mission étaient de mauvaise qualité.
+De plus, de nombreux obstacles étaient présents sur le terrain.
+Nous aurions aimé planifier une mission relativement à un point de départ et non avec des positions GPS définies à l'avance.</p>
+<p>Nous devons approfondir nos recherches à ce sujet.</p>
+<blockquote>
+<p>Après quelques recherches, il semblerait que ce soit impossible de planifier une mission relative à un point de départ, quel que soit le logiciel utilisé.</p>
+</blockquote>
+<h2 id="reconstruction"><a class="header" href="#reconstruction">Reconstruction</a></h2>
+<p>Voici un tableau comparant le temps de traitement pour des sous-sections d'une même mission en fonction du nombre d'images et de l'ordinateur utilisé.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Nombre d'images</th><th style="text-align: center">WebODM / ODM</th><th style="text-align: center">GPU</th><th style="text-align: center">Temps de traitement</th><th style="text-align: center">PC</th></tr></thead><tbody>
+<tr><td style="text-align: center">30</td><td style="text-align: center">WebODM</td><td style="text-align: center">Non</td><td style="text-align: center">9 mins 31 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC1">1</a></sup></td></tr>
+<tr><td style="text-align: center">20</td><td style="text-align: center">ODM</td><td style="text-align: center">Non</td><td style="text-align: center">7 mins 55 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC1">1</a></sup></td></tr>
+<tr><td style="text-align: center">20</td><td style="text-align: center">ODM</td><td style="text-align: center">Oui</td><td style="text-align: center">5 mins 52 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC1">1</a></sup></td></tr>
+<tr><td style="text-align: center">50</td><td style="text-align: center">ODM</td><td style="text-align: center">Oui</td><td style="text-align: center">11 mins 58 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC1">1</a></sup></td></tr>
+<tr><td style="text-align: center">52</td><td style="text-align: center">ODM</td><td style="text-align: center">Non</td><td style="text-align: center">12 mins 00 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC2">2</a></sup></td></tr>
+<tr><td style="text-align: center">52</td><td style="text-align: center">ODM</td><td style="text-align: center">Oui</td><td style="text-align: center">8 mins 50 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC2">2</a></sup></td></tr>
+<tr><td style="text-align: center">100</td><td style="text-align: center">ODM</td><td style="text-align: center">Oui</td><td style="text-align: center">20 mins 52 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC1">1</a></sup></td></tr>
+<tr><td style="text-align: center">237</td><td style="text-align: center">ODM</td><td style="text-align: center">Non</td><td style="text-align: center">55 mins 40 secs</td><td style="text-align: center"><sup class="footnote-reference"><a href="#PC2">2</a></sup></td></tr>
+</tbody></table>
+</div>
+<div class="footnote-definition" id="PC1"><sup class="footnote-definition-label">1</sup>
+<p>Intel i7-10870H CPU @ 2.20GHz + GPU Geforce GTX 1650 Ti Max-Q + 16Go Ram + 8Go Swap</p>
+</div>
+<div class="footnote-definition" id="PC2"><sup class="footnote-definition-label">2</sup>
+<p>Intel i7-11800H CPU @ 2.30GHz + GPU GeForce RTX 3050 Laptop + 16Go Ram + 8Go Swap</p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../guide/reconstruction/open_drone_map/open_drone_map.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../recherches/bibliographie/bibliographie.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../guide/reconstruction/open_drone_map/open_drone_map.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../recherches/bibliographie/bibliographie.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

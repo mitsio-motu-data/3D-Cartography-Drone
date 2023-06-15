@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Planification de la mission - Cartographie 3D avec un drone - Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../../introduction/presentation_projet/presentation_projet.html"><strong aria-hidden="true">1.</strong> Présentation du projet</a></li><li class="chapter-item expanded "><a href="../../introduction/mm/mm.html"><strong aria-hidden="true">2.</strong> Mitsio Motu</a></li><li class="chapter-item expanded affix "><li class="part-title">Guide</li><li class="chapter-item expanded "><a href="../../guide/autorisations/autorisations.html"><strong aria-hidden="true">3.</strong> Obtention des autorisations</a></li><li class="chapter-item expanded "><a href="../../guide/contraintes/contraintes.html"><strong aria-hidden="true">4.</strong> Identification des contraintes</a></li><li class="chapter-item expanded "><a href="../../guide/planification/planification.html" class="active"><strong aria-hidden="true">5.</strong> Planification de la mission</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../guide/planification/mission_planner/mission_planner.html"><strong aria-hidden="true">5.1.</strong> Grille de survol avec Mission Planner</a></li><li class="chapter-item expanded "><a href="../../guide/planification/litchi_angles/litchi_angles.html"><strong aria-hidden="true">5.2.</strong> Grille pour les angles avec Litchi Fly</a></li><li class="chapter-item expanded "><a href="../../guide/planification/carto3d/carto3d.html"><strong aria-hidden="true">5.3.</strong> Conversion du format avec Carto3D</a></li><li class="chapter-item expanded "><a href="../../guide/planification/litchi/litchi.html"><strong aria-hidden="true">5.4.</strong> Importation sur Litchi Fly</a></li></ol></li><li class="chapter-item expanded "><a href="../../guide/vol/vol.html"><strong aria-hidden="true">6.</strong> Réalisation du vol</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../guide/vol/preparation/preparation.html"><strong aria-hidden="true">6.1.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../../guide/vol/realisation/realisation.html"><strong aria-hidden="true">6.2.</strong> Réalisation</a></li></ol></li><li class="chapter-item expanded "><a href="../../guide/reconstruction/reconstruction.html"><strong aria-hidden="true">7.</strong> Reconstruction 3D</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../guide/reconstruction/photogrammetrie/photogrammetrie.html"><strong aria-hidden="true">7.1.</strong> Quelques notions de photogrammétrie</a></li><li class="chapter-item expanded "><a href="../../guide/reconstruction/open_drone_map/open_drone_map.html"><strong aria-hidden="true">7.2.</strong> Open Drone Map</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Recherches menées</li><li class="chapter-item expanded "><a href="../../recherches/recherches.html"><strong aria-hidden="true">8.</strong> Recherches</a></li><li class="chapter-item expanded "><a href="../../recherches/bibliographie/bibliographie.html"><strong aria-hidden="true">9.</strong> Bibliographie</a></li><li class="chapter-item expanded affix "><li class="part-title">Remerciements</li><li class="chapter-item expanded "><a href="../../remerciements/credits.html"><strong aria-hidden="true">10.</strong> Crédits</a></li><li class="chapter-item expanded "><a href="../../remerciements/contributeurs.html"><strong aria-hidden="true">11.</strong> Contributeurs</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mitsiomotu">Mitsio Motu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Cartographie 3D avec un drone - Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mitsio-motu-data/3D-Cartography-Drone" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="planification-de-la-mission"><a class="header" href="#planification-de-la-mission">Planification de la mission</a></h1>
+<p>Le drone <a href="https://www.dji.com/mavic-air-2/specs"><strong>Mavic Air 2</strong></a> de <a href="https://www.dji.com/">DJI</a> est normalement destiné à un usage personnel et non professionnel. Il n'inclut pas la possibilité de prévoir des vols autonomes et doit normalement être piloté à la main par l'opérateur. Cependant, il est possible de contourner cela grâce à l'utilisation de différents logiciels que nous allons présenter ici.</p>
+<p>Les étapes à suivre pour mettre en place le vol autonome sont les suivantes :</p>
+<ol>
+<li>Prévoir des points GPS à rallier grâce à <a href="mission_planner.html"><strong>Mission Planner</strong></a> ou <a href="litchi_angles.html"><strong>Litchi Fly</strong></a>.</li>
+<li>Convertir les points dans le format de <strong>Litchi Fly</strong> et éditer la mission (verticalité par exemple) grâce à <a href="carto3d.html"><strong>Carto3D</strong></a>.</li>
+<li>Vérifier les paramètres généraux de la mission sur <a href="litchi.html"><strong>Litchi Fly</strong></a>.</li>
+</ol>
+<p>Plus précisément, voici le diagramme complet représentant la file de traitement pour la préparation des missions. Cela permet également de clarifier la place et l'utilité de chaque logiciel dans la file de traitement.</p>
+<figure align="center">
+    <img src="chart.png" | width=650/>
+    <figcaption>Diagramme présentant toute les étapes de la planification de vol - Créé grâce à <a href="https://www.lucidchart.com/pages/">Lucid Chart</a></figcaption>
+</figure>
+<h2 id="quels-sont-les-vols-à-prévoir-"><a class="header" href="#quels-sont-les-vols-à-prévoir-">Quels sont les vols à prévoir ?</a></h2>
+<p>Pour cartographier un bâtiment de cette taille, il est presque indispensable de planifier les vols pour plusieurs raisons :</p>
+<ul>
+<li>C'est très fastidieux à la main et une bonne maîtrise de pilotage de drones est nécessaire.</li>
+<li>Les images doivent être prises d'une manière très précise (elles doivent avoir un certain pourcentage de recouvrement). Planifier le vol permet que les images soient bien prises. À la main, les erreurs sont trop faciles à faire. Les erreurs d'acquisition entravent grandement la qualité de la reconstruction (voire la rendent impossible). Cependant, nous verrons que dans certains cas, les vols ne peuvent s'effectuer qu'à la main.</li>
+<li>Un vol planifié sera souvent plus rapidement effectué sur le terrain qu'à la main. Cela permet donc d'économiser de la batterie.</li>
+</ul>
+<p>⚠️ Cependant, il n'est pas possible de planifier une seule très grande mission pour tout le bâtiment. Du moins, les logiciels que nous utilisons ne le permettent pas. Il faut découper le tout en plusieurs morceaux. Voyons donc maintenant comment sectionner cette mission pour la planifier. Les paramètres conseillés ne sont pas obligatoires. N'hésitez pas à les adapter si vous pensez que c'est nécessaire.</p>
+<p>Nous allons ici considérer qu'il s'agit de la cartographie d'un grand bâtiment, comme c'était le cas pour l'Hôtel de la Paix.
+C'est une configuration complexe (par sa grande taille et sa forme biscornue) qui permettra d'aborder de nombreux points.</p>
+<p>À vous ensuite d'adapter ces informations à votre projet ! 😉</p>
+<blockquote>
+<p>📚 Quelques termes et notions avant de commencer !</p>
+<ul>
+<li><strong>Vol horizontal</strong> : Vol dont le plan est parallèle au sol. Permet d'acquérir le sol par exemple.</li>
+<li><strong>Vol vertical</strong> : Vol dont le plan est perpendiculaire au sol. Permet d'acquérir les façades par exemple.</li>
+<li><strong>Caméra à</strong> :
+<ul>
+<li><strong>0°</strong> : Elle pointe vers le sol.</li>
+<li><strong>90°</strong> : Elle est perpendiculaire au sol. Elle pointe vers un mur par exemple.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="le-sol"><a class="header" href="#le-sol">Le sol</a></h3>
+<blockquote>
+<ul>
+<li>Vol horizontal</li>
+<li>Plat : caméra à 0° et grille simple</li>
+<li>Relief (ou bâtiment) : caméra à 45° et grille croisée</li>
+<li>Altitude en fonction de la précision voulue et de la taille du terrain (et donc longueur de la mission et nombre de photos).</li>
+<li>À planifier sur Mission Planner (voir la partie <a href="mission_planner.html">Grille de survol avec Mission Planner</a>)</li>
+</ul>
+</blockquote>
+<p>Pour acquérir du sol en particulier. En fonction de la précision voulue, le vol peut être assez bas mais peut monter jusqu'à l'altitude maximale du drone.</p>
+<p>La façon la plus simple d'opérer est de planifier une grille simple. Cependant si des bâtiments sont présents sur le terrain et que vous ne voulez pas perdre les façades, vous pouvez faire une acquisition en grille croisée avec la caméra orientée à 45%. Attention, celle-ci sera beaucoup plus longue et lourde en stockage et traitement.</p>
+<h3 id="le-toit"><a class="header" href="#le-toit">Le toit</a></h3>
+<blockquote>
+<ul>
+<li>Vol horizontal.</li>
+<li>Plat : caméra à 0° et grille simple</li>
+<li>Relief : caméra à 45° et grille croisée</li>
+<li>Altitude à +/- 15m du toit environ en fonction de la précision voulue.</li>
+<li>À planifier sur Mission Planner (voir la partie <a href="mission_planner.html">Grille de survol avec Mission Planner</a>).</li>
+</ul>
+</blockquote>
+<p>Dans la majorité des cas, un vol en grille simple avec la caméra à 0° suffira. Attention, l'altitude de vol donnée ici est relative au toit et non pas au sol. Il faudra trouver un moyen de connaître la hauteur maximale du bâtiment cartographié. Vous pouvez estimer sa hauteur grâce à son nombre d'étages ou bien faire un prévol avec le drone pour aller relever les altitudes de la toiture. Pour cela, placez la caméra du drone à 90° et faite le voler jusqu'à ce que le niveau que vous souhaitez mesurer soit au centre de l'image. L'altitude du drone, à ce moment, correspond à la hauteur du toit.</p>
+<figure align="center">
+    <img src="roof.jpg" | width=600/>
+    <figcaption>Exemple d'un bon rendu de la caméra pour mesurer la hauteur d'un bâtiment</figcaption>
+</figure>
+<p>Vous pouvez ensuite créer un plan avec les hauteurs de votre bâtiment comme celui-ci par exemple :</p>
+<figure align="center">
+    <img src="roof_altitudes.jpg" | width=600/>
+    <figcaption>Hauteurs du toit et des terrasses de l'Hôtel de la Paix</figcaption>
+</figure>
+<h3 id="les-façades"><a class="header" href="#les-façades">Les façades</a></h3>
+<blockquote>
+<ul>
+<li>Vol vertical.</li>
+<li>Caméra à 90°.</li>
+<li>Grille simple.</li>
+<li>Distance de +/- 15m du mur environ en fonction de la précision voulue et des obstacles.</li>
+<li>À planifier sur Mission Planner (voir la partie <a href="mission_planner.html">Grille de survol avec Mission Planner</a>).</li>
+</ul>
+</blockquote>
+<p>Pour chaque façade, il faudra faire une mission différente car la file de traitement prend (pour l'instant) seulement les missions sur une même ligne.</p>
+<h3 id="les-angles"><a class="header" href="#les-angles">Les angles</a></h3>
+<blockquote>
+<ul>
+<li>Vol vertical.</li>
+<li>Caméra à 90°.</li>
+<li>Grille simple.</li>
+<li>Distance de +/- 15m du mur environ en fonction de la précision voulue et des obstacles.</li>
+<li>À planifier sur Litchi Fly (voir la partie <a href="litchi_angles.html">Grille pour les angles avec Litchi Fly</a>) ou à faire en manuel.</li>
+</ul>
+</blockquote>
+<p>L'acquisition des angles est primordiale pour que le logiciel de reconstruction comprenne le lien entre les façades et puisse tout reconstruire lui même. Il faut que les photos de ces missions couvrent un peu de chaque façade.</p>
+<p>(voir la partie <a href="litchi_angles.html">Grille pour les angles avec Litchi Fly</a>)</p>
+<h3 id="zone-générale"><a class="header" href="#zone-générale">Zone générale</a></h3>
+<blockquote>
+<ul>
+<li>Vol horizontal.</li>
+<li>Plat : caméra à 0° et grille simple</li>
+<li>Relief (bâtiments) : caméra à 45° et grille croisée</li>
+<li>Altitude de +/- 40m environ en fonction de la précision voulue et de la taille du terrain (et donc longueur de la mission et nombre de photos).</li>
+<li>À planifier sur Mission Planner (voir la partie <a href="mission_planner.html">Grille de survol avec Mission Planner</a>).</li>
+</ul>
+</blockquote>
+<p>Bien que les caractéristiques soient très similaires avec l'acquisition du sol, ce sont deux choses très différentes. Par exemple, pour l'acquisition de l'Hôtel de la Paix, nous avons fait :</p>
+<ul>
+<li>Une <strong>acquisition générale</strong> de la zone à 40 et 50 m d'altitude en grille croisée (voir polygone bleu dans l'image ci-dessous) incluant le bâtiment principal et un peu de terrain. Cela permet d'obtenir de l'information générale sur le terrain et d'augmenter la qualité de la reconstruction. De plus, cela permet d'avoir des information (même si moyennement précises) sur tout le bâtiment et donc de s'assurer que le logiciel de reconstruction pourra faire le lien entre les différentes zones du bâtiment.</li>
+<li>Une <strong>acquisition de type sol</strong> sur la zone autour de la piscine. À plus basse altitude, elle permet de se focaliser sur une zone qui nous intéresse et d'avoir une meilleure résolution dans une zone spécifique. Certains petits bâtiments étaient présents dans cette zone. Nous avons fait l'erreur de faire malgré tout une acquisition en grille simple et non croisée. Il nous manque donc un peu des façades de ces bâtiments.</li>
+</ul>
+<figure align="center">
+    <img src="zone.jpg" | width=900/>
+    <figcaption>Bleu : Acquisition générale - Jaune : Acquisition de sol</figcaption>
+</figure>
+<h3 id="zones-délicates"><a class="header" href="#zones-délicates">Zones délicates</a></h3>
+<p>Certaines zones, trop étroites par exemple doivent être acquises de manière manuelle. À vous de juger les zones pour lesquelles c'est nécessaire. Attention, l'opérateur du drone doit bien respecter les recouvrements entre les images.</p>
+<h2 id="organisation-de-la-planification"><a class="header" href="#organisation-de-la-planification">Organisation de la planification</a></h2>
+<h3 id="suivi"><a class="header" href="#suivi">Suivi</a></h3>
+<p>Ainsi découpé, un seul bâtiment comporte rapidement plusieurs dizaines de missions planifiées différentes. Par exemple pour l'hôtel de la paix, nous avions découpé l'acquisition en 25 mission. De plus, comme nous utilisions 3 drones différents, nous avons planifié toutes les missions pour tous les drones ce qui faisait au total 75 missions.</p>
+<p>À ce stade, il est indispensable de prévoir un outil pour suivre l'état de la planification. Nous avions par exemple utilisé un <em>Google Sheet</em>.</p>
+<figure align="center">
+    <img src="google_sheet.jpg" | width=700/>
+    <figcaption>Fiche de suivi de l'état de la planification</figcaption>
+</figure>
+<h3 id="nomenclature"><a class="header" href="#nomenclature">Nomenclature</a></h3>
+<p>Il va également falloir manipuler de nombreux fichiers :</p>
+<ul>
+<li>Les fichiers <em>.waypoints</em> de Mission Planner</li>
+<li>Les fichiers <em>.csv</em> de Carto3D</li>
+<li>Les fichiers <em>.csv</em> de Litchi Fly</li>
+</ul>
+<p>Pour s'y retrouver et facilement comprendre à quoi correspond chaque fichier, il faut mettre en place une nomenclature. Voici par exemple ce que nous avions créé pour le projet Hôtel de la Paix  :</p>
+<figure align="center">
+    <img src="naming.jpg" | width=600/>
+    <figcaption>Nomenclature à l'hôtel de la paix</figcaption>
+</figure>
+<p>En plus de cette nomenclature, nous ajoutions :</p>
+<ul>
+<li>en <strong>préfixe</strong> le modèle du drone pour lequel la mission était destinée
+<ul>
+<li>Mavic Air 2 : <code>ma</code></li>
+<li>Mavic 2 Pro : <code>mp</code></li>
+<li>Phantom Pro v4 : <code>pp</code></li>
+</ul>
+</li>
+<li>en <strong>suffixe</strong> la distance à la surface de la mission (en m)</li>
+</ul>
+<p>Ainsi, une mission du Mavic Air 2 à 8m du pan de mur en rose clair dans l'angle haut droit de l'image s'appellerait  : <code>ma_edge_back_right_8</code>.</p>
+<blockquote>
+<p>✍️ C'est une pratique rendant le travail et la collaboration beaucoup plus faciles.
+Il est également indispensable de documenter la nomenclature choisie pour que le travail soit repris facilement par quelqu'un d'autre ou bien beaucoup plus tard.</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../guide/contraintes/contraintes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../guide/planification/mission_planner/mission_planner.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../guide/contraintes/contraintes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../guide/planification/mission_planner/mission_planner.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
