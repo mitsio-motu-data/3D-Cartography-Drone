@@ -24,7 +24,7 @@ Lorsque vous vous lancez dans ce projet, commencez par clarifier quelques points
 Le drone de [Mitsio Motu](https://www.mitsiomotu.com/) est le [Mavic Air 2](https://www.dji.com/mavic-air-2/specs). C'est un très bon drone amateur. Il embarque une caméra (photo et vidéo) et une balise GPS/GLONNASS.
 
 <figure align="center">
-    <img src="../../images/guide/drone_mavic.jpg" | width=500/>
+    <img src="drone_mavic.jpg" | width=500/>
     <figcaption>Drone Mavic Air 2</figcaption>
 </figure>
 

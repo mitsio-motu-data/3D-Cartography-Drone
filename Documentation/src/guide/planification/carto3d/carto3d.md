@@ -3,7 +3,7 @@
 [**Dépôt Github du projet**](https://github.com/mitsio-motu-data/Carto3D)
 
 <figure align="center">
-    <img src="../../images/guide/carto3d/carto3d.png" | width=600/>
+    <img src="carto3d.png" | width=600/>
 </figure>
 
 Cette étape a plusieurs intérêts :
@@ -26,7 +26,7 @@ La distance entre les *waypoints* est déjà bonne car ils ont été générés 
 Cependant, il faut renseigner à **Carto3D** la bonne distance entre les lignes pour conserver un *Sidelap* correct.
 
 <figure align="center">
-    <img src="../../images/guide/carto3d/flight_lines.jpg" | width=600/>
+    <img src="flight_lines.jpg" | width=600/>
     <figcaption>Schéma issu de Carto3D illustrant les <i>flight lines</i></figcaption>
 </figure>
 

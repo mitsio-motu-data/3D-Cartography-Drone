@@ -12,7 +12,7 @@ La liste du matériel à emporter est la même que présentée dans [Préparatio
 Vous pouvez éventuellement y ajouter une liste imprimée de tous les vols à effectuer pour suivre l'avancement de la journée.
 
 <figure align="center">
-    <img src="../../images/guide/vol/realisation/suivi.jpg" | width="600" />
+    <img src="suivi.jpg" | width="600" />
     <figcaption>Fiche de suivi pour les vols à l'Hôtel de la Paix</figcaption>
 </figure>
 
@@ -27,15 +27,19 @@ Vous pouvez cependant forcer le décollage.
 Pour cela, rendez-vous dans l'application `DJI Fly` (ou autre application DJI/constructeur correspondant à votre modèle de drone) :
 
 - `DJI Fly` :
-    - Faites décoller le drone. Il va s'élever à 1,2m.
-    - Alors, l'application vous dira qu'il ne peut pas décoller (oui, oui, alors que le drone a déjà décollé).
-    - Acceptez toutes les conditions pour vous porter garant en cas d'incident. Une vérification d'identité peut-être demandée. Suivez les instructions si c'est le cas.
+  - Faites décoller le drone. Il va s'élever à 1,2m.
+  - Alors, l'application vous dira qu'il ne peut pas décoller (oui, oui, alors que le drone a déjà décollé).
+  - Acceptez toutes les conditions pour vous porter garant en cas d'incident.
+    Une vérification d'identité peut-être demandée. Suivez les instructions si c'est le cas.
 - `DJI Go 4` :
-    - Appuyez sur le bouton de décollage du drone.
-    - Il va refuser de décoller en vous expliquant la raison dans un pop-up.
-    - Tout en bas du pop-up, vous pouvez cocher deux cases pour vous porter garant également en cas d'incident.
-    - Validez tout en bas du pop-up.
-    - ⚠️ Dans la version Android 4.3.54 de `DJI Go 4`, un bug fait qu'on ne peut pas dérouler le pop-up et donc jamais accéder au bouton `valider`. Nous n'avons pas trouvé d'autre solution que de passer sur un autre téléphone avec un écran plus large. Sur l'un des téléphones, une erreur se produit également en validant. Nous avons à nouveau dû changer de téléphone pour réussir cette étape.
+  - Appuyez sur le bouton de décollage du drone.
+  - Il va refuser de décoller en vous expliquant la raison dans un pop-up.
+  - Tout en bas du pop-up, vous pouvez cocher deux cases pour vous porter garant également en cas d'incident.
+  - Validez tout en bas du pop-up.
+  - ⚠️ Dans la version Android 4.3.54 de `DJI Go 4`, un bug fait qu'on ne peut pas dérouler le pop-up et donc jamais accéder au bouton `valider`.
+    Nous n'avons pas trouvé d'autre solution que de passer sur un autre téléphone avec un écran plus large.
+    Sur l'un des téléphones, une erreur se produit également en validant.
+    Nous avons à nouveau dû changer de téléphone pour réussir cette étape.
 
 Fermez alors l'application `DJI` et ouvrez `Litchi Fly`.
 Vous devez pouvoir décoller.

@@ -1,7 +1,7 @@
 <figure align="center">
     <p>
         <a href="https://www.mitsiomotu.com/" target="_blank" rel="noopener noreferrer">
-            <img src="../images/introduction/mm.png" | width=150/>
+            <img src="mm.png" | width=150/>
         </a>
     </p>
 </figure>
@@ -15,6 +15,6 @@ Cette documentation a été rédigée dans le cadre d'un projet de cartographie 
 Mitsio Motu réalise régulièrement des collectes de données auprès des populations d'Afrique de l'Ouest. Par exemple, en 2022, ce sont 700 collecteurs qui ont parcouru le Togo pendant 7 mois pour recenser toutes les infrastructures du pays : hôpitaux, écoles, restaurants, points d'eau, ... La donnée collectée permet de proposer des plans de déploiement d'infrastructures (lampadaires par exemple) adaptés aux besoins de la population.
 
 <figure align="center">
-    <img src="../images/introduction/mm_prise.jpeg" | width=650/>
+    <img src="mm_prise.jpeg" | width=650/>
     <figcaption>Collecteur sur  le terrain</figcaption>
 </figure>

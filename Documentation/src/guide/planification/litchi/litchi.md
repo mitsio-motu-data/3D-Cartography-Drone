@@ -10,7 +10,7 @@
 Une fois sur le site de Litchi Fly, rendez-vous sur [Mission Hub](https://flylitchi.com/hub).
 
 <figure align="center">
-    <img src="../../images/guide/litchi/welcome.jpg" | width=600/>
+    <img src="../litchi_angles/welcome.jpg" | width=600/>
     <figcaption>Accueil du site Litchi Fly</figcaption>
 </figure>
 
@@ -56,14 +56,14 @@ Nous souhaitons passer en mode **Waypoint**.
 Pour cela, cliquez dans l'icône **FPV** en haut à gauche de l'écran.
 
 <figure align="center">
-    <img src="../../images/guide/litchi/open_litchi.jpg" | width=600/>
-    <img src="../../images/guide/litchi/wp.jpg" | width=600/>
+    <img src="open_litchi.jpg" | width=600/>
+    <img src="wp.jpg" | width=600/>
 </figure>
 
 Vous pouvez voir et charger vos missions depuis l'icône de dossier.
 
 <figure align="center">
-    <img src="../../images/guide/litchi/browse.jpg" | width=600/>
+    <img src="browse.jpg" | width=600/>
 </figure>
 
 🏁 Et voilà, c'est parti pour la réalisation du vol !

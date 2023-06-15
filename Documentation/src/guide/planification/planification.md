@@ -11,13 +11,14 @@ Les étapes à suivre pour mettre en place le vol autonome sont les suivantes :
 Plus précisément, voici le diagramme complet représentant la file de traitement pour la préparation des missions. Cela permet également de clarifier la place et l'utilité de chaque logiciel dans la file de traitement.
 
 <figure align="center">
-    <img src="../../images/guide/planification/chart.png" | width=650/>
+    <img src="chart.png" | width=650/>
     <figcaption>Diagramme présentant toute les étapes de la planification de vol - Créé grâce à <a href="https://www.lucidchart.com/pages/">Lucid Chart</a></figcaption>
 </figure>
 
 ## Quels sont les vols à prévoir ?
 
-Pour cartographier un bâtiment de cette taille, il est presque indispensable de planifier les vols pour plusieurs raisons : 
+Pour cartographier un bâtiment de cette taille, il est presque indispensable de planifier les vols pour plusieurs raisons :
+
 - C'est très fastidieux à la main et une bonne maîtrise de pilotage de drones est nécessaire.
 - Les images doivent être prises d'une manière très précise (elles doivent avoir un certain pourcentage de recouvrement). Planifier le vol permet que les images soient bien prises. À la main, les erreurs sont trop faciles à faire. Les erreurs d'acquisition entravent grandement la qualité de la reconstruction (voire la rendent impossible). Cependant, nous verrons que dans certains cas, les vols ne peuvent s'effectuer qu'à la main.
 - Un vol planifié sera souvent plus rapidement effectué sur le terrain qu'à la main. Cela permet donc d'économiser de la batterie.
@@ -30,11 +31,13 @@ C'est une configuration complexe (par sa grande taille et sa forme biscornue) qu
 À vous ensuite d'adapter ces informations à votre projet ! 😉
 
 > 📚 Quelques termes et notions avant de commencer !
+>
 > - **Vol horizontal** : Vol dont le plan est parallèle au sol. Permet d'acquérir le sol par exemple.
 > - **Vol vertical** : Vol dont le plan est perpendiculaire au sol. Permet d'acquérir les façades par exemple.
-> - **Caméra à** : 
->    - **0°** : Elle pointe vers le sol.
->    - **90°** : Elle est perpendiculaire au sol. Elle pointe vers un mur par exemple.
+> - **Caméra à** :
+>   - **0°** : Elle pointe vers le sol.
+>   - **90°** : Elle est perpendiculaire au sol. Elle pointe vers un mur par exemple.
+
 ### Le sol
 
 > - Vol horizontal
@@ -58,14 +61,14 @@ La façon la plus simple d'opérer est de planifier une grille simple. Cependant
 Dans la majorité des cas, un vol en grille simple avec la caméra à 0° suffira. Attention, l'altitude de vol donnée ici est relative au toit et non pas au sol. Il faudra trouver un moyen de connaître la hauteur maximale du bâtiment cartographié. Vous pouvez estimer sa hauteur grâce à son nombre d'étages ou bien faire un prévol avec le drone pour aller relever les altitudes de la toiture. Pour cela, placez la caméra du drone à 90° et faite le voler jusqu'à ce que le niveau que vous souhaitez mesurer soit au centre de l'image. L'altitude du drone, à ce moment, correspond à la hauteur du toit.
 
 <figure align="center">
-    <img src="../../images/guide/planification/roof.JPG" | width=600/>
+    <img src="roof.jpg" | width=600/>
     <figcaption>Exemple d'un bon rendu de la caméra pour mesurer la hauteur d'un bâtiment</figcaption>
 </figure>
 
-Vous pouvez ensuite créer un plan avec les hauteurs de votre bâtiment comme celui-ci par exemple : 
+Vous pouvez ensuite créer un plan avec les hauteurs de votre bâtiment comme celui-ci par exemple :
 
 <figure align="center">
-    <img src="../../images/guide/planification/roof_altitudes.jpg" | width=600/>
+    <img src="roof_altitudes.jpg" | width=600/>
     <figcaption>Hauteurs du toit et des terrasses de l'Hôtel de la Paix</figcaption>
 </figure>
 
@@ -105,7 +108,7 @@ Bien que les caractéristiques soient très similaires avec l'acquisition du sol
 - Une **acquisition de type sol** sur la zone autour de la piscine. À plus basse altitude, elle permet de se focaliser sur une zone qui nous intéresse et d'avoir une meilleure résolution dans une zone spécifique. Certains petits bâtiments étaient présents dans cette zone. Nous avons fait l'erreur de faire malgré tout une acquisition en grille simple et non croisée. Il nous manque donc un peu des façades de ces bâtiments.
 
 <figure align="center">
-    <img src="../../images/guide/planification/zone.jpg" | width=900/>
+    <img src="zone.jpg" | width=900/>
     <figcaption>Bleu : Acquisition générale - Jaune : Acquisition de sol</figcaption>
 </figure>
 
@@ -115,19 +118,21 @@ Certaines zones, trop étroites par exemple doivent être acquises de manière m
 
 ## Organisation de la planification
 
-### Suivi 
+### Suivi
+
 Ainsi découpé, un seul bâtiment comporte rapidement plusieurs dizaines de missions planifiées différentes. Par exemple pour l'hôtel de la paix, nous avions découpé l'acquisition en 25 mission. De plus, comme nous utilisions 3 drones différents, nous avons planifié toutes les missions pour tous les drones ce qui faisait au total 75 missions.
 
 À ce stade, il est indispensable de prévoir un outil pour suivre l'état de la planification. Nous avions par exemple utilisé un *Google Sheet*.
 
 <figure align="center">
-    <img src="../../images/guide/planification/gs.jpg" | width=700/>
+    <img src="google_sheet.jpg" | width=700/>
     <figcaption>Fiche de suivi de l'état de la planification</figcaption>
 </figure>
 
 ### Nomenclature
 
-Il va également falloir manipuler de nombreux fichiers : 
+Il va également falloir manipuler de nombreux fichiers :
+
 - Les fichiers *.waypoints* de Mission Planner
 - Les fichiers *.csv* de Carto3D
 - Les fichiers *.csv* de Litchi Fly
@@ -135,15 +140,16 @@ Il va également falloir manipuler de nombreux fichiers :
 Pour s'y retrouver et facilement comprendre à quoi correspond chaque fichier, il faut mettre en place une nomenclature. Voici par exemple ce que nous avions créé pour le projet Hôtel de la Paix  :
 
 <figure align="center">
-    <img src="../../images/guide/planification/naming.jpg" | width=600/>
+    <img src="naming.jpg" | width=600/>
     <figcaption>Nomenclature à l'hôtel de la paix</figcaption>
 </figure>
 
-En plus de cette nomenclature, nous ajoutions : 
+En plus de cette nomenclature, nous ajoutions :
+
 - en **préfixe** le modèle du drone pour lequel la mission était destinée
-    - Mavic Air 2 : `ma`
-    - Mavic 2 Pro : `mp`
-    - Phantom Pro v4 : `pp`
+  - Mavic Air 2 : `ma`
+  - Mavic 2 Pro : `mp`
+  - Phantom Pro v4 : `pp`
 - en **suffixe** la distance à la surface de la mission (en m)
 
 Ainsi, une mission du Mavic Air 2 à 8m du pan de mur en rose clair dans l'angle haut droit de l'image s'appellerait  : `ma_edge_back_right_8`.

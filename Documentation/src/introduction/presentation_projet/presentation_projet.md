@@ -27,9 +27,8 @@ Les notions présentées dans cette documentation peuvent également être utili
 
 Ce projet a été mis en place en avril 2023 pour participer à la sauvegarde du patrimoine togolais. Cette année, l'Hôtel de la Paix, ancien hôtel phare de Lomé abandonné depuis 20 ans, menaçait d'être détruit. **[Mitsio Motu](https://www.mitsiomotu.com/)** a alors décidé de cartographier le bâtiment.
 
-
 <figure align=center>
-    <img src="../images/hdp_original_picture.jpg" width=650/>
+    <img src="hdp_original_picture.jpg" width=650/>
     <figcaption>Hôtel de la Paix (photo d'époque)</figcaption>
 </figure>
 
@@ -41,6 +40,6 @@ Deux méthodes ont été mises en place :
 Vous pouvez retrouver les résultats des deux méthodes sur [le site du projet](https://mitsio-motu-data.github.io/fipa/).
 
 <figure align=center>
-    <img src="../images/introduction/hdp_3d_reconstruction.jpg" width=650/>
+    <img src="hdp_3d_reconstruction.jpg" width=650/>
     <figcaption>Hôtel de la Paix (reconstruction 3D)</figcaption>
 </figure>

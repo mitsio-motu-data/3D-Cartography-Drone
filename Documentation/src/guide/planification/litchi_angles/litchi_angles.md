@@ -19,7 +19,7 @@
 Une fois sur le site de Litchi Fly, rendez-vous sur [Mission Hub](https://flylitchi.com/hub).
 
 <figure align="center">
-    <img src="../../images/guide/litchi/welcome.jpg" | width=600/>
+    <img src="welcome.jpg" | width=600/>
     <figcaption>Accueil du site Litchi Fly</figcaption>
 </figure>
 
@@ -28,7 +28,7 @@ Placez vous là où vous voulez réaliser votre mission.
 Nous choisissons de réaliser la mission pour l'angle représenté par la ligne bleue :
 
 <figure align="center">
-    <img src="../../images/guide/litchi_angles/this_angle.jpg" | width=600/>
+    <img src="this_angle.jpg" | width=600/>
     <figcaption>Angle pour lequel nous allons réaliser une mission</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ Litchi FLy ouvre alors un petit encadré pour modifier la position et l'altitude
 Son altitude n'a pas d'importance ici.
 
 <figure align="center">
-    <img src="../../images/guide/litchi_angles/poi.jpg" | width=600/>
+    <img src="poi.jpg" | width=600/>
     <figcaption>Positionnement de notre point d'intérêt</figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ Ici aucun calcul n'est fait pour vérifier que les images auront assez de recouv
 Il vaut mieux qu'elle en aient trop que pas assez.
 
 <figure align="center">
-    <img src="../../images/guide/litchi_angles/points.jpg" | width=600/>
+    <img src="points.jpg" | width=600/>
     <figcaption>Positionnement des waypoints</figcaption>
 </figure>
 

@@ -10,15 +10,18 @@ La stéreoscopie est une méthode ancienne, apparue bien avant l'informatique et
 Le même principe est utilisé au cinéma avec des projections de films en 3D.
 
 <figure align="center">
-    <img src="../images/introduction/holmes-stereoscope.jpg" | width=500/>
+    <img src="holmes-stereoscope.jpg" | width=500/>
     <figcaption>Stéreoscope de Holmes</figcaption>
 </figure>
 
 Aujourd'hui, il est possible avec un ordinateur de simuler les mêmes calculs que fait notre cerveau pour que lui aussi puisse obtenir des images 3D à partir d'images 2D. C'est grâce à cela que nous pourrons réaliser une reconstruction 3D à partir d'images 2D. Nous allons présenter les étapes principales d'une reconstruction 3D.
 
-> 📖 Nous vous conseillons vivement d'aller lire des sources plus complètes sur le sujet. Voici quelques exemples : 
-> - L'article [Introduction To Feature Detection And Matching](https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d) est une bonne base pour comprendre les étapes de la détection au matching.
-> - Le livre d'Open Drone Map [A Comprehensive Guide To Use OpenDroneMap](https://odmbook.com/) explique toute la file de reconstruction, de manière simple et claire.
+> 📖 Nous vous conseillons vivement d'aller lire des sources plus complètes sur le sujet. Voici quelques exemples :
+>
+> - L'article [Introduction To Feature Detection And Matching](https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d)
+>   est une bonne base pour comprendre les étapes de la détection au matching.
+> - Le livre d'Open Drone Map [A Comprehensive Guide To Use OpenDroneMap](https://odmbook.com/)
+>   explique toute la file de reconstruction, de manière simple et claire.
 
 ## Détection de points d'intérêt ou *features*
 
@@ -35,7 +38,7 @@ Ce sont des points dans l'image dont l'information environnante est suffisament 
 Différents algorithmes existent pour la détection de points d'intérêt, chacun ayant ses particularités. [Open Drone Map](https://opendronemap.org/), que nous utiliserons pour la reconstruction, utilise [SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform) par exemple.
 
 <figure align="center">
-    <img src="../images/introduction/cars.png" | width=600/>
+    <img src="cars.png" | width=600/>
     <figcaption>Détection de points d'intérêt - Algorithme d'<a href="https://en.wikipedia.org/wiki/Harris_corner_detector">Harris</a></figcaption>
 </figure>
 
@@ -57,7 +60,7 @@ L'information de profondeur s'obtient en ayant un même point sur plusieurs imag
  L'image ci-dessous illustre un résultat de matching entre deux images.
 
 <figure align="center">
-    <img src="../images/introduction/matching.jpg" | width=600/>
+    <img src="matching.jpg" | width=600/>
     <figcaption>Résultat de matching - Image issue de cet <a href="https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d">article</a></figcaption>
 </figure>
 
@@ -67,7 +70,7 @@ Une fois l'association des points d'intérêt faite, un nuage de points 3D peut 
 
 | Nuage de points | Mesh |
 | :-------------: | :--: |
-| ![](../images/introduction/bunny_pc.jpg) | ![](../images/introduction/bunny_meshed.jpg) |
+| ![Bunny point cloud](bunny_pc.jpg) | ![Bunny mesh](bunny_meshed.jpg) |
 
 ## Texturing
 
@@ -77,4 +80,4 @@ Pour donner de la couleur et texture à notre modèle, on crée un patchwork à 
 
 | Texture | Mesh texturé |
 | :-------------: | :--: |
-| ![](../images/introduction/bunny_texture.jpg) | ![](../images/introduction/bunny_textured.jpg) |
+| ![Bunny texture](bunny_texture.jpg) | ![Bunny textured](bunny_textured.jpg) |

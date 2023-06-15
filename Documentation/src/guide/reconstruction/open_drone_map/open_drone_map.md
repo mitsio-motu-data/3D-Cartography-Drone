@@ -103,7 +103,7 @@ Voici un exemple de reconstruction avec des coordonnées GPS aberrantes par rapp
 
 | Avec les images aberrantes | Sans les images aberrantes |
 | :------------------------: | :-----------------------: |
-| ![Avec les images aberrantes](../../images/guide/odm/with_gps_aberrant_images.jpg) | ![Sans les images aberrantes](../../images/guide/odm/without_gps_aberrant_images.jpg) |
+| ![Avec les images aberrantes](with_gps_aberrant_images.jpg) | ![Sans les images aberrantes](without_gps_aberrant_images.jpg) |
 
 Pour trouver les images aberrantes, on peut utiliser [QGIS](https://www.qgis.org/fr/site/).
 Pour cela, il faut utiliser la fonction `Import GeoTagged Photos` et sélectionner le dossier contenant les images.
@@ -112,7 +112,7 @@ Certaines aberrations sont visibles à l'œil nu.
 Par exemple, sur la figure ci-dessous, nous savons que toutes les images devraient être localisées dans la zone verte.
 On peut donc identifier les images aberrantes.
 
-![QGIS_GPS_aberrant](../../images/guide/odm/qgis_gps_aberrant.jpg)
+![QGIS_GPS_aberrant](qgis_gps_aberrant.jpg)
 
 D'autres aberrations sont moins visibles, comme des images **non localisées** ou **mal localisées**.
 
@@ -122,7 +122,7 @@ Les images non localisées n'apparaissent pas sur la carte.
 On peut les trouver en sélectionnant toutes les images visibles sur la cartes et en inversant la sélection.
 
 > ⚠️ FIXME ⚠️
-> EIl faudrait encore explorer la possibilité de reconstruire sans utiliser les coordonnées GPS des images.
+> Il faudrait encore explorer la possibilité de reconstruire sans utiliser les coordonnées GPS des images.
 
 ### Images non exploitables
 
@@ -130,7 +130,7 @@ Comme évoqué sur la page précédente, nous recommandons de supprimer les imag
 
 Voici un exemple d'images que nous avons oublié de supprimer et qui ont généré une erreur lors de la reconstruction.
 
-![Palmier](../../images/guide/odm/palm_tree.jpg)
+![Palmier](palm_tree.jpg)
 
 ## Paramètres explorés
 
@@ -151,7 +151,7 @@ Par défaut, la valeur est de `200000`, ce qui signifie que le maillage ne doit 
 
 | Une façade | Bâtiment entier |
 | :------: | :-------------: |
-| ![1 façade](../../images/guide/odm/mesh_wall.jpg) | ![Bâtiment entier](../../images/guide/odm/mesh_whole_hdp.jpg) |
+| ![1 façade](mesh_wall.jpg) | ![Bâtiment entier](mesh_whole_hdp.jpg) |
 
 Nous pouvons constater que les deux maillages ont à peu près le même nombre de sommets et de faces mais une densité très différente.
 
@@ -161,7 +161,7 @@ Pour éviter que le faible nombre de sommets limite la reconstruction, nous avon
 
 | `--mesh-size 200000` | `--mesh-size 1000000` |
 | :------------------: | :-------------------: |
-| ![mesh-size 200000](../../images/guide/odm/mesh_whole_hdp_200000.jpg) | ![mesh-size 1000000](../../images/guide/odm/mesh_whole_hdp_1000000.jpg) |
+| ![mesh-size 200000](mesh_whole_hdp_200000.jpg) | ![mesh-size 1000000](mesh_whole_hdp_1000000.jpg) |
 
 Nous pouvons constater que la précision n'a pas augmenté dans la cage d'escaliers et sur l'angle du mur. Nous savons cependant que cette façade peut être très bien reconstruite car nous obtenons une bonne précision lorsque nous la traitons seule. Dans ce cas, nous pouvons alors supposer que c'est le nuage de points qui limite la reconstruction et non le maillage. Cela nous amène aux paramètres suivants.
 

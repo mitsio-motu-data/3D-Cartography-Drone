@@ -10,13 +10,13 @@ Avant de se lancer dans quoi que ce soit, nous avons besoin de faire un inventai
 > ✅ Ce que nous avons :
 >
 > - [**Drone DJI Mavic Air 2**](https://www.dji.com/mavic-air-2/specs)
->     - Drone
->     - 3 batteries & chargeur
->     - Hélices
->     - Manette + chargeur
->     - Housse de transport
+>   - Drone
+>   - 3 batteries & chargeur
+>   - Hélices
+>   - Manette + chargeur
+>   - Housse de transport
 > - **Matériel informatique**
->     - Ordinateurs avec 16Go de RAM et GPUs
+>   - Ordinateurs avec 16Go de RAM et GPUs
 
 ## Planning du projet
 
@@ -29,7 +29,7 @@ Cette partie nous a pris environ le même temps que la partie "Processing".
 Ce diagramme est issu d'un site de planification de vol d’UAV (Unmanned Aerial Vehicle) très intéressant à lire : [UAV Mapping Guidelines](https://uav-guidelines.openaerialmap.org/pages/07-preparing-for-the-uav-mission/). On peut voir que la manipulation du drone ne représente qu'une minorité de la mission.
 
 <figure align="center">
-    <img src="../images/recherches/planning.jpg" | width=600/>
+    <img src="../guide/autorisations/planning.jpg" | width=600/>
     <figcaption>Planning de mission</figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ exiftool image.jpg
 Vous pourrez alors lire toutes les métadonnées de l'image et trouver les lignes qui se réfèrent aux coordonnées GPS :
 
 <figure align="center">
-    <img src="../images/recherches/gps.png" | width=600/>
+    <img src="gps.png" | width=600/>
     <figcaption>Métadonnées d'altitude, latitude et longitude</figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ La vidéo [Mavic Air 2 - photogrammétrie 12 vs 48 Mpx](https://www.youtube.com
 Ci-dessous un tableau extrait de la vidéo comparant différents points entre les prises 12 et 48 Mpx. 
 
 <figure align="center">
-    <img src="../images/recherches/12_48.png" | width=700/>
+    <img src="12_48.png" | width=700/>
     <figcaption>Comparaison de l'utilisation de photos en 12 et 48 Mpx sur une même mission</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ On parle de recouvrement.
 L'image ci dessous illustre à quoi correspond un pourcentage de recouvremet ou *overlap*.
 
 <figure align="center">
-    <img src="../images/recherches/overlap.png" | width=600/>
+    <img src="overlap.png" | width=600/>
     <figcaption>Pourcentages d'<i>overlap</i></figcaption>
 </figure>
 
@@ -118,7 +118,7 @@ Ces valeurs varient selon les sources mais correspondent aux ordres de grandeurs
 Voici une image afin d'illustrer les termes recouvrement horizontal (*forward overlap*) et vertical (*side overlap* ou *sidelap*) :
 
 <figure align="center">
-    <img src="../images/recherches/two_overlaps.png" | width=600/>
+    <img src="two_overlaps.png" | width=600/>
     <figcaption>Recouvrement horizontal (<i>forward overlap</i>) et vertical (<i>sidelap</i>)</figcaption>
 </figure>
 
@@ -143,7 +143,7 @@ Différentes solutions existent, avec des avantages, inconvénients et, bien sû
 | [DroneDeploy](https://www.dronedeploy.com/) | 329€ /mois pour une version personnelle ([détails](https://www.dronedeploy.com/pricing.html)). | ❌ | Gestionnaire de vol et reconstruction compris dedans. | DroneDeploy |
 
 <figure align="center">
-    <img src="../images/recherches/grid.png" | width=600/>
+    <img src="grid.png" | width=600/>
     <figcaption>Grille générée avec Grid Photogrammetry</figcaption>
 </figure>
 
@@ -174,7 +174,7 @@ Vous pouvez vous même voir des projets d'exemple et naviguer dans les reconstru
 et en cliquant successivement sur les boutons comme indiqué que l'image :
 
 <figure align="center">
-    <img src="../images/recherches/webodm.png" | width=600/>
+    <img src="webodm.png" | width=600/>
     <figcaption>Ouverture de projet sur WebODM</figcaption>
 </figure>
 
@@ -253,7 +253,7 @@ Cela nous a permis de répondre à plusieurs questions :
 Pour prévoir les vols, nous avons besoin de connaître la hauteur du bâtiment.
 
 <figure align="center">
-    <img src="../images/recherches/hotel.jpg" | width=600/>
+    <img src="hotel.jpg" | width=600/>
     <figcaption>Arrière de l'Hôtel de la Paix</figcaption>
 </figure>
 

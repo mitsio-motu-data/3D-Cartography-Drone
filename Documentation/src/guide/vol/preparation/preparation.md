@@ -27,7 +27,7 @@ Pour ne pas perdre de temps sur le terrain, il est important de faire quelques p
    Rendez-vous maintenant dans l'application `DJI Fly`.
 
 <figure align="center">
-    <img src="../../images/guide/vol/preparation/choice.jpg" | height="450" />
+    <img src="choice.jpg" | height="450" />
     <figcaption>Ne surtout pas cocher "Se souvenir de mon choix"</figcaption>
 </figure>
 
@@ -36,10 +36,10 @@ Pour ne pas perdre de temps sur le terrain, il est important de faire quelques p
    `... > À propos > Firmware de l'appareil > Rechercher des mises à jour`
 
 <figure align="center">
-    <img src="../../images/guide/vol/preparation/menu.jpg" | width="500" />
-    <img src="../../images/guide/vol/preparation/find_maj.jpg" | width="500" />
-    <img src="../../images/guide/vol/preparation/maj1.jpg" | width="500" />
-    <img src="../../images/guide/vol/preparation/maj2.jpg" | width="500" />
+    <img src="menu.jpg" | width="500" />
+    <img src="find_maj.jpg" | width="500" />
+    <img src="maj1.jpg" | width="500" />
+    <img src="maj2.jpg" | width="500" />
     <figcaption>Étape pour les mises à jours firmware</figcaption>
 </figure>
 
@@ -90,7 +90,7 @@ Le point de décollage est enregistré comme point de *Home* par le drone.
 Il reviendra ici lorsque vous lui direz d'atterrir en mode *RTH (Return To Home)*.
 
 <figure align="center">
-    <img src="../../images/guide/vol/preparation/takeoff.jpg" | width=600 />
+    <img src="takeoff.jpg" | width=600 />
     <figcaption>Icône de décollage du drone (DJI Fly). La même icône est utilisée sur Litchi Fly</figcaption>
 </figure>
 
@@ -100,14 +100,14 @@ Trois modes pré-configurés existent (cf. p32 [Manuel d'utilisation du Mavic Ai
 Voici le mode utilisé pour le drone [Mavic Air 2](https://www.dji.com/mavic-air-2/specs) de [Mitsio Motu](https://www.mitsiomotu.com/) :
 
 <figure align="center">
-    <img src="../../images/guide/vol/preparation/commands.jpg" | width=600 />
+    <img src="commands.jpg" | width=600 />
     <figcaption>Commandes des joysticks (Mode 2)</figcaption>
 </figure>
 
 À l'arrière de la télécommandes, des boutons sont disponibles pour gérer la partie caméra, photos et vidéos :
 
 <figure align="center">
-    <img src="../../images/guide/vol/preparation/other_commands.jpg" | width=600 />
+    <img src="other_commands.jpg" | width=600 />
     <figcaption>Inclinaison caméra, prise de photos et vidéos</figcaption>
 </figure>
 
@@ -118,8 +118,8 @@ Amusez-vous, c'est l'occasion de prendre de jolies photos ! 📸
 C'est le moment de tester les vols que vous avez préparés pour cette session d'essai.
 
 <figure align="center">
-    <img src="../../images/guide/vol/preparation/anac_hor.jpg" | width=600 />
-    <img src="../../images/guide/vol/preparation/anac_vert.jpg" | width=600 />
+    <img src="anac_hor.jpg" | width=600 />
+    <img src="anac_vert.jpg" | width=600 />
     <figcaption>Exemples de mission de test en terrain dégagé</figcaption>
 </figure>
 
@@ -128,7 +128,7 @@ Réglez ensuite le degré de la caméra à celui souhaité pour la mission grâc
 Vous pouvez voir à quel degré exactement la caméra est inclinée, comme illustré dans l'image ci-dessous :
 
 <figure align="center">
-    <img src="../../images/guide/vol/preparation/deg.jpg" | width=600 />
+    <img src="degree.jpg" | width=600 />
     <figcaption>Réglage de l'inclinaison de la caméra</figcaption>
 </figure>
 
@@ -142,7 +142,7 @@ Si l'on ne souhaite pas retoucher les images, il n'est pas nécessaire de les en
 Pour la reconstruction 3D ce format n'est pas forcément nécessaire.
 
 <figure align="center">
-    <img src="../../images/guide/vol/preparation/format.jpg" | width=600 />
+    <img src="format.jpg" | width=600 />
     <figcaption>Réglage du format d'enregistrement des photos</figcaption>
 </figure>
 
@@ -150,14 +150,14 @@ Assurez vous que les images sont bien enregistrées sur la mémoire externe et n
 Pour cela, rendez-vous dans les paramètres : `... > Caméra > Emplacement de stockage`.
 
 <figure align="center">
-    <img src="../../images/guide/vol/preparation/disk.jpg" | width=600 />
+    <img src="disk.jpg" | width=600 />
     <figcaption>Choix de l'emplacement de stockage</figcaption>
 </figure>
 
 Lancez ensuite simplement le vol en cliquant sur `Play`.
 
 <figure align="center">
-    <img src="../../images/guide/vol/preparation/start_lf.jpg" | width=600 />
+    <img src="start_lf.jpg" | width=600 />
     <figcaption>Démarrage d'une mission Litchi Fly</figcaption>
 </figure>
 
