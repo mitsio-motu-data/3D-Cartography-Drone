@@ -29,6 +29,9 @@ jobs:
 
       - name: Build with mdBook
         run: mdbook build Documentation
+      
+      - name: Fix index.html images (workaround)
+        run: cp Documentation/book/introduction/presentation_projet/*.jpg Documentation/book/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
