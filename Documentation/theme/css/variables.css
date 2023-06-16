@@ -213,6 +213,46 @@
     --search-mark-bg: #656668;
 }
 
+.mitsiomotu-dark {
+    --bg: #181A1B;
+    --fg: #D0CCC6;
+
+    --sidebar-bg: #160065;
+    --sidebar-fg: #e8e6e3;
+    --sidebar-non-existant: #a7a094;
+    --sidebar-active: #f07c74;
+    --sidebar-spacer: #25282a;
+
+    --scrollbar: #181a1b;
+
+    --icons: #9b9386;
+    --icons-hover: #3000d9;
+
+    --links: #6bb4eb;
+
+    --inline-code-color: #a8a095;
+
+    --theme-popup-bg: #1b1d1e;
+    --theme-popup-border: #3000d9;
+    --theme-hover: #26292b;
+
+    --quote-bg: #474D50;
+    --quote-border: #464b4e;
+
+    --table-border-color: #34383a;
+    --table-header-bg: #35393b;
+    --table-alternate-bg: #1d1f20;
+
+    --searchbar-border-color: #35393B;
+    --searchbar-bg: #1b1d1e;
+    --searchbar-fg: #e8e6e3;
+    --searchbar-shadow-color: #484e51;
+    --searchresults-header-fg: #a8a095;
+    --searchresults-border-color: #52585c;
+    --searchresults-li-bg: #5d4121;
+    --search-mark-bg: #4d5457;
+}
+
 .rust{
     --bg: hsl(60, 9%, 87%);
     --fg: #262625;
