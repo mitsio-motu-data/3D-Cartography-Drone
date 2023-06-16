@@ -6,5 +6,6 @@ src = "src"
 title = "Cartographie 3D avec un drone - Documentation"
 
 [output.html]
+default-theme = "mitsiomotu"
 site-url = "/3D-Cartography-Drone/"
 git-repository-url = "https://github.com/mitsio-motu-data/3D-Cartography-Drone"
