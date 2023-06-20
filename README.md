@@ -41,6 +41,18 @@ Vous pouvez maintenant naviguer dans la documentation.
 
 ⚠️ TODO ⚠️
 
+### Syntaxe Markdown
+
+Il n'y a pas de règles strictes concernant la syntaxe Markdown,
+mais nous essayons de suivre quelques bonnes pratiques pour que contribuer soit le plus agréable possible.
+
+Nous utilisons [markdownlint](https://github.com/DavidAnson/markdownlint) pour vérifier la syntaxe des fichiers Markdown.
+Différentes extensions existent pour les éditeurs de texte,
+vous pouvez donc l'installer pour votre éditeur préféré.
+
+Certaines règles sont désactivées pour des raisons de compatibilité avec mdBook.
+Vous pouvez consulter la configuration dans le fichier [`.markdownlint.json`](.markdownlint.json).
+
 ## Auteurs
 
 - Adèle PLUQUET
