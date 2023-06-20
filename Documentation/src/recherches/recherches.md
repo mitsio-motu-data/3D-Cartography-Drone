@@ -78,7 +78,7 @@ Cependant, l'utilisation du même capteur provoque souvent l'apparition de bruit
 ([Explications de l'utilisation d'un même capteur pour résolutions sortantes différentes](https://www.gsmarena.com/quad_bayer_sensors_explained-news-37459.php)).
 
 La vidéo [Mavic Air 2 - photogrammétrie 12 vs 48 Mpx](https://www.youtube.com/watch?v=7-p04vKLEWI&ab_channel=Paladrone) effectue une comparaison entre les deux modes de prise de photo.
-Ci-dessous un tableau extrait de la vidéo comparant différents points entre les prises 12 et 48 Mpx. 
+Ci-dessous un tableau extrait de la vidéo comparant différents points entre les prises 12 et 48 Mpx.
 
 <figure align="center">
     <img src="12_48.png" | width=700/>

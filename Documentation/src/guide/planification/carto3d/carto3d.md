@@ -13,9 +13,9 @@ Cette étape a plusieurs intérêts :
 - *[Optionnel]* Convertir la mission en un vol vertical pour l'acquisition d'une façade.
 - *[Optionnel]* Mettre à jour l'altitude et la vitesse du vol.
 - Définir une liste d'actions à chaque *waypoint* :
-    - Attendre 0.5 seconde.
-    - Prendre une photo.
-    - Attendre 0.5 seconde.
+  - Attendre 0.5 seconde.
+  - Prendre une photo.
+  - Attendre 0.5 seconde.
 
 L'installation et l'utilisation de **Carto3D** sont détaillées sur le [**Dépôt Github du projet**](https://github.com/mitsio-motu-data/Carto3D) (accessible uniquement aux membres de l'organisation Mitsio Motu).
 

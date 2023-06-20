@@ -6,7 +6,7 @@ D'après une définition d'[IGN France](https://www.ign.fr/institut/kiosque/la-p
 
 Le fonctionnement repose sur la [stéréoscopie](https://fr.wikipedia.org/wiki/St%C3%A9r%C3%A9oscopie), principe qui reprend la vision humaine : obtenir une images en 3 dimensions à partir de deux images en 2 dimensions.
 Pour l'humain, c'est le cerveau qui traite les deux images que nous voyons, une par oeil, pour en obtenir une en 3D.
-La stéreoscopie est une méthode ancienne, apparue bien avant l'informatique et même avant la photographie. 
+La stéreoscopie est une méthode ancienne, apparue bien avant l'informatique et même avant la photographie.
 Le même principe est utilisé au cinéma avec des projections de films en 3D.
 
 <figure align="center">
