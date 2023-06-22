@@ -7,7 +7,13 @@ Pour le générer, nous utilisons [mdBook](https://rust-lang.github.io/mdBook/).
 
 Pour le moment, il n'y a pas de déploiement automatique, il faut donc le générer localement. Pas d'inquiétude, c'est très simple ! Il suffit d'appliquer les quelques commandes expliquées ci-dessous.
 
-## Installation
+## Contribuer
+
+### Prérequis
+
+- [mdBook](https://rust-lang.github.io/mdBook/)
+
+### Installation
 
 D'abord, il faut cloner le dépôt :
 
@@ -15,13 +21,7 @@ D'abord, il faut cloner le dépôt :
 git clone <this-repo>
 ```
 
-## Utilisation
-
-## Prérequis
-
-- [mdBook](https://rust-lang.github.io/mdBook/)
-
-### Génération
+### Utilisation
 
 Pour générer la documentation, il faut exécuter la commande suivante :
 
@@ -35,11 +35,10 @@ Vous pouvez également accéder à la documentation en allant sur l'adresse suiv
 
 Vous pouvez maintenant naviguer dans la documentation.
 
-## Contribuer
 
 ### Structure du dépôt
 
-```plaintext
+```sh
 .
 ├── Documentation/ # Contient la documentation
 │   ├── book.toml # Configuration de mdBook
