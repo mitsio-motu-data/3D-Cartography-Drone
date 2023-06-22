@@ -39,7 +39,32 @@ Vous pouvez maintenant naviguer dans la documentation.
 
 ### Structure du dépôt
 
-⚠️ TODO ⚠️
+```plaintext
+.
+├── Documentation/ # Contient la documentation
+│   ├── book.toml # Configuration de mdBook
+│   ├── src/ # Contient les fichiers Markdown et les images,
+│   │   │    # organisés en dossiers hiérarchiques selon la table des matières
+│   │   ├── <chapitre>/
+│   │   │   ├── <chapitre>.md
+│   │   │   ├── <image>.jpg
+│   │   │   ├── <sous-chapitre>/
+│   │   │   │   ├── <sous-chapitre>.md
+│   │   │   │   ├── <image>.jpg
+│   │   │   │   └── ...
+│   │   │   └── ...
+│   │   └── ...
+│   ├── theme/ # Contient le thème utilisé par mdBook
+│   │   ├── css/
+│   │   │   └── <variable>.css # Contient les couleurs du thème Mitsio Motu
+│   │   └── ...
+│   └── SUMMARY.md # Table des matières
+├── .gitignore
+├── .github/ # Contient les fichiers de configuration de GitHub
+│   └── workflows/ # Contient les workflows GitHub Actions
+│       └── deploy.yml # Déploiement automatique de la documentation sur GitHub Pages
+└── .markdownlint.json # Configuration de markdownlint
+```
 
 ### Syntaxe Markdown
 
