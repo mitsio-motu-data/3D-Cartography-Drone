@@ -5,8 +5,6 @@
     <em>Hôtel de la Paix (photo d'époque)</em>
 </p>
 
-<center>This is an image</center>
-
 Afin de préserver une trâce d l'Hôtel de la Paix, à Lomé, nous avons réalisé une cartographie 3D du bâtiment. Vous trouverez ici la documentation reprenant tout ce projet : 
 - Présentation du projet
 - Guide pour mettre en place un projet similaire
