@@ -80,5 +80,5 @@ Vous pouvez consulter la configuration dans le fichier [`.markdownlint.json`](.m
 
 ## Auteurs
 
-- Adèle PLUQUET
-- Adrien ANTON LUDWIG
+- [Adèle PLUQUET](https://github.com/apluquet)
+- [Adrien ANTON LUDWIG](https://linktr.ee/adrien.ludwig)
