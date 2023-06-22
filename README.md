@@ -5,17 +5,17 @@
     <em>Hôtel de la Paix (photo d'époque)</em>
 </p>
 
-Afin de préserver une trâce d l'Hôtel de la Paix, à Lomé, nous avons réalisé une cartographie 3D du bâtiment. Vous trouverez ici la documentation reprenant tout ce projet : 
+Ce projet a été mis en place en avril 2023 pour participer à la sauvegarde du patrimoine togolais. Cette année, l'Hôtel de la Paix, ancien hôtel phare de Lomé abandonné depuis 20 ans, menaçait d'être détruit. **[Mitsio Motu](https://www.mitsiomotu.com/)** a alors décidé de cartographier le bâtiment.
+
+Vous trouverez ici la documentation reprenant tout ce projet : 
 - Présentation du projet
 - Guide pour mettre en place un projet similaire
 - Archives des recherches effectuées en amont
 - Crédits et remerciements
 
-Le lien pour accéder à la documentation et les suivant : [https://mitsio-motu-data.github.io/3D-Cartography-Drone/](https://mitsio-motu-data.github.io/3D-Cartography-Drone/)
+Le lien pour accéder à la documentation est le suivant : [https://mitsio-motu-data.github.io/3D-Cartography-Drone/](https://mitsio-motu-data.github.io/3D-Cartography-Drone/)
 
 ## Contribuer
-
-***Exclusivement pour les membres de l'organisation [Mitsio Motu](https://github.com/mitsio-motu-data).***
 
 Si vous souhaitez modifier ou étayer cette documentation, il faudra suivre les étapes suiantes. Merci de la tenir à jour de tout changement afin qu'elle reste pertinent le plus longtemps possible.
 
