@@ -94,7 +94,7 @@ Vous pouvez consulter la configuration dans le fichier [`.markdownlint.json`](.m
 
 Ce projet n'aurait pas été possible sans les librairies et logiciels [Open Source](https://opensource.com/resources/what-open-source#:~:text=The%20term%20open%20source%20refers,approach%20to%20creating%20computer%20programs.) que nous avons utilisés. Merci à tous les contributeurs pour leur travail :
 
-**Écritude et illustration de cette documentation**
+**Écriture et illustration de cette documentation**
 
 [![mdBook](https://img.shields.io/badge/-mdBook-000000?logo=mbBook&logoColor=white&style=for-the-badge)](https://rust-lang.github.io/mdBook/)
 [![Flameshot](https://img.shields.io/badge/-Flameshot-660081?logo=logoColor=white&style=for-the-badge)](https://flameshot.org/)
