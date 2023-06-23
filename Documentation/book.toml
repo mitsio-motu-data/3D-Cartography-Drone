@@ -8,5 +8,6 @@ title = "Cartographie 3D avec un drone - Documentation"
 [output.html]
 default-theme = "mitsiomotu"
 preferred-dark-theme = "mitsiomotu-dark"
+edit-url-template = "https://github.com/mitsio-motu-data/3D-Cartography-Drone/edit/main/Documentation/{path}"
 site-url = "/3D-Cartography-Drone/"
 git-repository-url = "https://github.com/mitsio-motu-data/3D-Cartography-Drone"
