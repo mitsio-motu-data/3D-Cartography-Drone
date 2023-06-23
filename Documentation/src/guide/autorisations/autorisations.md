@@ -10,6 +10,8 @@ Il peut être nécessaire de faire des demandes d'autorisation de vols. Il est i
 - Papiers import/export par les douanes
 - Historique des réparations par le constructeur
 
+Comme l'illustre le schéma ci-dessous, à titre indicatif, il ne faut pas négliger le temps des démarches administratives pour obtenir les autorisation nécessaires (section *mission approval*) au vol.
+
 <figure align="center">
     <img src="planning.jpg" | width=600/>
     <figcaption>Répartition du temps conseillée entre les différentes étapes <a href="https://uav-guidelines.openaerialmap.org/pages/07-preparing-for-the-uav-mission/">(source)</a></figcaption>
