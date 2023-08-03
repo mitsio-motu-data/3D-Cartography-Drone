@@ -17,7 +17,7 @@ Le lien pour accéder à la documentation est le suivant : [https://mitsio-motu-
 
 ## Contribuer
 
-Si vous souhaitez modifier ou étayer cette documentation, il faudra suivre les étapes suiantes. Merci de la tenir à jour de tout changement afin qu'elle reste pertinent le plus longtemps possible.
+Si vous souhaitez modifier ou étayer cette documentation, il faudra suivre les étapes suiantes. Merci de la tenir à jour de tout changement afin qu'elle reste pertinente le plus longtemps possible.
 
 ### Prérequis
 
