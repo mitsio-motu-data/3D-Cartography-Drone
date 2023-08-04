@@ -21,7 +21,7 @@ Si vous souhaitez modifier ou étayer cette documentation, il faudra suivre les 
 
 ### Prérequis
 
-La documentation a été écrite grâce à [**mdBook**](https://rust-lang.github.io/mdBook/). Faite un tour sur la documentation pour l'installer et pour vous renseigner sur l'outil.
+La documentation a été écrite grâce à [**mdBook**](https://rust-lang.github.io/mdBook/). Rendez-vous sur la documentation de [**mdBook**](https://rust-lang.github.io/mdBook/) pour l'installer et vous renseigner sur l'outil.
 
 Clonez ensuite le dépôt :
 ```bash
@@ -38,7 +38,7 @@ mdbook serve --open # Génère la documentation et l'ouvre dans votre navigateur
 ```
 
 Une fenêtre de votre navigateur par défaut devrait s'ouvrir sur la documentation.
-Vous pouvez également accéder à la documentation en allant sur l'adresse suivante : [http://localhost:3000](http://localhost:3000).
+Vous pouvez également accéder à la documentation en allant à l'adresse suivante : [http://localhost:3000](http://localhost:3000).
 
 Vous pouvez maintenant naviguer dans la documentation.
 
