@@ -37,7 +37,7 @@ Deux méthodes ont été mises en place :
 - Une cartographie classique réalisée par des étudiants en architecture.
 - Une cartographie 3D par drone, que nous expliquons ici.
 
-Vous pouvez retrouver les résultats des deux méthodes sur [le site du projet](https://mitsio-motu-data.github.io/fipa/).
+Vous pouvez retrouver les résultats des deux méthodes sur [le site du projet](https://mitsio-motu-data.github.io/HDP-Cartography-Website/).
 
 <figure align=center>
     <img src="hdp_3d_reconstruction.jpg" width=650/>
