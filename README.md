@@ -15,6 +15,11 @@ Vous trouverez ici la documentation reprenant tout ce projet :
 
 Le lien pour accéder à la documentation est le suivant : [https://mitsio-motu-data.github.io/3D-Cartography-Drone/](https://mitsio-motu-data.github.io/3D-Cartography-Drone/)
 
+<p align=center>
+    <img src="./Documentation/src/introduction/presentation_projet/hdp_3d_reconstruction.jpg" width=600/><br>
+    <em>Hôtel de la Paix (reconstruction 3D)</em>
+</p>
+
 ## Contribuer
 
 Si vous souhaitez modifier ou étayer cette documentation, il faudra suivre les étapes suivantes. Merci de la tenir à jour de tout changement afin qu'elle reste pertinente le plus longtemps possible.
